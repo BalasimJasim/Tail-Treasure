@@ -32,6 +32,8 @@ userRegistration.post("/register", async (req, res, next) => {
       expiresIn: "1h",
     });
 
+    // not commiting for some reason!!
+
     res.status(201).json({ token });
   } catch (error) {
     next(error);
