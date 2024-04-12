@@ -2,10 +2,12 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
+import connectDB from "./src/utils/connectDB";
 
 const app = express();
 config();
 app.use(express.json());
+connectDB();
 app.use(morgan("dev"));
 app.use(cors());
 
