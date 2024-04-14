@@ -1,14 +1,34 @@
 import express from "express";
-import User from "./models/User";
+import { User } from "../models/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const userRegistration = express.Router();
+const userPath = express.Router();
 
-userRegistration.post("/register", async (req, res, next) => {
+/**
+ * get all users
+ */
+
+userPath.get("/", async (req, res, next) => {
   try {
-    // here i still need the User model!!
-    const { username, email, password } = req.body;
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
+  }
+});
+
+userPath.post("/register", async (req, res, next) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      address: { street, city, state, postalCode },
+      phoneNumber,
+      bonusPoints,
+    } = req.body;
 
     // checkinf if the user already exist
 
@@ -22,14 +42,18 @@ userRegistration.post("/register", async (req, res, next) => {
 
     // Create a new user...
     const newUser = new User({
-      username,
+      firstName,
+      lastName,
       email,
       password: hashedPassword,
+      phoneNumber,
+      address: { street, city, state, postalCode },
+      bonusPoints,
     });
 
     const result = await newUser.save();
-    const token = jwt.sign({ userID: user._id }, process.env.SECRET, {
-      expiresIn: "1h",
+    const token = jwt.sign({ userID: result._id }, process.env.SECRET_KEY, {
+      expiresIn: "6h",
     });
 
     // not commiting for some reason!!
@@ -40,4 +64,4 @@ userRegistration.post("/register", async (req, res, next) => {
   }
 });
 
-export default userRegistration;
+export default userPath;
