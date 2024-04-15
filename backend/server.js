@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
+const reviewsUser = require("./src/middlewares/reviewsUser.js");
 
 const app = express();
 config();
