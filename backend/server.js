@@ -13,6 +13,10 @@ app.use(cors());
 
 const port = process.env.PORT || 4000;
 
+app.use("/auth");
+app.use("/user");
+app.use("/reviews");
+
 app.use((err, req, res, next) => {
   res
     .status(err.status || 500)
