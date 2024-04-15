@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { Address } from "./AddressModel";
+import { Address } from "../models/AddressModel.js";
 
 const required = true;
 const unique = true;
