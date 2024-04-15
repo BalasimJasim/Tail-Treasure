@@ -15,6 +15,8 @@ const userSchema = new Schema({
     type: Number,
     default: 0,
   },
+  history: [{}],
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Product" }],
   createdAt: {
     type: Date,
     default: Date.now,
