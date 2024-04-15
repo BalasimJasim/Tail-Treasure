@@ -3,13 +3,13 @@ import { User } from "../models/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const userPath = express.Router();
+const userRoute = express.Router();
 
 /**
  * get all users
  */
 
-userPath.get("/", async (req, res, next) => {
+userRoute.get("/", async (req, res, next) => {
   try {
     const users = await User.find();
     res.status(200).json(users);
@@ -18,7 +18,7 @@ userPath.get("/", async (req, res, next) => {
   }
 });
 
-userPath.post("/register", async (req, res, next) => {
+userRoute.post("/register", async (req, res, next) => {
   try {
     const {
       firstName,
@@ -64,4 +64,4 @@ userPath.post("/register", async (req, res, next) => {
   }
 });
 
-export default userPath;
+export default userRoute;
