@@ -1,4 +1,4 @@
-const reviewsUser = (req, res, next) => {
+export const reviewsUser = (req, res, next) => {
   const { rating, comment } = req.body;
   if (!rating || !comment) {
     return res.status(400).json({ message: "Rating and comment are required" });
