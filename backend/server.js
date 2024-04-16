@@ -3,11 +3,12 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
-const reviewsUser = require("./src/middlewares/reviewsUser.js");
+//import { reviewsUser } from "./src/middlewares/reviewsUser.js";
 
 import connectDB from "./src/utils/connectDB.js";
 import userPath from "./src/routes/registration.js";
 
+import { loginRouter } from "./src/routes/loginRouter.js";
 
 const app = express();
 config();
@@ -18,12 +19,11 @@ app.use(cors());
 
 const port = process.env.PORT || 4000;
 
-
-app.use("/auth");
-app.use("/user");
-app.use("/reviews");
+//app.use("/auth");
+//app.use("/user");
+//app.use("/reviews");
 app.use("/", userPath);
-
+app.use("/login", loginRouter);
 
 app.use((err, req, res, next) => {
   res
