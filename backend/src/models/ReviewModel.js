@@ -11,9 +11,14 @@ const reviewSchema = new Schema({
     ref: "Product",
     required,
   },
-  content: {
+  comment: {
     type: String,
     required,
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
   },
   image: String,
   createdAt: {
