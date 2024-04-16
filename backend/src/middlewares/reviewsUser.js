@@ -29,6 +29,18 @@ router.post("/products/:productId/reviews", reviewsUser, async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+// retrieve all the reviews
+router.get("/reviews", async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.json(reviews);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 // update reviews by id
 router.put(
   "/reviews/:reviewId",
