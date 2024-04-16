@@ -9,7 +9,7 @@ export const reviewsUser = (req, res, next) => {
   next();
 };
 
-app.post("/products/:productId/reviews", reviewsUser, async (req, res) => {
+router.post("/products/:productId/reviews", reviewsUser, async (req, res) => {
   try {
     const { productId } = req.params;
     const userId = req.user.id;
@@ -24,6 +24,39 @@ app.post("/products/:productId/reviews", reviewsUser, async (req, res) => {
     await newReview.save();
 
     res.status(201).json({ message: "Review posted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+// update reviews by id
+router.put(
+  "/reviews/:reviewId",
+  reviewsUser,
+  getReviewById,
+  async (req, res) => {
+    try {
+      const { rating, comment } = req.body;
+      const review = req.review;
+
+      review.rating = rating;
+      review.comment = comment;
+      await review.save();
+
+      res.json({ message: "Review updated successfully", review });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  }
+);
+// delete a review by id
+router.delete("/reviews/:reviewId", getReviewById, async (req, res) => {
+  try {
+    const review = req.review;
+    await review.remove();
+
+    res.json({ message: "Review deleted successfully" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
