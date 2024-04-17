@@ -1,7 +1,7 @@
 import express from "express";
 import {
   getAllUsers,
-  getUserByID,
+  getUserById,
   updateUser,
   deleteUser,
 } from "../controller/userController.js";
@@ -14,7 +14,7 @@ const userRoute = express.Router();
 
 // Routes
 userRoute.get("/", verifyTokenAndAuthorization, getAllUsers);
-userRoute.get("/:userID", getUserByID);
+userRoute.get("/:userID", getUserById);
 userRoute.put("/:userID", verifyToken, updateUser);
 userRoute.delete("/:userID", verifyToken, deleteUser);
 
