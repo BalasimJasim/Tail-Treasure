@@ -6,3 +6,5 @@ const app = express();
 app.use("/reviews", router);
 
 module.exports = app;
+
+export default app;

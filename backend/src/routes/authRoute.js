@@ -69,8 +69,8 @@ authRoute.post(
       if (!user) {
         res.status(400).json({ error: "invalid Email or password!" });
       }
-      const isPasswordMatchs = await bcrypt.compare(password, user.password);
-      if (!isPasswordMatchs) {
+      const isPasswordMatch = await bcrypt.compare(password, user.password);
+      if (!isPasswordMatch) {
         return res.status(400).json({ error: "invalid Email or password!" });
       }
       const token = jwt.sign({ userID: user._id }, process.env.SECRET_KEY, {

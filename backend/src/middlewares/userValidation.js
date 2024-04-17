@@ -13,7 +13,7 @@ export const validateUser = async (req, res, next) => {
       bonusPoints,
       isAdmin,
     } = req.body;
-
+    console.log(req.body);
     if (
       !firstName ||
       !lastName ||

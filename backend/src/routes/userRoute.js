@@ -4,7 +4,7 @@ import { User } from "../models/UserModel.js";
 import {
   verifyToken,
   verifyTokenAndAuthorization,
-} from "../middlewar/veryfyToken.js";
+} from "../middlewares/veryfyToken.js";
 
 const userRoute = express.Router();
 
@@ -48,7 +48,7 @@ userRoute.get("/:userID", async (req, res, next) => {
 userRoute.put("/:userID", verifyToken, async (req, res, next) => {
   try {
     if (req.user._id !== req.params.userID) {
-      return res.status(403).json({ message: "unauthorized requist" });
+      return res.status(403).json({ message: "unauthorized request" });
     }
     const updatedUser = await User.findByIdAndUpdate(
       req.params.userID,
@@ -69,6 +69,7 @@ userRoute.put("/:userID", verifyToken, async (req, res, next) => {
 });
 
 /**
+
  * DELETE
  * delete user profile
  * @route /users/userID
