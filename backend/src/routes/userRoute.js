@@ -4,7 +4,7 @@ import { User } from "../models/UserModel.js";
 import {
   verifyToken,
   verifyTokenAndAuthorization,
-} from "../middlewar/veryfyToken.js";
+} from "../middlewares/veryfyToken.js";
 
 const userRoute = express.Router();
 

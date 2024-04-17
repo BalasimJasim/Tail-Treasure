@@ -4,5 +4,5 @@ const favoritesRouter = Router();
 
 favoritesRouter.route("/").get(getAllFavorites);
 
-favoritesRouter("/add/:productId").post(addFavoriteProduct);
-favoritesRouter("/remove/:productId").delete(removeFavorite);
+favoritesRouter.route("/add/:productId").post(addFavoriteProduct);
+favoritesRouter.route("/remove/:productId").delete(removeFavorite);

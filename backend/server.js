@@ -3,8 +3,8 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
-const reviewsUser = require("./src/middlewares/reviewsUser.js");
-const reviews = require("./src/routes/reviews.js");
+import reviewsUser from "./src/middlewares/reviewsUser.js";
+import reviews from "./src/routes/reviews.js";
 import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";
