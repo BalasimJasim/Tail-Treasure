@@ -3,9 +3,14 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
+<<<<<<< HEAD
+import reviewsUser from "./src/middlewares/reviewsUser.js";
+import reviews from "./src/routes/reviews.js";
+=======
 import { reviewsUser } from "./src/middlewares/reviewsUser.js";
 //import reviews from "./src/routes/reviews.js";
 
+>>>>>>> main
 import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";

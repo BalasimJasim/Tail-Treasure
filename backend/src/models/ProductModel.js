@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 const required = true;
-const unique = true;
 
+const categories = ["dogs", "cats", "birds", "rodents"];
 const productSchema = new Schema({
   name: {
     type: String,
@@ -19,6 +19,7 @@ const productSchema = new Schema({
   category: {
     type: String,
     required,
+    enum: categories,
   },
   image: String,
   createdAt: {

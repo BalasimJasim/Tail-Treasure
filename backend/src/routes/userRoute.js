@@ -8,7 +8,7 @@ import {
 import {
   verifyToken,
   verifyTokenAndAuthorization,
-} from "../middlewar/verifyToken.js";
+} from "../middlewares/veryfyToken.js";
 
 const userRoute = express.Router();
 

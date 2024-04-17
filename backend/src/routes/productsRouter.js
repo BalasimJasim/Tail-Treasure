@@ -5,14 +5,14 @@ import {
   getAllProducts,
   getProduct,
   updateProduct,
-} from "../controller/productsController";
+} from "../controller/productsController.js";
 
 const productsRouter = Router();
 
 productsRouter.route("/").get(getAllProducts).post(addProduct);
 
 productsRouter
-  .route("/:id")
+  .route("/:productId")
   .get(getProduct)
   .put(updateProduct)
   .delete(deleteProduct);
