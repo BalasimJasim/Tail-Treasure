@@ -3,8 +3,14 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
+<<<<<<< HEAD
 import reviewsUser from "./src/middlewares/reviewsUser.js";
 import reviews from "./src/routes/reviews.js";
+=======
+import { reviewsUser } from "./src/middlewares/reviewsUser.js";
+//import reviews from "./src/routes/reviews.js";
+
+>>>>>>> main
 import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";
@@ -21,9 +27,9 @@ const port = process.env.PORT || 4000;
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
 
-app.use("/reviews");
-app.use("/", userPath);
-app.use("/api/reviews", reviewRoutes);
+app.use("/reviews", reviews);
+app.use("/", userPath); // not defined
+app.use("/api/reviews", reviewRoutes); // not defined
 
 app.use((err, req, res, next) => {
   if (res.headersSent) {

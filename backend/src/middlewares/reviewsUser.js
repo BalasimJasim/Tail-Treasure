@@ -1,3 +1,7 @@
+import express from "express";
+
+const reviewRoute = express.Router();
+
 export const reviewsUser = (req, res, next) => {
   const { rating, comment } = req.body;
   if (!rating || !comment) {
@@ -9,31 +13,41 @@ export const reviewsUser = (req, res, next) => {
   next();
 };
 
-router.post("/products/:productId/reviews", reviewsUser, async (req, res) => {
-  try {
-    const { productId } = req.params;
-    const userId = req.user.id;
-    const { rating, comment } = req.body;
+//export const getReviewById = (req, res, next) => {
+//  try {
 
-    const newReview = new Review({
-      productId,
-      userId,
-      rating,
-      comment,
-    });
-    await newReview.save();
+//  } catch (error) {}
+//};
 
-    res.status(201).json({ message: "Review posted successfully" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal server error" });
+reviewRoute.post(
+  "/products/:productId/reviews",
+  reviewsUser,
+  async (req, res) => {
+    try {
+      const { productId } = req.params;
+      const userId = req.user.id;
+      const { rating, comment } = req.body;
+
+      const newReview = new Review({
+        productId,
+        userId,
+        rating,
+        comment,
+      });
+      await newReview.save();
+
+      res.status(201).json({ message: "Review posted successfully" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
   }
-});
+);
 
 // retrieve all the reviews
-router.get("/reviews", async (req, res) => {
+reviewRoute.get("/reviews", async (req, res) => {
   try {
-    const reviews = await Review.find();
+    const reviews = await reviews.find();
     res.json(reviews);
   } catch (error) {
     console.error(error);
@@ -42,10 +56,10 @@ router.get("/reviews", async (req, res) => {
 });
 
 // update reviews by id
-router.put(
+reviewRoute.put(
   "/reviews/:reviewId",
   reviewsUser,
-  getReviewById,
+  //
   async (req, res) => {
     try {
       const { rating, comment } = req.body;
@@ -63,7 +77,7 @@ router.put(
   }
 );
 // delete a review by id
-router.delete("/reviews/:reviewId", getReviewById, async (req, res) => {
+reviewRoute.delete("/reviews/:reviewId", async (req, res) => {
   try {
     const review = req.review;
     await review.remove();
