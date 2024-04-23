@@ -20,6 +20,10 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  isAccountVerified: {
+    type: Boolean,
+    default: false,
+  },
 
   history: [{}],
   favorites: [{ type: Schema.Types.ObjectId, ref: "Product" }],

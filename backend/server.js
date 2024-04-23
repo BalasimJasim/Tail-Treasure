@@ -7,6 +7,7 @@ import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";
 import reviewsRouter from "./src/routes/reviewsRouter.js";
+import passwordRoute from "./src/routes/passwordRoute.js";
 
 const app = express();
 config();
@@ -19,7 +20,7 @@ const port = process.env.PORT || 4000;
 
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
-
+app.use("/reset", passwordRoute);
 app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
 
