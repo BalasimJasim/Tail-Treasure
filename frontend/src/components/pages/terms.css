@@ -1,0 +1,49 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+button {
+  background-color: #db7093;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.link {
+  color: #fe28a2;
+  font-size: 25px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(250, 255, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 255, 132, 1) 25%,
+    rgba(251, 198, 56, 1) 50%,
+    rgba(250, 255, 132, 1) 75%
+  );
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: rgb(250, 255, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 255, 132, 1) 28%,
+    rgba(218, 233, 50, 1) 51%,
+    rgba(227, 118, 237, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  flex-direction: column;
+}
