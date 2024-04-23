@@ -28,6 +28,3 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 };
 
 export { verifyToken, verifyTokenAndAuthorization };
-
-/// this function does not work properly!!
-// when
