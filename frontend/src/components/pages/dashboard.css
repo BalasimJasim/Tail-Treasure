@@ -1,5 +1,4 @@
-html,
-body {
+/* body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -10,9 +9,9 @@ body {
     rgba(251, 198, 56, 1) 50%,
     rgba(250, 255, 132, 1) 75%
   );
-}
+} */
 
-.wrapper {
+/* .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +26,4 @@ body {
     rgba(2, 0, 36, 1) 100%
   );
   flex-direction: column;
-}
+} */

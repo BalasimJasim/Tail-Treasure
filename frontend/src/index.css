@@ -1,3 +1,13 @@
+/* variables to keep all your stuff in one place and make sure everything is changed altogether */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  use this sheet to do some generic styling for your buttons, a tags, inputs, heading, stuff */
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

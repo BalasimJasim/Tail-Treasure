@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
@@ -21,50 +23,49 @@ function Login() {
 
   return (
     <>
-      <div className="form-box">
-        <div className="login-container" id="login">
-          <div className="top">
-            <span>
-              Don't have an account? <Link to="/register">Sign up</Link>
-            </span>
-            <header>Login</header>
-          </div>
-          <form onSubmit={handleLogin}>
-            <div className="input-box">
-              <input
-                type="text"
-                className="input-field"
-                placeholder="Username or Email"
-                value={usernameOrEmail}
-                onChange={(e) => setUsernameOrEmail(e.target.value)}
-                required
-              />
+      <div className="container-login">
+        <div className="form-box-login">
+          <div className="login-container" id="login">
+            <div className="top-login">
+              <span>
+                Don't have an account? <Link to="/register">Sign up</Link>
+              </span>
+              <header>Login</header>
             </div>
+            <form onSubmit={handleLogin}>
+              <div className="input-box-login">
+                <input
+                  type="text"
+                  className="input-field-login"
+                  placeholder="Username or Email"
+                  value={usernameOrEmail}
+                  onChange={(e) => setUsernameOrEmail(e.target.value)}
+                  required
+                />
+              </div>
 
-            <div className="input-box">
-              <input
-                type="password"
-                className="input-field"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
+              <div className="input-box-login">
+                <input
+                  type="password"
+                  className="input-field-login"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
 
-            <div className="input-box">
-              <input type="submit" className="submit" value="Sign In" />
+              <div className="input-box-login">
+                <input type="submit" className="submit-login" value="Sign In" />
+              </div>
+            </form>
+            {error && <div className="error-login">{error}</div>}
+            <div className="two-col-login">
+              <div className="one-login">
+                <input type="checkbox" id="login-check" />
+                <label htmlFor="login-check">Remember Me</label>
+              </div>
             </div>
-          </form>
-          {error && <div className="error">{error}</div>}
-          <div className="two-col">
-            <div className="one">
-              <input type="checkbox" id="login-check" />
-              <label htmlFor="login-check">Remember Me</label>
-            </div>
-            {/* <div className="two">
-              <Link to="/forgot-password">Forgot password?</Link>
-            </div> */}
           </div>
         </div>
       </div>
