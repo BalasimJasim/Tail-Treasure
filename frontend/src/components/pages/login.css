@@ -8,7 +8,7 @@
 
 .form-box-login {
   position: relative;
-  margin: 30px auto;
+  margin: 5px auto;
   max-width: 900px;
   display: flex;
   align-items: center;
@@ -32,20 +32,20 @@
   justify-content: center;
   flex-direction: column;
   transition: 0.5s ease-in-out;
-  margin: 45px auto;
+  margin: 55px auto;
   padding: 20px;
   width: 90%;
   max-width: 850px;
 }
 
 .top-login span {
-  margin-left: 50%;
-  width: 380px;
+  width: 385px;
   font-size: 35px;
   font-family: "Shadows Into Light", cursive;
 }
 
 .top-login span a {
+  align-items: center;
   font-size: medium;
   font-weight: 500;
   color: #fff;
@@ -53,18 +53,21 @@
 }
 
 .top-login header {
-  font-size: 20px;
+  font-size: 25px;
   display: flex;
-  margin-left: 10%;
+  margin-left: 55%;
+
   flex-direction: row;
   color: red;
 }
 
 .input-field-login {
+  margin-top: 10px;
+  margin-bottom: 15px;
   font-size: 17px;
   background-color: #ffcc00;
   height: 58px;
-  width: 100%; /* Adjust width as needed */
+  width: 100%;
   padding: 0 10px 0 45px;
   border: none;
   border-radius: 30px;
@@ -81,7 +84,7 @@
   font-size: 25px;
   font-weight: 500;
   height: 45px;
-  width: 100%; /* Adjust width as needed */
+  width: 100%;
   border: none;
   border-radius: 30px;
   outline: none;
@@ -102,14 +105,20 @@
   flex-direction: column;
   justify-content: center;
   gap: 25px;
-  color: #fff; /* Adjust font color if necessary */
-  font-size: small; /* Adjust font size if necessary */
+  color: #fff;
+  font-size: small;
   margin-top: 25px;
   margin-bottom: 15px;
 }
 
-/* .two-col-login .one-login {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-} */
+.image-box-login {
+  flex: 0 0 40%;
+  position: relative;
+  left: 8%;
+}
+
+.image-box-login img {
+  width: 70%;
+  height: 45%;
+  object-fit: cover;
+}
