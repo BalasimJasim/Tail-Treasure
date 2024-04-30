@@ -16,8 +16,11 @@ function Login() {
       // Successful login
       setError("");
     } else {
-      // Failed login
-      setError("Invalid username/email or password.");
+      setError("Username is incorrect or password");
+
+      setTimeout(() => {
+        setError("");
+      }, 3000);
     }
   };
 

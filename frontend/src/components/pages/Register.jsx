@@ -4,10 +4,12 @@
 import React from "react";
 import "./register.css";
 import { NavLink, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate("/login");
   };
 
   return (
