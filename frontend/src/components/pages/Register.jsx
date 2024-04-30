@@ -1,14 +1,73 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
-// export default Register;
-import React from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from "react";
 import "./register.css";
 import { NavLink, Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 
+import { userRegisterApi } from "../../Helpers/fetches";
+import { useUserContext } from "../contexts/UserContext";
+
+
 function Register() {
-  const handleSubmit = (event) => {
+  const { dispatch } = useUserContext();
+  const [loading, setLoading] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [street, setStreet] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      setLoading(true);
+      if (password !== confirmPassword) {
+        console.error("Passwords do not match");
+        return;
+      }
+
+      const formData = {
+        firstName,
+        lastName,
+        email,
+        password,
+        address: {
+          city,
+          state,
+          street,
+          postalCode,
+        },
+      };
+
+      dispatch({ type: "REGISTER_USER_START" });
+
+      const user = await userRegisterApi(formData);
+
+      dispatch({ type: "REGISTER_USER_SUCCESS", payload: user });
+
+      console.log("User registered successfully!");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setCity("");
+      setState("");
+      setStreet("");
+      setPostalCode("");
+    } catch (error) {
+      console.error("Registration failed:", error);
+      dispatch({ type: "REGISTER_USER_FAILURE", payload: error.message });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,6 +96,9 @@ function Register() {
                 type="text"
                 className="input-field"
                 placeholder="Firstname"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
               />
             </div>
 
@@ -45,15 +107,68 @@ function Register() {
                 type="text"
                 className="input-field"
                 placeholder="Lastname"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
               />
             </div>
 
             <div className="input-box">
-              <input type="text" className="input-field" placeholder="Email" />
+              <input
+                type="email"
+                className="input-field"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {email && !/^\S+@\S+\.\S+$/.test(email) && (
+                <p className="error-text">Invalid email format</p>
+              )}
             </div>
 
             <div className="input-box">
-              <input type="text" className="input-field" placeholder="Region" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="City"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <input
+                type="text"
+                className="input-field"
+                placeholder="State"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Street"
+                value={street}
+                onChange={(e) => setStreet(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Postal Code"
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+                required
+              />
             </div>
 
             <div className="input-box">
@@ -61,6 +176,8 @@ function Register() {
                 type="password"
                 className="input-field"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -70,8 +187,13 @@ function Register() {
                 type="password"
                 className="input-field"
                 placeholder="Repeat Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
+              {confirmPassword && confirmPassword !== password && (
+                <p className="error-text">Passwords do not match</p>
+              )}
             </div>
 
             <div className="two-col">
@@ -94,11 +216,28 @@ function Register() {
                 </p>
               </div>
             </div>
-          </form>
 
-          <div className="input-box">
-            <input type="submit" className="submit" value="Register" />
-          </div>
+            <div className="input-box">
+              <input
+                type="submit"
+                className="submit"
+                value={loading ? "Loading..." : "Register"}
+                disabled={
+                  loading ||
+                  !firstName ||
+                  !lastName ||
+                  !email ||
+                  !password ||
+                  !confirmPassword ||
+                  !city ||
+                  !state ||
+                  !street ||
+                  !postalCode ||
+                  confirmPassword !== password
+                }
+              />
+            </div>
+          </form>
         </div>
 
         <motion.div
