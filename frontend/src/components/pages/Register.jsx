@@ -3,8 +3,12 @@
 import React, { useState } from "react";
 import "./register.css";
 import { NavLink, Link } from "react-router-dom";
+
+import { motion } from "framer-motion";
+
 import { userRegisterApi } from "../../Helpers/fetches";
 import { useUserContext } from "../contexts/UserContext";
+
 
 function Register() {
   const { dispatch } = useUserContext();
@@ -236,9 +240,14 @@ function Register() {
           </form>
         </div>
 
-        <div className="image-box">
+        <motion.div
+          initial={{ opacity: 0, x: "-100vw" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          className="image-box"
+        >
           <img src="../../../images/backgound.png" alt="background" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

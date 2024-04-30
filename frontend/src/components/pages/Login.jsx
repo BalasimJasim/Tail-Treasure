@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
+import loginImage from "../../../images/loginImage.jpg";
+import { motion } from "framer-motion";
 
 function Login() {
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
@@ -65,6 +67,16 @@ function Login() {
                 <input type="checkbox" id="login-check" />
                 <label htmlFor="login-check">Remember Me</label>
               </div>
+              {
+                <motion.div
+                  initial={{ opacity: 0, y: "80vh" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  className="image-box-login"
+                >
+                  <img src={loginImage} alt="background" />
+                </motion.div>
+              }
             </div>
           </div>
         </div>
