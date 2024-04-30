@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import "./register.css";
 import { NavLink, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
@@ -25,6 +26,8 @@ function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+
 
     try {
       setLoading(true);
@@ -68,6 +71,7 @@ function Register() {
     } finally {
       setLoading(false);
     }
+
   };
 
   return (
