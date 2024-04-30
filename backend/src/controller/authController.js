@@ -12,8 +12,6 @@ export const registerUser = async (req, res, next) => {
       email,
       password,
       address: { street, city, state, postalCode },
-      phoneNumber,
-      bonusPoints,
     } = req.body;
 
     const user = await User.findOne({ email });
@@ -28,9 +26,7 @@ export const registerUser = async (req, res, next) => {
       lastName,
       email,
       password: hashedPassword,
-      phoneNumber,
       address: { street, city, state, postalCode },
-      bonusPoints,
     });
 
     await newUser.save();
@@ -112,14 +108,14 @@ export const verifyUserAccount = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.userId);
     if (!user) {
-      return res.state(400).json({ message: "invalid link!" });
+      return res.status(400).json({ message: "invalid link!" });
     }
     const verificationToken = await VerificationToken.findOne({
       userId: user._id,
       token: req.params.token,
     });
     if (!verificationToken) {
-      return res.state(400).json({ message: "invalid link!" });
+      return res.status(400).json({ message: "invalid link!" });
     }
     user.isAccountVerified = true;
     await user.save();
@@ -130,6 +126,8 @@ export const verifyUserAccount = async (req, res, next) => {
     await VerificationToken.deleteOne({ _id: verificationToken._id });
 
     // await verificationToken.remove();
+
+    //**Todo --> res.redirect(`${process.env.CLIENT_DOMAIN}/auth/login`);*/
 
     res.status(200).json({ message: "Your Account is Verified!" });
   } catch (error) {
