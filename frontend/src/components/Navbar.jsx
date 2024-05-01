@@ -10,8 +10,51 @@ import {
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
+import { useUserContext } from "./contexts/UserContext";
 
 function Navbar() {
+  const { state, dispatch } = useUserContext();
+  const authButton = () => {
+    const handleLogout = () => {
+      dispatch({ type: "LOGOUT" });
+    };
+    if (state.isAccountVerified) {
+      return (
+        <li>
+          <button onClick={handleLogout}>
+            <span>Logout</span>
+          </button>
+        </li>
+      );
+    } else {
+      return (
+        <>
+          <li>
+            <Link to="/login">
+              <button>
+                <FaSignInAlt
+                  className="mr-1"
+                  style={{ color: "red", fontSize: "1.2em" }}
+                />
+                <span>Login</span>
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/register">
+              <button>
+                <FaUserPlus
+                  className="mr-1"
+                  style={{ color: "red", fontSize: "1.2em" }}
+                />
+                <span>Register</span>
+              </button>
+            </Link>
+          </li>
+        </>
+      );
+    }
+  };
   return (
     <nav className="headerbox">
       <motion.h1
@@ -29,39 +72,14 @@ function Navbar() {
         style={{ fontSize: "" }}
       >
         <ul className="bar">
-          {
-            <>
-              <li>
-                <Link to="/dashboard">
-                  <button>
-                    <span>Home</span>
-                  </button>
-                </Link>
-              </li>
-              <li>
-                <Link to="/login">
-                  <button>
-                    <FaSignInAlt
-                      className="mr-1"
-                      style={{ color: "red", fontSize: "1.2em" }}
-                    />
-                    <span>Login</span>
-                  </button>
-                </Link>
-              </li>
-              <li>
-                <Link to="/register">
-                  <button>
-                    <FaUserPlus
-                      className="mr-1"
-                      style={{ color: "red", fontSize: "1.2em" }}
-                    />
-                    <span> Register</span>
-                  </button>
-                </Link>
-              </li>
-            </>
-          }{" "}
+          <li>
+            <Link to="/dashboard">
+              <button>
+                <span>Home</span>
+              </button>
+            </Link>
+          </li>
+          {authButton()}
           <li>
             <FaShoppingCart size={30} />
           </li>

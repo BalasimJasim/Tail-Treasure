@@ -3,7 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
-import reviews from "./src/routes/reviews.js";
+// import reviews from "./src/routes/reviews.js";
 import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";

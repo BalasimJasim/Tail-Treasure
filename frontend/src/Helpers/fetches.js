@@ -6,5 +6,10 @@ export const userRegisterApi = async (formData) => {
 };
 
 export const userLoginApi = async (loginObj) => {
-  axios.post("/auth/login", loginObj);
+  try {
+    return await axios.post("/auth/login", loginObj);
+  } catch (error) {
+    console.error("Error in userLoginApi:", error);
+    throw error;
+  }
 };

@@ -1,26 +1,18 @@
-const userReducer = (state, action) => {
+export const userReducer = (state, action) => {
   switch (action.type) {
-    case "REGISTER_USER_START":
+    case "LOGIN":
       return {
         ...state,
-        loading: true,
-        error: null,
+        user: action.payload.user,
+        isAccountVerified: true,
       };
-    case "REGISTER_USER_SUCCESS":
+    case "LOGOUT":
       return {
         ...state,
-        user: action.payload,
-        loading: false,
-      };
-    case "REGISTER_USER_FAILURE":
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
+        user: null,
+        isAccountVerified: false,
       };
     default:
       return state;
   }
 };
-
-export default userReducer;
