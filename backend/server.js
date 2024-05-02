@@ -3,11 +3,17 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "dotenv";
 
+// import reviews from "./src/routes/reviews.js";
 import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";
 import reviewsRouter from "./src/routes/reviewsRouter.js";
+
+import productsRouter from "./src/routes/productsRouter.js";
+import { getAllProducts } from "./src/controller/productsController.js";
+
 import passwordRoute from "./src/routes/passwordRoute.js";
+
 
 const app = express();
 config();
@@ -23,10 +29,11 @@ app.use("/auth", authRoute);
 app.use("/reset", passwordRoute);
 app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
+app.use("/products", productsRouter);
 
 app.use((err, req, res, next) => {
   if (res.headersSent) {
-    return next(err); // the error presest so i had to handle it here
+    return next(err); // the error preset so i had to handle it here
   }
   res
     .status(err.status || 500)
