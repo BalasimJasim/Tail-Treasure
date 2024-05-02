@@ -12,7 +12,6 @@ import {
 
 const userRoute = express.Router();
 
-// Routes
 userRoute.get("/", verifyTokenAndAuthorization, getAllUsers);
 userRoute.get("/:userID", getUserById);
 userRoute.put("/:userID", verifyToken, updateUser);

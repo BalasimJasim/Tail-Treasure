@@ -1,5 +1,6 @@
 import { User } from "../models/UserModel.js";
 import { validationResult, check } from "express-validator";
+import validator from "email-validator";
 
 export const validateUser = async (req, res, next) => {
   try {
@@ -9,9 +10,6 @@ export const validateUser = async (req, res, next) => {
       email,
       password,
       address: { street, city, state, postalCode },
-      phoneNumber,
-      bonusPoints,
-      isAdmin,
     } = req.body;
     console.log(req.body);
     if (
@@ -22,8 +20,7 @@ export const validateUser = async (req, res, next) => {
       !street ||
       !city ||
       !state ||
-      !postalCode ||
-      !isAdmin
+      !postalCode
     ) {
       res.status(400).json({ error: "All fields are required" });
       return;
@@ -35,6 +32,11 @@ export const validateUser = async (req, res, next) => {
     check("password")
       .matches(/[^a-zA-Z0-9]/)
       .withMessage("Password must contain at least one special character");
+
+    if (!validator.validate(email)) {
+      res.status(400).json({ error: "Invalid email address" });
+      return;
+    }
 
     const errors = validationResult(req);
 
