@@ -26,6 +26,7 @@ function Login() {
       if (data.token) {
         console.log(data);
         dispatch({ type: "LOGIN", payload: { user: data.user } });
+
         navigate("/");
         setError("");
       }
@@ -63,6 +64,7 @@ function Login() {
                   type="text"
                   className="input-field-login"
                   placeholder="Username or Email"
+                  id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -74,6 +76,7 @@ function Login() {
                   type="password"
                   className="input-field-login"
                   placeholder="Password"
+                  id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
