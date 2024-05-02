@@ -7,6 +7,9 @@ import Register from "./components/pages/Register";
 import Terms from "./components/pages/Terms";
 import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/pages/Login";
+import { Product } from "./components/pages/Product";
+import NotFound from "./components/pages/NotFound";
+import ProductPage from "./components/pages/ProductPage";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/products/:productID" element={<ProductPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

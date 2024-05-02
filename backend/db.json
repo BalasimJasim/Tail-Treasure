@@ -1,0 +1,451 @@
+[{
+  "name": "ROYAL CANIN Chihuahua Adult",
+  "description": "Diet is a very important factor in supporting the health of your adult Chihuahua. ROYAL CANIN Chihuahua Adult is suitable for Chihuahuas aged 8 months and over. The food has been specially tailored to the needs of adult Chihuahuas, who are considered very picky. ",
+  "price": 24.49,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Chihuahua-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},
+{
+  "name": "ROYAL CANIN BHN Yorkshire Terrier Adult",
+  "description": "Yorkshire Terriers, or Yorkies, are balanced, active and intelligent dogs full of energy and enthusiasm. The little terrier is eager to learn, playful and self-confident. Every breed of dog has different needs. Diet should take this into account to support optimal health. ROYAL CANIN Yorkshire Terrier Adult is suitable for Yorkshire Terriers from 10 months and has been specially tailored to the nutritional needs of this breed.",
+  "price": 14.49,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-YorkshireTerrier-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN MEDIUM Adult dry food for medium-sized dogs",
+  "description": "At 12 months, a medium-sized dog is fully grown, although his behavior may seem like that of a puppy for a while. Good nutrition is just as important at this stage of life as it is during growth. Ensuring that food provides the right nutrients in the right amounts is key to supporting and maintaining health. ROYAL CANIN Medium Adult is specifically tailored to the nutritional needs of a medium-sized, adult dog. The food is ideal for dogs aged 1-7 years with a body weight of 11kg-25kg.",
+  "price": 24.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Medium-Adult-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN MAXI Adult dry food for large dogs",
+  "description": "The nutritional needs of large dogs differ enormously from the needs of smaller dogs. It is therefore particularly important to ensure a balanced diet that is tailored to the dog's specific needs, which depend on size and age. The ROYAL CANIN Maxi Adult dog food is specially tailored to the needs of your dog. It is suitable for large dogs from 15 months of age and weighing 26kg-44kg when fully grown.",
+  "price": 24.49,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Maxi-Adult-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN MINI Adult dry food for small dogs",
+  "description": "Even when a dog becomes an adult, it is important to ensure that their diet continues to provide the important nutrients that support optimal health throughout adulthood. ROYAL CANIN Mini Adult is suitable for small dogs from 10 months and weighing up to 10 kg and has been specially tailored to the needs of small dogs.",
+  "price": 15.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Mini-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN Labrador Retriever Adult Sterilized dry food for neutered dogs",
+  "description": "The lovable, lively and good-natured Labrador Retriever is both a popular family pet and a versatile companion dog. Thanks to its agility, intelligence and keen sense of smell, the Labrador Retriever is often used as a guide dog or search and rescue dog. Nutrition is also an essential component of a healthy life for neutered, adult Labradors. For this reason, choosing a balanced diet is very important. ",
+  "price": 64.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-LabradorRetriever-Sterilised-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN MINI Adult 8+ dry food for older small dogs",
+  "description": "As your dog grows into adulthood, it is important that his diet provides him with nutrients that will continue to support his health as the first signs of aging begin to appear. ROYAL CANIN Mini Adult 8+ is suitable for small dogs aged 8 and over weighing up to 10 kg and has been specially tailored to the needs of small, adult dogs",
+  "price": 15.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Mini-Adult-8plus-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN Dachshund Adult dry dog ​​food for Dachshunds",
+  "description": "The Dachshund is known for its strong will and great courage. The friendly dog ​​enthusiastically accompanies his human pack in all activities. Because each dog breed has its own unique needs, nutrition should support their unique lifestyle and promote optimal health. ROYAL CANIN Dachshund Adult is suitable for dachshunds from 10 months of age and has been specially adapted to the needs of adult dachshunds.",
+  "price": 49.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Dachshund-Adult-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN French Bulldog Adult dry dog ​​food for French Bulldogs",
+  "description": "The French Bulldog is a small breed with pronounced muscle mass, a compact build and strong bones. These strong dogs are usually alert, active and intelligent. Because each breed has its own unique needs, nutrition should support their unique lifestyle and promote optimal health. ROYAL CANIN French Bulldog Adult is suitable for French Bulldogs from 12 months old and has been specially adapted to the needs of adult French Bulldogs.",
+  "price": 23.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-FrenchBulldog-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+},{
+  "name": "ROYAL CANIN Maltese Adult dry dog ​​food",
+  "description": "Maltese are lively, loving and highly intelligent dogs that make excellent companions. Every breed of dog has different needs. Diet should take this into account to support optimal health. ROYAL CANIN Maltese Adult is suitable for Maltese dogs from 10 months of age and has been specially tailored to the needs of this breed. The breed's diet helps maintain a healthy balance of intestinal flora. This optimally supports your dog's digestion and at the same time reduces unpleasant stool odors.",
+  "price": 29.99,
+  "quantity": 100,
+  "category": "dogs",
+  "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/RoyalCanin-Hundefutter-Maltese-1.jpg",
+  "createdAt": "2024-04-11T00:00:00.000Z"
+}]
+
+
+[
+  {
+    "name": "Irish Pure Premium Dry Dog Food, High Meat Content, Vitamins, Grain Free, Sensitive, Dry Dog Food for All Breeds",
+    "description": "Perfectly matched dog food: 65% meat from Irish pasture animals, 32% vegetables and herbs as well as 3% kelp algae make 100% natural taste for your four-legged friend. From Irish free range: the meat for this dry food comes from Irish pasture lambs and outdoor chickens that spend 365 days a year in the fresh Atlantic air of Ireland. Greener can not feed meat.",
+    "price": 49.99,
+    "quantity": 100,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/61Idjbt8uZL._AC_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Poultry Enjoyment - Premium Dry Dog Food, Made in Germany, Dry Food for Dogs, Grain-Free & No Added Sugar, Perfect for Muscle Building and a Healthy Coat",
+    "description": "High-quality dry food: the poultry enjoyment from True Animal Love, specially developed for the nutritional needs of your dog, supports muscle building and ensures a shiny coat. Grain-free food: your dog food is made from 60% poultry protein and is free from cereals and sugar additives, ideal for sensitive stomachs and dogs with allergies. NATURAL INGREDIENTS FOR OPTIMAL HEALTH: Infused with carrots, peas, salmon oil, and herbs to promote digestion and support overall health.",
+    "price": 29.99,
+    "quantity": 75,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/71zknS2cJIL._AC_SL1500_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Naturpfötchen Environmentally conscious & vital with insect proteins - 100% cold pressed",
+    "description": "Free from conventional industrial meat. With essential amino acids. With peas, lupins, vegetables, fruit, fish oil and herbs. Hypoallergenic complete dry dog food with rich monoprotein. 100% cold-pressed dog food - made by the Markus Mühle with green electricity. The complete food for your dog lover.",
+    "price": 39.99,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/61hFAszrbRL._AC_SL1500_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "JosiDog Economy (1 x 15 kg) Dog Food for Adult Dogs Dry Food Powered by Josera Pack of 1",
+    "description": "Controlled and high-quality ingredients - without the addition of wheat, soy and sugar as well as artificial colours and flavourings. Crispy snacks – particularly crispy and delicious. For normally active dogs – for adult dogs with normal energy requirements. Full quality nutrition - provides your four-legged friend with all important nutrients every day. Made in Germany and not tested on animals - Made by a medium-sized family business in Germany",
+    "price": 34.99,
+    "quantity": 60,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/61jRFQ3bD1L._AC_SL1400_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Beneful Original Dry Dog Food with Beef and Garden Vegetables, Pack of 1 (1 x 12 kg)",
+    "description": "Dry food for adult dogs: with beef, garden vegetables and spinach. New formula: soft, fleshy chunks with natural texture. Box contents: 1 x 12 kg dry dog food with soft chunks and crispy croquettes. An adapted amount of proteins and fat to strengthen healthy joints. Dog food with valuable fibre from whole grain for healthy digestion. High-quality dog food with important omega 3 and 6 fatty acids to support healthy skin and shiny coat",
+    "price": 39.99,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/812IK818yxL._AC_SL1500_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "bosch HPC Adult Dog Food with Lamb and Rice, Dry Dog Food for Adult Dogs of all Breeds, 1 x 15 kg",
+    "description": "Wheat-free and sugar-free (suitable for sensitive dogs). Immune complex of mannas and glucans for stabilising the intestinal flora and immune defence (strengthening of the immune system).Shell extracts for strengthening cartilage, joints & bones. Easily digestible, stomach-friendly dry food. Energy and protein concentration is selected to prevent the risks of obesity",
+    "price": 32.49,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/81Faad1StrL._AC_SL1500_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Dog Food Adult Dry with Lamb and Rice All Breeds Fine Preparation",
+    "description": "Free from chicken and wheat gluten. 195g lamb in 1kg feed equals 780g raw meat. The FMP system and Yucca promote good digestion. No added gluten. An excellent taste that your dog will like",
+    "price": 40.69,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/717Q++eDZ9L._AC_SL1500_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Irish Pure Premium Dry Dog Food, High Meat Content, Vitamins, Grain Free, Sensitive, Dry Dog Food for All Breeds",
+    "description": "Perfectly matched dog food: 65% meat from Irish pasture animals, 32% vegetables and herbs as well as 3% kelp algae make 100% natural taste for your four-legged friend. From Irish free range: the meat for this dry food comes from Irish pasture lambs and outdoor chickens that spend 365 days a year in the fresh Atlantic air of Ireland. Greener can not feed meat",
+    "price": 16.99,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/61Idjbt8uZL._AC_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Dehner Wild Nature Dry Dog Food",
+    "description": "Grain-free premium dry dog food with game - adult. Original, species-friendly, 100% natural composition. High meat content as well as vegetables, fruit, herbs and berries. Contains pre-biotic carbohydrates MOS and FOS. Free from chemical additives, no sugar or soy.",
+    "price": 21.99,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/6137MPQt84L._AC_SL1107_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  },
+  {
+    "name": "Dehner Wild Nature Dry Dog Food",
+    "description": "Grain-free premium dry dog food with game - adult. Original, species-friendly, 100% natural composition. High meat content as well as vegetables, fruit, herbs and berries. Contains pre-biotic carbohydrates MOS and FOS. Free from chemical additives, no sugar or soy.",
+    "price": 21.99,
+    "quantity": 80,
+    "category": "dogs",
+    "image": "https://m.media-amazon.com/images/I/61uTH4ll7RL._AC_SL1107_.jpg",
+    "createdAt": "2024-04-11T00:00:00.000Z"
+  }
+]
+[
+    {
+      "name": "Irish Pure Premium Dry Dog Food, High Meat Content, Vitamins, Grain Free, Sensitive, Dry Dog Food for All Breeds",
+      "description": "Perfectly matched dog food: 65% meat from Irish pasture animals, 32% vegetables and herbs as well as 3% kelp algae make 100% natural taste for your four-legged friend. From Irish free range: the meat for this dry food comes from Irish pasture lambs and outdoor chickens that spend 365 days a year in the fresh Atlantic air of Ireland. Greener can not feed meat. 💚 With Superfood Kelp algae: The ingredients of this dog food also include kelp algae, which is harvested off the west coast of Ireland. It is responsible for regulating digestion and strengthening the immune system of your four-legged friend. 🍀 No additives: cereals and artificial additives are not found at Irish Pure Only valuable ingredients come into the bag. Potatoes provide your dog with important carbohydrates instead of burdening digestion",
+      "price": 49.99,
+      "quantity": 100,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/61Idjbt8uZL._AC_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Poultry Enjoyment - Premium Dry Dog Food, Made in Germany, Dry Food for Dogs, Grain-Free & No Added Sugar, Perfect for Muscle Building and a Healthy Coat",
+      "description": "High-quality dry food: the poultry enjoyment from True Animal Love, specially developed for the nutritional needs of your dog, supports muscle building and ensures a shiny coat. Grain-free food: your dog food is made from 60% poultry protein and is free from cereals and sugar additives, ideal for sensitive stomachs and dogs with allergies. NATURAL INGREDIENTS FOR OPTIMAL HEALTH: Infused with carrots, peas, salmon oil, and herbs to promote digestion and support overall health.",
+      "price": 29.99,
+      "quantity": 75,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/71zknS2cJIL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Naturpfötchen Environmentally conscious & vital with insect proteins - 100% cold pressed",
+      "description": "Free from conventional industrial meat. With essential amino acids. With peas, lupins, vegetables, fruit, fish oil and herbs. Hypoallergenic complete dry dog food with rich monoprotein. 100% cold-pressed dog food - made by the Markus Mühle with green electricity. The complete food for your dog lover.",
+      "price": 39.99,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/61hFAszrbRL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "JosiDog Economy (1 x 15 kg) Dog Food for Adult Dogs Dry Food Powered by Josera Pack of 1",
+      "description": "Controlled and high-quality ingredients - without the addition of wheat, soy and sugar as well as artificial colours and flavourings. Crispy snacks – particularly crispy and delicious. For normally active dogs – for adult dogs with normal energy requirements. Full quality nutrition - provides your four-legged friend with all important nutrients every day. Made in Germany and not tested on animals - Made by a medium-sized family business in Germany",
+      "price": 34.99,
+      "quantity": 60,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/61jRFQ3bD1L._AC_SL1400_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Beneful Original Dry Dog Food with Beef and Garden Vegetables, Pack of 1 (1 x 12 kg)",
+      "description": "Dry food for adult dogs: with beef, garden vegetables and spinach. New formula: soft, fleshy chunks with natural texture. Box contents: 1 x 12 kg dry dog food with soft chunks and crispy croquettes. An adapted amount of proteins and fat to strengthen healthy joints. Dog food with valuable fibre from whole grain for healthy digestion. High-quality dog food with important omega 3 and 6 fatty acids to support healthy skin and shiny coat",
+      "price": 39.99,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/812IK818yxL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "bosch HPC Adult Dog Food with Lamb and Rice, Dry Dog Food for Adult Dogs of all Breeds, 1 x 15 kg",
+      "description": "Wheat-free and sugar-free (suitable for sensitive dogs). Immune complex of mannas and glucans for stabilising the intestinal flora and immune defence (strengthening of the immune system).Shell extracts for strengthening cartilage, joints & bones. Easily digestible, stomach-friendly dry food. Energy and protein concentration is selected to prevent the risks of obesity",
+      "price": 32.49,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/81Faad1StrL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Dog Food Adult Dry with Lamb and Rice All Breeds Fine Preparation",
+      "description": "Free from chicken and wheat gluten. 195g lamb in 1kg feed equals 780g raw meat. The FMP system and Yucca promote good digestion. No added gluten. An excellent taste that your dog will like",
+      "price": 40.69,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/717Q++eDZ9L._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Irish Pure Premium Dry Dog Food, High Meat Content, Vitamins, Grain Free, Sensitive, Dry Dog Food for All Breeds",
+      "description": "Perfectly matched dog food: 65% meat from Irish pasture animals, 32% vegetables and herbs as well as 3% kelp algae make 100% natural taste for your four-legged friend. From Irish free range: the meat for this dry food comes from Irish pasture lambs and outdoor chickens that spend 365 days a year in the fresh Atlantic air of Ireland. Greener can not feed meat",
+      "price": 16.99,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/61Idjbt8uZL._AC_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Dehner Wild Nature Dry Dog Food",
+      "description": "Grain-free premium dry dog food with game - adult. Original, species-friendly, 100% natural composition. High meat content as well as vegetables, fruit, herbs and berries. Contains pre-biotic carbohydrates MOS and FOS. Free from chemical additives, no sugar or soy.",
+      "price": 21.99,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/6137MPQt84L._AC_SL1107_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Dehner Wild Nature Dry Dog Food",
+      "description": "Grain-free premium dry dog food with game - adult. Original, species-friendly, 100% natural composition. High meat content as well as vegetables, fruit, herbs and berries. Contains pre-biotic carbohydrates MOS and FOS. Free from chemical additives, no sugar or soy.",
+      "price": 21.99,
+      "quantity": 80,
+      "category": "dogs",
+      "image": "https://m.media-amazon.com/images/I/61uTH4ll7RL._AC_SL1107_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "mera vital Urinary Dry Cat Food (1 x 3 kg), for Inflammation of the Urinary Tract, Dissolution of Struvite Stones, Prevents New Urinary Stones in Cats",
+      "description": "The urinary cat dry food inhibits inflammation in the urinary tract, strengthens the stressed bladder mucosa, avoids the formation of urinary stones and promotes water absorption in cats. High premium diet dry food specially developed by veterinarians and nutritionists - the cat food acidifies the urine, which promotes the dissolution of struvite stones. Thanks to the undersaturated yet demand-covering calcium and magnesium content, the dry cat food prevents the formation of new crystals and strengthens the stressed bladder mucosa.",
+      "price": 24.99,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/61FiSkh2NBL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Royal Canin Bengal Adult Cats Dry Food 2 kg Poultry Vegetable",
+      "description": "Royal Canin Bengal Adult cats dry food 2 kg Poultry Vegetable",
+      "price": 32.35,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/61rE39QdgJL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "PURINA Pro Plan Veterinary Diets Feline HA St/Ox Hypoallergenic - Dry Cat Food - 3 5 kg",
+      "description": "PURINA Pro Plan Veterinary Diets Feline HA St/Ox Hypoallergenic - Dry Cat Food - 3 5 kg",
+      "price": 48.75,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/713j+gOuEnL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "IAMS for Vitality Dry Cat Food with Salmon — Dry Food for Cats Aged 1-6 Years 3 kg",
+      "description": "",
+      "price": 10.59,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/716CItY5vgL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Felix Sensations Dry Cat Food, Variety Mix, Various Sizes",
+      "description": "Dry food for adult cats: Crispy croquettes in different shapes. Colourful meal with the flavours of beef, chicken and vegetables. Box contents: dry cat food with sealable bag in 1 pack (1 x 4 kg). Vitamins and essential fatty acids to support a happy cat life and for shiny coat. Cat food with vitamin D and minerals for strong teeth and bones. Cat food without preservatives or added artificial flavours and dyes",
+      "price": 11.2,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/81+Q1daOifL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Lifelong Complete Cat Food with Grain Free Recipe, beige",
+      "description": "High quality formula with 55% chicken. Veterinarians tested: developed by veterinarians and vetted. Complete food for adult cats. HYPOALLERGENIC - Contains a single animal protein source (chicken) No added wheat, corn, soy, egg, lactose and gluten. Made with natural ingredients*: no added artificial flavourings, dyes and preservatives. Natural antioxidants: with fruits and vegetables that are a source of natural antioxidants",
+      "price": 10.34,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/61uTH4ll7RL._AC_SL1107_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Whiskas Cat Food Dry Adult 1+ Various Varieties and Sizes",
+      "description": "Complete dry food for adult cats. Specially designed to promote healthy teeth with a texture that provides a gentle abrasion effect to remove plaque and tartar. No artificial colours or flavours. Taurine for a healthy heart. Natural oils for a shiny coat.",
+      "price": 19.99,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/81MyS1Yg9YL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Venandi Animal Premium Dry Cat Food, Chicken, Grain-Free with Lots of Fresh Meat, 1.5 kg",
+      "description": "Complete food for all breeds: Our cat food is suitable for cats of all ages and for all breeds. Guaranteed: Grain-free, natural cat food with extra high meat content. Our mission: Natural, genuine, original – this is Venandi. This is important to us: Natural ingredients – real raw materials – original compositions.",
+      "price": 12.89,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/6121mNSicaL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "MERA finest fit Indoor Cat Food Dry for Active Cats, Dry Food from Fresh Poultry and Rice, Healthy Food for Domestic Cats, No Sugar",
+      "description": "Just right: the finest fit indoor dry food is tailored to the special needs of domestic cats. So that you can always stay fit and active despite a small range of motion. Delicious: The tasty combination of lots of fresh poultry, rice and forest fruits provides indoor cats with the appropriate energy content for them. In addition, special minerals can prevent the formation of urinary stones.",
+      "price": 9.59,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/61UhiNBbcbL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Lifelong Complete Cat Food with Grain Free Recipe, beige",
+      "description": "High quality formula with 65% chicken. Veterinarians tested: developed by veterinarians and vetted. Complete food for older cats from 7 years. HYPOALLERGENIC - Contains a single animal protein source (chicken) No added wheat, corn, soy, egg, lactose and gluten.",
+      "price": 21.99,
+      "quantity": 80,
+      "category": "cats",
+      "image": "https://m.media-amazon.com/images/I/61wYhRezv2L._AC_SL1000_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    }
+  ]
+  [
+    {
+      "name": "ERDA® Dried Soldier Fly Larvae, 5 kg, Natural, Protein-Rich Bird Food for Chickens, Wild Birds and Hedgehogs, Ideal as Treats and Snack",
+      "description": "Versatile: perfect as wild bird food, chicken treats and hedgehog snack. Natural & nutritious: 100% natural, dried soldier fly larvae, rich in essential protein. Optimal source of nutrients: provides a balanced blend of proteins, fats and minerals for feeding birds and hedgehogs.",
+      "price": 24.99,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71JA+mMV9pL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Eggersmann volaris 30 pieces fat balls protein without net",
+      "description": "For all types of birds: the high-quality fat balls are suitable as bird food for all wild birds. Watch new bird species at your feeding site with our fat balls. Available all year round: whether as bird dumplings for spring, summer, autumn or winter – the versatile ingredients and our fresh production all year round make our dumplings an all-rounder in the theme of wild bird food.",
+      "price": 13.15,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/619nh8oWKDL._AC_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Dehner Natura Wild Bird Feed, Sprinkle Food in a Bucket",
+      "description": "Selected seeds in classic mix - ideal for year-round feeding. Thanks to fatty peanut kernels and vegetable oil, important energy supplier for birds",
+      "price": 12.99,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71Nywaz87-L._AC_SL1280_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Eggersmann Volaris Summer Grains 3 kg | Bird Food Wild Birds All Year Round | Low Fat Content | Ideal for Rearing | Suitable for All Bird Species",
+      "description": "Easy to feed: the food can be easily fed without further mixing. Simply drop out of the bag into the feeder and watch the birds.   Peanut free: in order to minimise the risk of injury to young birds, our summer grains do not contain peanuts.",
+      "price": 13.19,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71zLmBzFbfL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Eggersmann volaris 3 kg fat grains, bird food, wild birds all year round, wild bird food for the whole year, high-fat scattered food for all bird species",
+      "description": "Nutrient-rich: the peanuts and greased oats are very energetic thanks to their oil content. This means that the wild birds are well prepared for the cold season. Easy to feed: the food can be easily fed without further mixing. Simply drop out of the bag into the feeder and watch the birds.",
+      "price": 12.19,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/717OqXsfG4L._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Eggersmann Volaris Summer Grains 3 kg | Bird Food Wild Birds All Year Round | Low Fat Content | Ideal for Rearing | Suitable for All Bird Species",
+      "description": "Easy to feed: the food can be easily fed without further mixing. Simply drop out of the bag into the feeder and watch the birds.   Peanut free: in order to minimise the risk of injury to young birds, our summer grains do not contain peanuts.",
+      "price": 13.19,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71zLmBzFbfL._AC_SL1500_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Dehner Canary Food with Vitamin Active Complex and Iodine",
+      "description": "bird food for canaries. Made from selected, high-quality seeds. Canary food with vitamin active complex. Contains important iodine. In Dehner brand quality",
+      "price": 13.99,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/611yFPAcTXL._AC_SL1000_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "PANTO Ornamental Bird Food for Canaries, Canary Food 1 kg",
+      "description": "PANTO Special canary food with pluramine. Mix of different millet varieties. Canary seed.Oat kernels. Linseed and hemp seeds and turnips",
+      "price": 21.99,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/51o0T06KzgL._AC_SL1000_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "wildtier liebe Futtertraum I Premium Bird Food Wild Birds All Year Round Shell-free 5 kg",
+      "description": "Free from bowls and natural – Our wildtier liebe Futtertraum shellless scattered food provides valuable energy as a particularly high-fat bird food. The wild bird food contains all important nutrients, vegetable fats, delicious peanuts, shellless sunflower seeds and the finest raisins. Thanks to high-quality ingredients, suitable for year-round feeding",
+      "price": 26.9,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71QePmjIZaL._AC_SL1200_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "wildtier liebe Futtertraum I Premium Bird Food Wild Birds All Year Round without Wheat 5 kg",
+      "description": "Species-appropriate and natural – Our wildtier liebe Futtertraum scattered food in premium quality without wheat is a particularly nutrient-rich year-round food for wild birds. It consists of high-energy grains, sunflower seeds and peanuts",
+      "price": 27.9,
+      "quantity": 80,
+      "category": "birds",
+      "image": "https://m.media-amazon.com/images/I/71uwCCHVRjL._AC_SL1200_.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    }
+  ]
+    

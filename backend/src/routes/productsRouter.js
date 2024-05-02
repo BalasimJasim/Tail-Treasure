@@ -9,7 +9,7 @@ import {
 
 const productsRouter = Router();
 
-productsRouter.route("/").get(getAllProducts).post(addProduct);
+productsRouter.route("/products").get(getAllProducts).post(addProduct);
 
 productsRouter
   .route("/:productId")
