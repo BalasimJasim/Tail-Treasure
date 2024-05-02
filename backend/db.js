@@ -409,3 +409,104 @@ const productDataRodents = [
     createdAt: new Date(),
   },
 ];
+[
+  {
+    name: "petifool Gemüsefarm (vegetable farm), 500 g, supplementary feed for rodents, natural rodent feed for rabbits, guinea pigs, hamsters, chinchilla ",
+    description:
+      "100% natural: The petifool Gemüsefarm (vegetable farm) consists of carefully selected ingredients such as carrots, pumpkin, raspberry leaves, topinambour, parsnip, dandelion leaves, ribgrass, nettle leaves, spinach stems, dill and parsley stems.",
+    price: 6.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/71AN5IhEVAL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "petifool Blütenzauber (flower magic), 360 g, supplementary feed for rodents, natural rodent feed for rabbits, guinea pigs, hamsters, chinchilla ",
+    description:
+      "100% natural: The petifool Blütenzauber (flower magic) consists of carefully selected ingredients such as parsley stems, raspberry leaves, nettle, ribgrass, dandelion, cornflower red and pink.",
+    price: 6.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/711zX-Lw4jL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "petifool Nager Flora, 430 g, complete feed for rodents, natural rodent feed for rabbits and guinea pigs, no artificial additives",
+    description:
+      "100% natural. Carefully selected flowers and vegetables. For a strong immune system. For optimal digestion. Grain-free",
+    price: 5.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/719V877yM-L._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "petifool Nager Flora, 430 g, complete feed for rodents, natural rodent feed for rabbits and guinea pigs, no artificial additives,",
+    description: "",
+    price: 5.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/71rBl-shQwL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "petifool Kräuter Oase (herbal oasis), 370 g, supplementary feed for rodents, natural rodent feed for rabbits, guinea pigs, hamsters, chinchilla",
+    description:
+      "100% natural: The petifool Kräuter-Oase (herbal oasis) consists of carefully selected ingredients such as parsley stems, banana, birch leaves, raspberry leaves, dandelion and hibiscus",
+    price: 6.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/71yrajvzj4L._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "petifool Nager Flora, 430 g, complete feed for rodents, natural rodent feed for rabbits and guinea pigs",
+    description:
+      "100% natural. Carefully selected flowers and vegetables. For a strong immune system. For optimal digestion. Grain-free",
+    price: 5.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/719V877yM-L._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "Dehner Guinea Pig Food 5kg",
+    description:
+      "Delicious and healthy: tasty food that covers the daily needs of an adult guinea pig without any sugar. Contains all important vitamins, which strengthens the natural defences and has a positive effect on fur, hair and vitality. The high raw fibre content helps the guinea pigs support natural tooth abrasion and healthy digestion",
+    price: 11.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/71A1DfYzFDL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "Dehner Rabbit Feed Pellets, Complete Food for Rabbits, Rabbits and Dwarf Rabbits,",
+    description:
+      "Dry food for rabbits and rabbits. With many minerals and vitamins. Covers the entire need for nutrients. Ideal as a complete food",
+    price: 19.16,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/71Ln0Q5VRqL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "Dehner Best Nature Adult Rodent Food, Degu Food",
+    description:
+      "Inspired by the natural food spectrum of Degus. Grain-free feed mix developed with biologists and veterinarians. With over 25 ingredients such as plants, herbs, vegetables and rapeseed oil",
+    price: 15.99,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/81Fa26rLUnL._AC_SL1500_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+  {
+    name: "R FARM Gemüse-Traum",
+    description:
+      "Pure natural – a colourful mix of high-quality vegetable and cereals and fragrant parsley. Different structures – made of rings, flakes and cubes, this mixture stimulates different senses and promises a lot of variety in taste.",
+    price: 2.39,
+    quantity: 80,
+    category: "rodents",
+    image: "https://m.media-amazon.com/images/I/61Ap5K3UpTL._AC_SL1000_.jpg",
+    createdAt: "2024-04-11T00:00:00.000Z",
+  },
+];

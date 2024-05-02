@@ -8,7 +8,12 @@ import connectDB from "./src/utils/connectDB.js";
 import userRoute from "./src/routes/userRoute.js";
 import authRoute from "./src/routes/authRoute.js";
 import reviewsRouter from "./src/routes/reviewsRouter.js";
+
+import productsRouter from "./src/routes/productsRouter.js";
+import { getAllProducts } from "./src/controller/productsController.js";
+
 import passwordRoute from "./src/routes/passwordRoute.js";
+
 
 const app = express();
 config();
@@ -24,6 +29,7 @@ app.use("/auth", authRoute);
 app.use("/reset", passwordRoute);
 app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
+app.use("/products", productsRouter);
 
 app.use((err, req, res, next) => {
   if (res.headersSent) {
