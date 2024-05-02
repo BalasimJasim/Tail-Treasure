@@ -1,5 +1,7 @@
-import { createContext, useReducer } from "react";
-import { productReducer } from "../../../reducer/productReducer";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { createContext, useReducer } from "react";
+import { productReducer } from "../../../reducer/productReducer.js";
 
 export const CartContext = createContext();
 const initialState = [];

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import img from "../../img/logo.png";
 import {
@@ -11,9 +12,16 @@ import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
 import { useUserContext } from "./contexts/UserContext";
+import { useState } from "react";
+import Cart from "./pages/cart/Cart";
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
   const authButton = () => {
     const handleLogout = () => {
       dispatch({ type: "LOGOUT" });
@@ -80,14 +88,17 @@ function Navbar() {
             </Link>
           </li>
           {authButton()}
-          <li>
-            <FaShoppingCart size={30} />
+          <li onClick={toggleCart}>
+            <Link to="/cart">
+              <FaShoppingCart size={30} />
+            </Link>
           </li>
           <li>
             <FaHeart size={30} />
           </li>
         </ul>
       </motion.div>
+      {/* {isCartOpen && <Cart />} */}
     </nav>
   );
 }
