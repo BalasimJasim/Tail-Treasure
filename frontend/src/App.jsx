@@ -16,12 +16,19 @@ import ProductPage from "./components/pages/ProductPage";
 
 import Navbar from "./components/Navbar";
 import Discount from "./components/pages/Discount";
+
+import Headroom from "react-headroom";
+import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <HideNavBar>
+        <Headroom>
+          <Navbar />
+        </Headroom>
+      </HideNavBar>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/discount" element={<Discount />} />
