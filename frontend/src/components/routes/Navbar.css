@@ -52,6 +52,13 @@ li span {
   font-weight: 900;
 }
 
+.Headroom {
+  top: 5;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
 @media only screen and (max-width: 768px) {
   .bar {
     display: none;
@@ -73,4 +80,38 @@ li span {
 li span {
   padding: 1rem;
   color: black;
+}
+@media only screen and (max-width: 768px) {
+  .bar {
+    display: none;
+  }
+  .img {
+    display: none;
+  }
+
+  .bar.responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 6rem; /* Adjust this based on your header height */
+    left: 0;
+    background-color: rgb(245, 233, 240); /* Same background color as header */
+    z-index: 1; /* Ensure it's above other content */
+  }
+
+  .bar.responsive li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
 }

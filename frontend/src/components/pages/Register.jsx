@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import { userRegisterApi } from "../../Helpers/fetches";
 import { useUserContext } from "../contexts/UserContext";
 
-
 function Register() {
   const { dispatch } = useUserContext();
   const [loading, setLoading] = useState(false);
@@ -26,8 +25,6 @@ function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-
 
     try {
       setLoading(true);
@@ -71,7 +68,6 @@ function Register() {
     } finally {
       setLoading(false);
     }
-
   };
 
   return (

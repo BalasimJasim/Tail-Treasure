@@ -10,11 +10,17 @@ import Login from "./components/pages/Login";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Discount from "./components/pages/Discount";
+import Headroom from "react-headroom";
+import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <HideNavBar>
+        <Headroom>
+          <Navbar />
+        </Headroom>
+      </HideNavBar>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/discount" element={<Discount />} />
