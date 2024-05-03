@@ -1,0 +1,61 @@
+body {
+  background-color: rgb(255, 248, 240);
+  //rgb(245, 185, 73) orange
+  //rgb(254, 230, 184) ligth yellow
+}
+
+.Product {
+  background-color: rgb(255, 248, 240);
+  display: flex;
+  flex-wrap: wrap;
+  .cart {
+    height: 400px;
+  }
+  .cart-btn {
+    background-color: rgb(245, 185, 73);
+    font-size: 1.3rem;
+    width: 20rem;
+    position: absolute;
+    right: 0;
+    visibility: visible;
+  }
+
+  .cart .cont-prod {
+    background-color: white;
+    width: 400px;
+    margin: 20px;
+
+    .img-cont {
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+    button {
+      background-color: rgb(245, 185, 73);
+    }
+
+    .card {
+      .favorite:hover {
+        background-color: rgb(245, 185, 73);
+      }
+      gap: 1rem;
+      .card-body {
+        .cont-btn {
+          display: flex;
+          justify-content: space-between;
+
+          .cont-quant {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cart:hover {
+  .cart-btn {
+    visibility: visible;
+  }
+}

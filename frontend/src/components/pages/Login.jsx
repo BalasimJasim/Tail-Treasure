@@ -1,28 +1,49 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import loginImage from "../../../images/loginImage.jpg";
 import { motion } from "framer-motion";
+import { userLoginApi } from "../../Helpers/fetches";
+import { useUserContext } from "../contexts/UserContext";
 
 function Login() {
-  const [usernameOrEmail, setUsernameOrEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const handleLogin = (event) => {
+  const navigate = useNavigate();
+  const { dispatch } = useUserContext();
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    if (usernameOrEmail === "example" && password === "password") {
-      // Successful login
-      setError("");
-    } else {
-      setError("Username is incorrect or password");
+    try {
+      const loginObj = { email, password };
+      const response = await userLoginApi(loginObj);
+
+      const { data } = response;
+
+      if (data.token) {
+        console.log(data);
+        dispatch({ type: "LOGIN", payload: { user: data.user } });
+
+        navigate("/");
+        setError("");
+      }
+    } catch (error) {
+      setError("Invalid username or password");
 
       setTimeout(() => {
         setError("");
       }, 3000);
+    }
+  };
+  const handleLogout = async () => {
+    try {
+      await dispatch({ type: "LOGOUT" });
+      navigate("login");
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -43,8 +64,9 @@ function Login() {
                   type="text"
                   className="input-field-login"
                   placeholder="Username or Email"
-                  value={usernameOrEmail}
-                  onChange={(e) => setUsernameOrEmail(e.target.value)}
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -54,6 +76,7 @@ function Login() {
                   type="password"
                   className="input-field-login"
                   placeholder="Password"
+                  id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -70,6 +93,9 @@ function Login() {
                 <input type="checkbox" id="login-check" />
                 <label htmlFor="login-check">Remember Me</label>
               </div>
+              {/* <div className="two-login">
+                <button onClick={handleLogout}>Logout</button>
+              </div> */}
               {
                 <motion.div
                   initial={{ opacity: 0, y: "80vh" }}
