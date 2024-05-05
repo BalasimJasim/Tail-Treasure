@@ -10,9 +10,6 @@ export const validateUser = async (req, res, next) => {
       email,
       password,
       address: { street, city, state, postalCode },
-      phoneNumber,
-      bonusPoints,
-      isAdmin,
     } = req.body;
     console.log(req.body);
     if (
@@ -23,8 +20,7 @@ export const validateUser = async (req, res, next) => {
       !street ||
       !city ||
       !state ||
-      !postalCode ||
-      !isAdmin
+      !postalCode
     ) {
       res.status(400).json({ error: "All fields are required" });
       return;
