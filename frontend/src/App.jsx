@@ -20,6 +20,7 @@ import Discount from "./components/pages/Discount";
 import Headroom from "react-headroom";
 import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
+import { Home } from "./components/pages/Home";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         </Headroom>
       </HideNavBar>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/register" element={<Register />} />
@@ -46,7 +48,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />
-
       </Routes>
     </>
   );
