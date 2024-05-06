@@ -9,7 +9,6 @@ function Dashboard() {
     <div className="dog">
       <div className="content">
         <div className="dog-image" style={{ backgroundImage: `url(${img})` }}>
-          <h1>blabla</h1>
           <Link to="/Discount">
             <h2>Food & Accessories</h2>
             <button>30% Discount</button>
