@@ -30,7 +30,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
 
         <Route path="/reset" element={<Reset />} />
-        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/forgot/" element={<Forgot />} />
 
         <Route path="/cart" element={<Cart />} />
 
@@ -39,7 +39,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />
-
       </Routes>
     </>
   );

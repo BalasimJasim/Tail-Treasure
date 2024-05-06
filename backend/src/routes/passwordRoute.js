@@ -8,7 +8,7 @@ import { validateUser } from "../middlewares/userValidation.js";
 
 const passwordRoute = express.Router();
 
-passwordRoute.post("/reset", validateUser, sendResetPassLink);
+passwordRoute.post("/reset", sendResetPassLink);
 
 passwordRoute.get("/:userId/reset/:token", getResetPasswordLink);
 
