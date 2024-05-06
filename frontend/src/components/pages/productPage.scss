@@ -1,0 +1,26 @@
+.prod-container {
+  background-color: rgb(255, 248, 240);
+  //rgb(245, 185, 73) orange
+  //rgb(254, 230, 184) ligth yellow
+  width: 70vw;
+  margin: auto;
+  img {
+    width: 400px;
+    padding: 4rem;
+    margin-left: 100px;
+  }
+  .prod-text {
+    padding: 4rem;
+    width: 500px;
+    margin-left: 100px;
+  }
+  .pls-mns {
+    width: 40px;
+    height: 100%;
+  }
+  .quantity {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+  }
+}

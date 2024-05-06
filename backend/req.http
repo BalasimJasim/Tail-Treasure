@@ -7,3 +7,12 @@ Content-Type: application/json
   "email": "1@gmail.com",  
   "adress": "address"
 }
+
+###
+
+POST http://localhost:5000/products/
+Content-Type: application/json
+
+{
+  
+}
