@@ -20,16 +20,26 @@ function Navbar() {
     };
     if (state.isAccountVerified) {
       return (
-        <li>
-          <button onClick={handleLogout}>
-            <span>Logout</span>
-          </button>
-        </li>
+        <>
+          <li>
+            <Link to="/products">
+              {" "}
+              <span>Product</span>
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <button onClick={handleLogout}>
+              <span>Logout</span>
+            </button>
+          </li>
+        </>
       );
     } else {
       return (
         <>
           <li>
+            {" "}
             <Link to="/login">
               <button>
                 <FaSignInAlt

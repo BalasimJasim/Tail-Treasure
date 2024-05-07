@@ -8,9 +8,9 @@ import Terms from "./components/pages/Terms";
 import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/pages/Login";
 
-import { Product } from "./components/pages/Product";
+import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
-import ProductPage from "./components/pages/ProductPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 import { useState } from "react";
 import Navbar from "./components/Navbar";
@@ -32,7 +32,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />
-
       </Routes>
     </>
   );

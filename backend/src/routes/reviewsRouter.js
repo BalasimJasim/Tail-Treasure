@@ -3,16 +3,19 @@ import {
   addNewReview,
   deleteReview,
   getAllReview,
-  getReview,
+  getReviewsByProduct,
   updateReview,
 } from "../controller/reviewController.js";
 import { validateReview } from "../middlewares/reviewsValidation.js";
 
 const reviewsRouter = Router();
 
-reviewsRouter.route("/").get(getAllReview).post(validateReview, addNewReview);
+reviewsRouter
+  .route("/product")
+  .get(getAllReview)
+  .post(validateReview, addNewReview);
 
-reviewsRouter.route("/:productId").get(getReview);
+reviewsRouter.route("/product/:productId").get(getReviewsByProduct);
 
 reviewsRouter
   .route("/:id")
