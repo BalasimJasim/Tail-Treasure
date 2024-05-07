@@ -12,6 +12,9 @@
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .forgot-title {

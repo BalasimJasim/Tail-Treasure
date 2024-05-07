@@ -9,7 +9,7 @@ import { validateUser } from "../middlewares/userValidation.js";
 const authRoute = express.Router();
 
 authRoute.post("/register", validateUser, registerUser);
-authRoute.post("/login", loginUser);
 authRoute.get("/:userId/verify/:token", verifyUserAccount);
+authRoute.post("/login", loginUser);
 
 export default authRoute;

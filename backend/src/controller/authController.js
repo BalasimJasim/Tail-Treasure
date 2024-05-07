@@ -37,8 +37,8 @@ export const registerUser = async (req, res, next) => {
     await verificationToken.save();
 
     //*************the link */
-    const link = `${process.env.CLIENT_DOMAIN}/auth/${newUser._id}/verify/${verificationToken.token}`;
-
+    const link = `${process.env.SERVER_DOMAIN}/auth/${newUser._id}/verify/${verificationToken.token}`;
+    console.log("LINK AFTERRegester:", link);
     //**HTML TEMPLATE */
     const htmlTemplate = `
     <div>
@@ -75,15 +75,15 @@ export const loginUser = async (req, res, next) => {
 
       if (!verificationToken) {
         verificationToken = new VerificationToken({
-          userID: user._id,
+          userId: user._id,
           token: crypto.randomBytes(32).toString("hex"),
         });
         await verificationToken.save();
       }
 
       //** we send verfication email again here,just in case */
-      const link = `${process.env.CLIENT_DOMAIN}/auth/${newUser._id}/verify/${verificationToken.token}`;
-
+      const link = `${process.env.SERVER_DOMAIN}/auth/${user._id}/verify/${verificationToken.token}`;
+      console.log("Link from login:", link);
       const htmlTemplate = `
       <div>
         <p>Click on the link below to verify your email</p>
@@ -95,7 +95,11 @@ export const loginUser = async (req, res, next) => {
         message: "We sent to you an email, please verify your email address",
       });
     }
-    const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
+    const payload = {
+      userId: user._id,
+      isAdmin: user.isAdmin,
+    };
+    const token = jwt.sign(payload, process.env.SECRET_KEY, {
       expiresIn: "60d",
     });
     res.status(200).json({ token });
@@ -106,6 +110,8 @@ export const loginUser = async (req, res, next) => {
 //**Verifying user account after clicking the LINK */
 export const verifyUserAccount = async (req, res, next) => {
   try {
+    console.log("User ID:", req.params.userId);
+    console.log("Verification Token:", req.params.token);
     const user = await User.findById(req.params.userId);
     if (!user) {
       return res.status(400).json({ message: "invalid link!" });
@@ -129,7 +135,8 @@ export const verifyUserAccount = async (req, res, next) => {
 
     //**Todo --> res.redirect(`${process.env.CLIENT_DOMAIN}/auth/login`);*/
 
-    res.status(200).json({ message: "Your Account is Verified!" });
+    // res.status(200).json({ message: "Your Account is Verified!" });
+    return res.redirect(`${process.env.CLIENT_DOMAIN}/login`);
   } catch (error) {
     next(error);
   }
