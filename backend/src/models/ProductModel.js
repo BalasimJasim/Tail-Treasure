@@ -22,6 +22,7 @@ const productSchema = new Schema({
     enum: categories,
   },
   image: String,
+  reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
   createdAt: {
     type: Date,
     default: Date.now,

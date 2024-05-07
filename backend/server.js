@@ -10,10 +10,13 @@ import authRoute from "./src/routes/authRoute.js";
 import reviewsRouter from "./src/routes/reviewsRouter.js";
 
 import productsRouter from "./src/routes/productsRouter.js";
-import { getAllProducts } from "./src/controller/productsController.js";
 
+import { favoritesRouter } from "./src/routes/favoritesRouter.js";
 import passwordRoute from "./src/routes/passwordRoute.js";
+
+
 import { getResetPasswordLink } from "./src/controller/passwordController.js";
+
 
 const app = express();
 config();
@@ -24,7 +27,7 @@ app.use(cors());
 
 const port = process.env.PORT || 4000;
 
-app.use("/users", userRoute);
+app.use("/users", userRoute, favoritesRouter);
 app.use("/auth", authRoute);
 app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);

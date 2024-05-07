@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "./product.scss";
 
 export const Product = () => {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     getAllProducts();
@@ -18,7 +18,7 @@ export const Product = () => {
       const { data } = await axios.get(
         "http://localhost:5000/products/products"
       );
-      setProducts(data.data);
+      setProduct(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -26,8 +26,8 @@ export const Product = () => {
 
   return (
     <div className="Product">
-      {products.length > 0 ? (
-        products.map((product) => (
+      {product.length > 0 ? (
+        product.map((product) => (
           <Link key={product._id} to={`/products/${product._id}`}>
             <div className="card m-4" style={{ width: "20rem" }}>
               <p className="d-flex justify-content-end m-1">

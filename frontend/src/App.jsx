@@ -10,9 +10,9 @@ import Login from "./components/pages/Login";
 import Reset from "./components/pages/Reset";
 import Forgot from "./components/pages/Forgot";
 
-import { Product } from "./components/pages/Product";
+import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
-import ProductPage from "./components/pages/ProductPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 import Navbar from "./components/Navbar";
 import Discount from "./components/pages/Discount";
