@@ -14,6 +14,10 @@ import productsRouter from "./src/routes/productsRouter.js";
 import { favoritesRouter } from "./src/routes/favoritesRouter.js";
 import passwordRoute from "./src/routes/passwordRoute.js";
 
+
+import { getResetPasswordLink } from "./src/controller/passwordController.js";
+
+
 const app = express();
 config();
 app.use(express.json());
@@ -25,10 +29,11 @@ const port = process.env.PORT || 4000;
 
 app.use("/users", userRoute, favoritesRouter);
 app.use("/auth", authRoute);
-app.use("/reset", passwordRoute);
 app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
 app.use("/products", productsRouter);
+app.use("/reset", passwordRoute);
+app.get("/reset/:userId/reset/:token", getResetPasswordLink);
 
 app.use((err, req, res, next) => {
   if (res.headersSent) {

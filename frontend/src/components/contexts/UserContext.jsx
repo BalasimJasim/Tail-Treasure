@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { createContext, useContext, useReducer } from "react";
-import { userReducer } from "../reducers/userReducer";
+import { userReducer } from "../../../reducer/userReducer";
 
 const initialState = {
   user: null,
