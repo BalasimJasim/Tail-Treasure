@@ -36,14 +36,13 @@ function Navbar() {
     };
     if (state.isAccountVerified) {
       return (
-
-        <li className="nav-item">
-          <button className="nav-button" onClick={handleLogout}>
-            <span className="nav-span">Logout</span>
-          </button>
-        </li>
-
         <>
+          <li className="nav-item">
+            <button className="nav-button" onClick={handleLogout}>
+              <span className="nav-span">Logout</span>
+            </button>
+          </li>
+
           <li>
             <Link to="/products">
               {" "}
@@ -57,17 +56,12 @@ function Navbar() {
             </button>
           </li>
         </>
-
       );
     } else {
       return (
         <>
-
           <li className="nav-item">
-
-          <li>
             {" "}
-
             <Link to="/login">
               <button className="nav-button">
                 <FaSignInAlt
