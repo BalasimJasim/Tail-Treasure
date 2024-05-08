@@ -1,0 +1,103 @@
+body {
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+  background: rgb(253, 253, 253);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 255, 132, 1) 25%,
+    rgba(251, 198, 56, 1) 50%,
+    rgba(250, 255, 132, 1) 75%
+  );
+}
+*/ .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+
+  background: rgb(250, 255, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 255, 132, 1) 28%,
+    rgba(218, 233, 50, 1) 51%,
+    rgba(227, 118, 237, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  flex-direction: column;
+}
+
+.home-container {
+  background-image: url("../../../../img/imgdog.jpg");
+  background-size: cover;
+
+  background-position: center 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.home-container p {
+  font-size: medium;
+  margin-left: 20px;
+  margin-top: 1rem;
+  width: 30%;
+}
+.home-container h1 {
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.discount-link {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin-left: 2rem;
+}
+.home-button {
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.product-background {
+  background-color: white;
+}
+.product-h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+.product-ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+.product-li {
+  font-size: 2rem;
+  list-style: none;
+  text-decoration: underline;
+}
+.product-card {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home-container p {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-container p {
+    width: 80%;
+    color: rgb(0, 0, 0);
+  }
+}
