@@ -10,25 +10,24 @@ import Login from "./components/pages/Login";
 import Reset from "./components/pages/Reset";
 import Forgot from "./components/pages/Forgot";
 
-import { Product } from "./components/pages/Product";
+import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
-import ProductPage from "./components/pages/ProductPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 import Navbar from "./components/Navbar";
 import Discount from "./components/pages/Discount";
 
-import Headroom from "react-headroom";
+// import Headroom from "react-headroom";
 import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 import { Home } from "./components/pages/Home";
+import Verifying from "./components/pages/VeryfyingUser.jsx";
 
 function App() {
   return (
     <>
       <HideNavBar>
-        <Headroom>
-          <Navbar />
-        </Headroom>
+        <Navbar />
       </HideNavBar>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,9 +36,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/auth/:userId/verify/:token" element={<Verifying />} />
 
         <Route path="/reset" element={<Reset />} />
-        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/forgot/" element={<Forgot />} />
 
         <Route path="/cart" element={<Cart />} />
 
