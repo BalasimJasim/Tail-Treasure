@@ -21,35 +21,9 @@ body {
   justify-content: center;
 }
 
-.bar li {
-  list-style: none;
-  padding: 0 1rem;
-  position: relative;
-  color: rgb(235, 185, 185);
-  border: none;
-  border-radius: none;
-}
-li button {
-  border: none;
-}
 .bar span {
   color: black;
   margin-left: 0.3rem;
-}
-
-img {
-  border-radius: 60%;
-  height: 8rem;
-  width: 16rem;
-  padding-left: 2rem;
-}
-li span {
-  font-size: 1.2rem;
-  color: black;
-}
-.bar li:hover span {
-  text-decoration: underline;
-  font-weight: 900;
 }
 
 .Headroom {
@@ -82,12 +56,12 @@ li span {
   color: black;
 }
 @media only screen and (max-width: 768px) {
-  .bar {
+  /* .bar {
     display: none;
   }
   .img {
     display: none;
-  }
+  } */
 
   .bar.responsive {
     display: flex;
@@ -101,10 +75,10 @@ li span {
     z-index: 1; /* Ensure it's above other content */
   }
 
-  .bar.responsive li {
+  /* .bar.responsive li {
     text-align: center;
     padding: 1rem 0;
-  }
+  } */
 
   .menu-icon {
     display: block;

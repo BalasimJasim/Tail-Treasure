@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./dashboard.css";
+// import "./dashboard.css";
 import img from "../../../img/imgdog.jpg";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Register from "./Register";
