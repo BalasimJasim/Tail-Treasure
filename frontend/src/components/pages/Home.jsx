@@ -6,6 +6,7 @@ import "./home.css";
 import img from "../../../img/imgdog.jpg";
 import { BannerOne } from "./BannerOne.jsx";
 import ProductCard from "./ProductCard.jsx";
+import BannerTwo from "./BannerTwo.jsx";
 
 export const Home = () => {
   const [showPopover, setShowPopover] = useState(false);
@@ -81,6 +82,11 @@ export const Home = () => {
         ) : (
           <div>No products</div>
         )}
+      </div>
+      <div className="banner-parent-container">
+        <div className="banner-container">
+          <BannerTwo />
+        </div>
       </div>
     </>
   );
