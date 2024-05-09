@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { userForgotPassword } from "../../Helpers/fetches";
+import { userForgotPassword } from "../../../Helpers/fetches";
 import "./forgot.css";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";

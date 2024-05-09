@@ -14,16 +14,19 @@ import productsRouter from "./src/routes/productsRouter.js";
 import { favoritesRouter } from "./src/routes/favoritesRouter.js";
 import passwordRoute from "./src/routes/passwordRoute.js";
 
-
 import { getResetPasswordLink } from "./src/controller/passwordController.js";
-
 
 const app = express();
 config();
 app.use(express.json());
 connectDB();
 app.use(morgan("dev"));
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 const port = process.env.PORT || 4000;
 

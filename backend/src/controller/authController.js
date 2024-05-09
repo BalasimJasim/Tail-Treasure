@@ -118,36 +118,34 @@ export const loginUser = async (req, res, next) => {
 //**Verifying user account after clicking the LINK */
 export const verifyUserAccount = async (req, res, next) => {
   try {
-    console.log("User ID:", req.params.userId);
-    console.log("Verification Token:", req.params.token);
-    const user = await User.findById(req.params.userId);
+    const { userId, token } = req.params;
+
+    // Find the user by ID
+    const user = await User.findById(userId);
     if (!user) {
-      return res.status(400).json({ message: "invalid link!" });
+      return res.status(400).json({ message: "Invalid user ID" });
     }
+
+    // Find the verification token
     const verificationToken = await VerificationToken.findOne({
       userId: user._id,
-      token: req.params.token,
+      token,
     });
+
     if (!verificationToken) {
-      return res.status(400).json({ message: "invalid link!" });
+      return res.status(400).json({ message: "Invalid verification token" });
     }
+
+    // Verify the user's email address
     user.isAccountVerified = true;
     await user.save();
 
-    //**removing the verification */
-
-    // await verificationToken.toObject().remove();
+    // Remove the verification token
     await VerificationToken.deleteOne({ _id: verificationToken._id });
 
-    // await verificationToken.remove();
-
-    //**Todo --> res.redirect(`${process.env.CLIENT_DOMAIN}/auth/login`);*/
-
-    // res.status(200).json({ message: "Your Account is Verified!" });
+    // Redirect the user or send success response
     return res.redirect(`${process.env.CLIENT_DOMAIN}/login`);
   } catch (error) {
     next(error);
   }
 };
-
-//***in the front end create "not found page" */
