@@ -19,6 +19,6 @@ userRoute.get("/", verifyTokenAndAdmin, getAllUsers);
 userRoute.get("/:userID", getUserById);
 
 userRoute.put("/:userID", verifyToken, updateUser);
-userRoute.delete("/:userID", verifyToken, deleteUser);
+userRoute.delete("/:userID", verifyTokenAndAuthorization, deleteUser);
 
 export default userRoute;
