@@ -36,7 +36,7 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
 
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

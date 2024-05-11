@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
-import "./dashboard.css";
+// import "./dashboard.css";
 import img from "../../../img/imgdog.jpg";
 
 import Register from "./forms/Register";
