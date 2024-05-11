@@ -1,8 +1,14 @@
+import {
+  addToFavorites,
+  getFavorites,
+  removeFromFavorites,
+} from "../controller/favoritesController.js";
 import { Router } from "express";
+export const favoritesRouter = Router();
 
-const favoritesRouter = Router();
+favoritesRouter.route("/:userId/favorites").get(getFavorites);
 
-favoritesRouter.route("/").get(getAllFavorites);
-
-favoritesRouter.route("/add/:productId").post(addFavoriteProduct);
-favoritesRouter.route("/remove/:productId").delete(removeFavorite);
+favoritesRouter.route("/:userId/favorites/:productId").post(addToFavorites);
+favoritesRouter
+  .route("/:userId/favorites/:productId")
+  .delete(removeFromFavorites);

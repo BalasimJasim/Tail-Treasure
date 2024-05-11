@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import loginImage from "../../../images/loginImage.jpg";
+import loginImage from "../../../../images/loginImage.jpg";
 import { motion } from "framer-motion";
-import { userLoginApi } from "../../Helpers/fetches";
-import { useUserContext } from "../contexts/UserContext";
+import { userLoginApi } from "../../../Helpers/fetches";
+import { useUserContext } from "../../contexts/UserContext";
+import Cookies from "js-cookie";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,8 +26,11 @@ function Login() {
 
       if (data.token) {
         console.log(data);
-        dispatch({ type: "LOGIN", payload: { user: data.user } });
+        Cookies.set("token", data.token);
+        Cookies.set("user", email);
 
+        dispatch({ type: "LOGIN", payload: { user: data.user } });
+        console.log(navigate);
         navigate("/");
         setError("");
       }
@@ -85,6 +89,9 @@ function Login() {
 
               <div className="input-box-login">
                 <input type="submit" className="submit-login" value="Sign In" />
+              </div>
+              <div className="forgot-password-link">
+                <Link to="/forgot">Forgot password?</Link>
               </div>
             </form>
             {error && <div className="error-login">{error}</div>}

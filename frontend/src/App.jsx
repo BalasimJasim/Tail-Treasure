@@ -3,43 +3,48 @@ import "./App.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Register from "./components/pages/Register";
+import Register from "./components/pages/forms/Register.jsx";
 import Terms from "./components/pages/Terms";
-import Profile from "./components/pages/Profile.jsx";
-import Login from "./components/pages/Login";
-import Reset from "./components/pages/Reset";
-import Forgot from "./components/pages/Forgot";
+import Dashboard from "./components/pages/Dashboard";
+import Login from "./components/pages/forms/Login";
+import Reset from "./components/pages/forms/Reset";
+import Forgot from "./components/pages/forms/Forgot";
 
-import { Product } from "./components/pages/Product";
+import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
-import ProductPage from "./components/pages/ProductPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 import Navbar from "./components/Navbar";
 import Discount from "./components/pages/Discount";
-import CustomerSupportForm from "./components/pages/CustomerSupportForm.jsx";
-import Headroom from "react-headroom";
+
+// import Headroom from "react-headroom";
 import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 import { Home } from "./components/pages/Home";
+import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
+import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
+import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 
 function App() {
   return (
     <>
       <HideNavBar>
-        <Headroom>
-          <Navbar />
-        </Headroom>
+        <Navbar />
       </HideNavBar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/customerSupportForm" element={<CustomerSupportForm />} />
+        <Route path="/auth/:userId/verify/:token" element={<Verifying />} />
+
         <Route path="/reset" element={<Reset />} />
-        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/forgot/" element={<Forgot />} />
 
         <Route path="/cart" element={<Cart />} />
 
