@@ -24,6 +24,7 @@ import { Home } from "./components/pages/Home";
 import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
+import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
+        <Route
+          path="/admin-dashboard/categories-table"
+          element={<CategoriesTable />}
+        />
 
         <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />

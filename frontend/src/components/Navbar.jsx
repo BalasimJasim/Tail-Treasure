@@ -1,12 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-
 import {
   FaShoppingCart,
   FaHeart,
   FaSignInAlt,
   FaUserPlus,
-  FaBars,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
@@ -30,10 +28,12 @@ function Navbar() {
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
+
   const authButton = () => {
     const handleLogout = () => {
       dispatch({ type: "LOGOUT" });
     };
+
     if (state.isAccountVerified) {
       return (
         <>
@@ -42,22 +42,20 @@ function Navbar() {
               <span className="nav-span">Logout</span>
             </button>
           </li>
-
-          <li>
-            <Link to="/products">
-              <span>Product</span>
-            </Link>
-          </li>
-          <li>
-            <button onClick={handleLogout}>
-              <span>Logout</span>
+          <li className="nav-item">
+            <button className="nav-button">
+              <Link to="/products">
+                <span className="nav-span">Product</span>
+              </Link>
             </button>
           </li>
           {state.isAdmin && (
-            <li>
-              <Link to="/admin-dashboard">
-                <span>Admin</span>
-              </Link>
+            <li className="nav-item">
+              <button className="nav-button">
+                <Link to="/admin-dashboard">
+                  <span className="nav-span">Admin</span>
+                </Link>
+              </button>
             </li>
           )}
         </>
@@ -92,6 +90,7 @@ function Navbar() {
       );
     }
   };
+
   return (
     <nav className="container-navbar">
       <motion.h1
@@ -115,6 +114,11 @@ function Navbar() {
               <button className="nav-button">
                 <span className="nav-span">Home</span>
               </button>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/products">
+              <span className="nav-span">Products</span>
             </Link>
           </li>
           {authButton()}
