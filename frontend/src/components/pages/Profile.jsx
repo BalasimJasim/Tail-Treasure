@@ -13,7 +13,7 @@ function Profile() {
         <nav className="dash-sidebar">
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="#">Homes</a>
             </li>
             <li>
               <a href="CustomerSupportForm">Support</a>
