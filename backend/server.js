@@ -15,6 +15,7 @@ import { favoritesRouter } from "./src/routes/favoritesRouter.js";
 import passwordRoute from "./src/routes/passwordRoute.js";
 
 import { getResetPasswordLink } from "./src/controller/passwordController.js";
+import categoryRoute from "./src/routes/categoryRoute.js";
 
 const app = express();
 config();
@@ -32,9 +33,10 @@ const port = process.env.PORT || 4000;
 
 app.use("/users", userRoute, favoritesRouter);
 app.use("/auth", authRoute);
-app.use("/", userRoute);
+// app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
 app.use("/products", productsRouter);
+app.use("/categories", categoryRoute);
 app.use("/reset", passwordRoute);
 app.get("/reset/:userId/reset/:token", getResetPasswordLink);
 

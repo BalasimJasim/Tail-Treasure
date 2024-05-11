@@ -4,35 +4,26 @@ import "./adminTable.scss";
 import AdminSideBar from "./AdminSideBr";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";
-import axios from "axios";
-import Cookies from "js-cookie";
-
+import { fetchAllUsers } from "./../../../Helpers/fetches.js";
 const UsersTable = () => {
   const { deleteUser } = useUserContext();
   const [users, setUsers] = useState([]);
   const [searchUser, setSearchUser] = useState("");
 
   useEffect(() => {
-    const fetchAllUsers = async () => {
+    const fetchData = async () => {
       try {
-        axios.defaults.withCredentials = true;
-        const token = Cookies.get("token");
-        console.log("Token from cookies:", token);
-        const response = await axios.get("http://localhost:5000/users", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUsers(response.data);
-        console.log(response);
+        const userData = await fetchAllUsers();
+        setUsers(userData);
+        console.log("UsersTable:", userData);
       } catch (error) {
         console.error("Error fetching users:", error);
       }
     };
-    fetchAllUsers();
+    fetchData();
   }, []);
 
-  const searchUserHandeler = (event) => {
+  const searchUserHandler = (event) => {
     setSearchUser(event.target.value);
   };
 
@@ -51,7 +42,7 @@ const UsersTable = () => {
             type="text"
             placeholder="Search by name"
             value={searchUser}
-            onChange={searchUserHandeler}
+            onChange={searchUserHandler}
           />
           <table className="table">
             <thead className="table-head">
