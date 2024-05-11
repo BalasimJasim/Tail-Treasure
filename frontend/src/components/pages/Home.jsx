@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+
 import Register from "./Register";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./home.css";
-import img from "../../../img/imgdog.jpg";
+
 import { BannerOne } from "./BannerOne.jsx";
 import ProductCard from "./ProductCard.jsx";
 import BannerTwo from "./BannerTwo.jsx";
