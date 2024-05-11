@@ -45,6 +45,7 @@ body {
   margin-left: 20px;
   margin-top: 1rem;
   width: 30%;
+  color: rgb(58, 55, 55);
 }
 .home-container h1 {
   font-size: 2rem;
@@ -52,6 +53,7 @@ body {
   font-weight: 900;
   margin-bottom: 1rem;
   margin-bottom: 3rem;
+  color: rgb(58, 55, 55);
 }
 
 .discount-link {
@@ -77,11 +79,14 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
+  margin: 0;
 }
 .product-li {
   font-size: 2rem;
   list-style: none;
   text-decoration: underline;
+
+  padding: 1rem;
 }
 .product-card {
   display: flex;

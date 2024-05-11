@@ -5,7 +5,7 @@ import img from "../../../img/imgdog.jpg";
 
 import Register from "./forms/Register";
 
-function Dashboard() {
+function Discount() {
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
 
@@ -20,7 +20,7 @@ function Dashboard() {
           <h2>Food & Accessories</h2>
           <button
             type="button"
-            className=""
+            className="discount"
             onClick={togglePopover}
             ref={popoverRef}
           >
@@ -29,7 +29,7 @@ function Dashboard() {
 
           {showPopover && (
             <div id="register" className="register-container">
-              <span>
+              <span className="discount-span">
                 {" "}
                 <Register />
               </span>
@@ -41,4 +41,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Discount;
