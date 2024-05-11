@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
-import "./dashboard.css";
+// import "./dashboard.css";
 import img from "../../../img/imgdog.jpg";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import Register from "./Register";
+
+import Register from "./forms/Register";
 
 function Discount() {
   const [showPopover, setShowPopover] = useState(false);

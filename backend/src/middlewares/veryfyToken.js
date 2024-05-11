@@ -2,10 +2,12 @@ import jwt from "jsonwebtoken";
 
 // Verify token
 const verifyToken = (req, res, next) => {
-  const token = req.headers.token;
+  const token = req.headers.authorization?.split(" ")[1];
   if (token) {
     try {
       const decoded = jwt.verify(token, process.env.SECRET_KEY);
+      console.log("SECRET_KEY:", process.env.SECRET_KEY);
+      console.log("Decoded token:", decoded);
       req.user = decoded;
       next();
     } catch (error) {
@@ -31,8 +33,9 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 
 const verifyTokenAndAdmin = (req, res, next) => {
   verifyToken(req, res, () => {
+    console.log("ADMINNNN:", req.user.isAdmin);
     if (req.user.isAdmin) {
-      next();
+      return next();
     } else {
       return res.status(403).json({ message: "not allowed, only admin" });
     }

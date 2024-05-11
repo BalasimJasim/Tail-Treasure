@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import "./register.css";
 import { NavLink, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
+import { userRegisterApi } from "../../../Helpers/fetches";
 
-import { userRegisterApi } from "../../Helpers/fetches";
-import { useUserContext } from "../contexts/UserContext";
+import { useUserContext } from "../../contexts/UserContext";
 
 function Register() {
   const { dispatch } = useUserContext();

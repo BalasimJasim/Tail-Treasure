@@ -1,8 +1,54 @@
+/* eslint-disable no-useless-catch */
 import axios from "axios";
+import Cookies from "js-cookie";
 
 axios.defaults.baseURL = "http://localhost:5000";
+
+export const fetchAllUsers = async () => {
+  try {
+    axios.defaults.withCredentials = true;
+    const token = Cookies.get("token");
+    console.log("Token from cookies:", token);
+    const response = await axios.get("/users", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const fetchUserCount = async () => {
+  try {
+    const response = await axios.get("/users/count");
+    return response.data.count;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteUserById = async (userId) => {
+  try {
+    const token = Cookies.get("token");
+    await axios.delete(`/users/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const userRegisterApi = async (formData) => {
-  axios.post("/auth/register", formData);
+  try {
+    await axios.post("/auth/register", formData);
+  } catch (error) {
+    console.error("Error in userRegisterApi:", error);
+    throw error;
+  }
 };
 
 export const userLoginApi = async (loginObj) => {
@@ -15,7 +61,6 @@ export const userLoginApi = async (loginObj) => {
 };
 
 export const userForgotPassword = async (formData) => {
-  console.log(formData);
   try {
     await axios.post("/reset/reset", formData);
   } catch (error) {
