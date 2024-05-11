@@ -4,18 +4,23 @@ import { User } from "../models/UserModel.js";
 import VerificationToken from "../models/verificationToken.js";
 import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
+import { token } from "morgan";
+import { create } from "domain";
 
 export const sendResetPassLink = async (req, res, next) => {
   const { email } = req.body;
   try {
-    const user = await User.findOne(email);
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" });
+    }
+    const user = await User.findOne({ email });
     if (!user) {
       res.status(404).json({ message: "user does not exist!" });
     }
 
     //** Create verficationtoken */
 
-    const verificationtoken = await VerificationToken.findOne({
+    let verificationtoken = await VerificationToken.findOne({
       userId: user._id,
     });
     if (!verificationtoken) {
@@ -23,14 +28,20 @@ export const sendResetPassLink = async (req, res, next) => {
         userId: user._id,
         token: crypto.randomBytes(32).toString("hex"),
       });
+      await verificationtoken.save();
     }
-    const link = `${process.env.CLIENT_DOMAIN}/reset/${user._id}/verify/${verificationtoken.token}`;
+    const link = `${process.env.CLIENT_DOMAIN}/reset?id=${user._id}&token=${verificationtoken.token}`;
 
+    console.log("Reset password link:", link);
     const htmlTemplate = `<a href="${link}"> click the link to reset your password </a>`;
 
     await sendEmail(user.email, "Reset Password", htmlTemplate);
 
-    res.status(200).json({ message: " Password reset link sent to you email" });
+    res.status(200).json({
+      message: "Password reset link sent to you email",
+      userId: user._id,
+      token: verificationtoken.token,
+    });
   } catch (error) {
     next(error);
   }
@@ -39,20 +50,23 @@ export const sendResetPassLink = async (req, res, next) => {
 //** Get the reset pass link*/
 export const getResetPasswordLink = async (req, res, next) => {
   try {
+    const userId = req.params.userId;
+    console.log("User Id:", userId);
     //**chicking if the user and token exist in the DB */
 
     const user = await User.findById(req.params.userId);
-
+    // console.log("User:", user);
     if (!user) {
       return res.status(400).json({ message: "invalid link!" });
     }
-    const verificationtoken = await VerificationToken.findOne({
+    let verificationtoken = await VerificationToken.findOne({
       userId: user._id,
       token: req.params.token,
     });
     if (!verificationtoken) {
       return res.status(400).json({ message: "invalid link!" });
     }
+    console.log("tokennn:", verificationtoken.token);
     res.status(200).json({ message: "valid link" });
   } catch (error) {
     next(error);
@@ -68,7 +82,7 @@ export const resetPassword = async (req, res, next) => {
       return res.status(400).json({ message: "invalid link!" });
     }
 
-    const verificationtoken = await VerificationToken.findOne({
+    let verificationtoken = await VerificationToken.findOne({
       userId: user._id,
       token: req.params.token,
     });

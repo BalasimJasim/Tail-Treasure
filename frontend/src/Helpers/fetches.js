@@ -13,3 +13,22 @@ export const userLoginApi = async (loginObj) => {
     throw error;
   }
 };
+
+export const userForgotPassword = async (formData) => {
+  console.log(formData);
+  try {
+    await axios.post("/reset/reset", formData);
+  } catch (error) {
+    console.error("Error in userForgotPassword:", error);
+    throw error;
+  }
+};
+
+export const userResetPassword = async ({ userId, token, password }) => {
+  try {
+    await axios.post(`/reset/${userId}/reset/${token}`, { password });
+  } catch (error) {
+    console.error("Error in userResetPassword:", error);
+    throw error;
+  }
+};

@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 import "./dashboard.css";
 import img from "../../../img/imgdog.jpg";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import Register from "./Register";
 
-function Dashboard() {
+import Register from "./forms/Register";
+
+function Discount() {
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
 
@@ -16,11 +17,10 @@ function Dashboard() {
     <div className="dog">
       <div className="content">
         <div className="dog-image" style={{ backgroundImage: `url(${img})` }}>
-          <h1>blabla</h1>
           <h2>Food & Accessories</h2>
           <button
             type="button"
-            className=""
+            className="discount"
             onClick={togglePopover}
             ref={popoverRef}
           >
@@ -29,7 +29,7 @@ function Dashboard() {
 
           {showPopover && (
             <div id="register" className="register-container">
-              <span>
+              <span className="discount-span">
                 {" "}
                 <Register />
               </span>
@@ -41,4 +41,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Discount;

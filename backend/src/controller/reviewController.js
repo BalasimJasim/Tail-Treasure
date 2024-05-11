@@ -1,4 +1,6 @@
+import { Product } from "../models/ProductModel.js";
 import { Review } from "../models/ReviewModel.js";
+import { User } from "../models/UserModel.js";
 
 export const getAllReview = async (req, res, next) => {
   try {
@@ -9,10 +11,10 @@ export const getAllReview = async (req, res, next) => {
   }
 };
 
-export const getReview = async (req, res, next) => {
+export const getReviewsByProduct = async (req, res, next) => {
   try {
     const { productId } = req.params;
-    const review = await Review.findOne({ productId });
+    const review = await Review.find({ product: productId });
     res.json({ message: "success", data: review });
   } catch (error) {
     next(error);
@@ -21,10 +23,19 @@ export const getReview = async (req, res, next) => {
 
 export const addNewReview = async (req, res, next) => {
   try {
-    const { productId } = req.params;
-    const { rating, comment } = req.body;
-    const newReview = new Review({ productId, rating, comment });
-    await newReview.save();
+    const { userId, productId, rating, comment } = req.body;
+    const user = await User.findById(userId);
+    const product = await Product.findById(productId);
+    const newReview = new Review({
+      user: user._id,
+      product: product._id,
+      rating,
+      comment,
+    });
+    product.reviews.push(newReview);
+    user.reviews.push(newReview);
+    await Promise.all([user, product, newReview].map((el) => el.save())); //same as
+    // await user.save(); await product.save(); newReview.save()
     res.status(201).json({ message: "success", data: newReview });
   } catch (error) {
     next(error);

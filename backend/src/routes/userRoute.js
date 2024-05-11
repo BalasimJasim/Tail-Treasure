@@ -4,17 +4,21 @@ import {
   getUserById,
   updateUser,
   deleteUser,
+  getUsersCount,
 } from "../controller/userController.js";
 import {
   verifyToken,
   verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
 } from "../middlewares/veryfyToken.js";
 
 const userRoute = express.Router();
 
-userRoute.get("/", verifyTokenAndAuthorization, getAllUsers);
+userRoute.get("/count", verifyTokenAndAdmin, getUsersCount);
+userRoute.get("/", verifyTokenAndAdmin, getAllUsers);
 userRoute.get("/:userID", getUserById);
+
 userRoute.put("/:userID", verifyToken, updateUser);
-userRoute.delete("/:userID", verifyToken, deleteUser);
+userRoute.delete("/:userID", verifyTokenAndAuthorization, deleteUser);
 
 export default userRoute;
