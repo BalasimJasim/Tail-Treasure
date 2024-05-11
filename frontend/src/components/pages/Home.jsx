@@ -7,6 +7,8 @@ import img from "../../../img/imgdog.jpg";
 import { BannerOne } from "./BannerOne.jsx";
 import ProductCard from "./ProductCard.jsx";
 import BannerTwo from "./BannerTwo.jsx";
+import ServicePage from "./ServicePage.jsx";
+import { FooterPage } from "./FooterPage";
 
 export const Home = () => {
   const [showPopover, setShowPopover] = useState(false);
@@ -74,19 +76,26 @@ export const Home = () => {
           <li className="product-li">For the Birds</li>
           <li className="product-li">For Rodents</li>
         </ul>
-      </div>
-      <div className="product-card">
-        <div className="product-text-container"></div>
-        {products.length > 0 ? (
-          products.map((product) => <ProductCard product={product} />)
-        ) : (
-          <div>No products</div>
-        )}
+
+        <div className="product-card">
+          <div className="product-text-container"></div>
+          {products.length > 0 ? (
+            products.map((product) => <ProductCard product={product} />)
+          ) : (
+            <div>No products</div>
+          )}
+        </div>
       </div>
       <div className="banner-parent-container">
         <div className="banner-container">
           <BannerTwo />
         </div>
+      </div>
+      <div className="service-parent-container">
+        <ServicePage />
+      </div>
+      <div className="footer-parent-container">
+        <FooterPage />
       </div>
     </>
   );

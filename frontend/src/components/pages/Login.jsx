@@ -30,7 +30,7 @@ function Login() {
         Cookies.set("user", email);
 
         dispatch({ type: "LOGIN", payload: { user: data.user } });
-
+        console.log(navigate);
         navigate("/");
         setError("");
       }

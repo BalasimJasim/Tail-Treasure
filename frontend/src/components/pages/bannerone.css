@@ -1,6 +1,6 @@
 .bannerone-background {
   background-color: white;
-  height: ß0vh;
+  height: 90vh;
 }
 
 .container-grid {
@@ -46,8 +46,7 @@
   width: 10rem;
   padding: 2px auto;
   text-align: center;
-  background-color: rgb(233, 123, 236);
-  border-radius: 5px;
+
   color: rgb(0, 0, 0);
 }
 

@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  height: 60vh;
   max-width: 1920px;
   margin: 0;
   padding: 0;
@@ -30,15 +30,26 @@ body {
   );
   flex-direction: column;
 }
+.dog {
+  height: 50vh;
+}
 .discount-page {
   width: 40%;
 }
 .dog-background {
-  height: 120vh;
+  height: 20vh;
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
 }
 .span-login {
   padding: 1rem;
+}
+
+.discount-span {
+  height: 20vh;
+}
+
+.register-container {
+  height: 20vh;
 }
