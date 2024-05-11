@@ -1,15 +1,48 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import "./Admin.css";
+import React, { useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
 
-const AddCattegoryForm = () => {
+const AddCategoryForm = () => {
+  const [title, setTitle] = useState("");
+
+  const formSubmitHandler = async (e) => {
+    e.preventDefault();
+    if (!title.trim()) return;
+
+    try {
+      const token = Cookies.get("token");
+
+      axios.defaults.withCredentials = true;
+      const response = await axios.post(
+        "http://localhost:5000/categories",
+        { title },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setTitle("");
+    } catch (error) {
+      console.error("Error adding category:", error.message);
+    }
+  };
+
   return (
     <div className="add-category">
-      <h6 className="add-category-title">Add a new category</h6>
-      <form className="add-category-form">
+      <h6 className="add-category-title">Add New Category</h6>
+      <form onSubmit={formSubmitHandler}>
         <div className="add-category-form-group">
-          <label htmlFor="title"> Category Title</label>
-          <input type="text" id="title" placeholder="Enter Category title" />
+          <label htmlFor="title">Category Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Enter Category Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
         <button className="add-category-btn" type="submit">
           Add
@@ -19,4 +52,4 @@ const AddCattegoryForm = () => {
   );
 };
 
-export default AddCattegoryForm;
+export default AddCategoryForm;
