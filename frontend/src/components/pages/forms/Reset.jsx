@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { userResetPassword } from "../../Helpers/fetches";
+import { userResetPassword } from "./../../../Helpers/fetches";
 import { useNavigate } from "react-router-dom";
 import "./reset.css";
 

@@ -45,16 +45,21 @@ function Navbar() {
 
           <li>
             <Link to="/products">
-              {" "}
               <span>Product</span>
             </Link>
           </li>
           <li>
-            {" "}
             <button onClick={handleLogout}>
               <span>Logout</span>
             </button>
           </li>
+          {state.isAdmin && (
+            <li>
+              <Link to="/admin-dashboard">
+                <span>Admin</span>
+              </Link>
+            </li>
+          )}
         </>
       );
     } else {
