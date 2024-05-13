@@ -28,19 +28,18 @@ body {
   );
   flex-direction: column;
 }
+.background-banner-two {
+}
 .banner-container {
   height: 60vh;
 }
 
 .bannertwo-container {
-  height: 100%;
-  width: 100%;
   background-image: url("../../../../img/bannertwo.jpg");
-
-  background-size: 100% 100%;
-  padding: 2rem;
-  padding-top: 6rem;
-  object-fit: cover;
+  height: 100%;
+  background-size: cover;
+  background-position: right;
+  padding: 3rem;
 }
 .banner-h1 {
   color: rgb(58, 55, 55);

@@ -1,55 +1,82 @@
-html,
-body {
-  height: 60vh;
-  max-width: 1920px;
-  margin: 0;
-  padding: 0;
-  background: rgb(250, 255, 132);
-  background: linear-gradient(
-    90deg,
-    rgba(250, 255, 132, 1) 25%,
-    rgba(251, 198, 56, 1) 50%,
-    rgba(250, 255, 132, 1) 75%
-  );
+.main-container {
+  background-color: white;
 }
 
-.wrapper {
+.discount-h2 {
+  margin: 2rem;
+  width: 50%;
+}
+
+.discount-h1 {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.dog-image img {
+  height: 320px;
+  width: 300px;
+  margin: 1rem;
+}
+
+.dog-container {
+  background-color: rgb(255, 255, 255);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
+  align-items: flex-start;
+  padding: 5rem;
+  border: 2px solid black;
+}
 
-  background: rgb(250, 255, 132);
-  background: linear-gradient(
-    90deg,
-    rgba(250, 255, 132, 1) 28%,
-    rgba(218, 233, 50, 1) 51%,
-    rgba(227, 118, 237, 1) 100%,
-    rgba(2, 0, 36, 1) 100%
-  );
+.border-card {
+  background-color: rgb(255, 254, 254);
+  width: 350px;
+  height: auto;
+  display: flex;
   flex-direction: column;
-}
-.dog {
-  height: 50vh;
-}
-.discount-page {
-  width: 40%;
-}
-.dog-background {
-  height: 20vh;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 20px;
-}
-.span-login {
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  border: 1px solid black;
 }
 
-.discount-span {
-  height: 20vh;
+.dog-description-container {
+  margin: 1rem;
+  padding: 2px;
+}
+.dog-description {
+  font-size: 1rem;
+}
+.dog-price {
+  margin-top: 2rem;
+  font-size: 1rem;
 }
 
-.register-container {
-  height: 20vh;
+.dog-buy-button {
+  width: 10rem;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dog-image:hover .dog-buy-button {
+  opacity: 1;
+}
+
+.discount-h5 {
+  width: 100%;
+  background-color: rgb(241, 12, 12);
+  text-align: center;
+  height: 3rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+.discounted-span {
+  text-decoration: underline;
+  color: red;
+}
+.favorite-icon {
 }

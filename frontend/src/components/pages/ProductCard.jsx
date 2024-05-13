@@ -7,13 +7,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-container">
       <Link key={product._id} to={`/products/${product._id}`}>
-        <div className="card m-4" style={{ width: "20rem" }}>
+        <div className="card m-4" style={{ width: "250px" }}>
           <p className="d-flex justify-content-end m-1">
             <FiHeart className="favorite" fontSize={"1.5rem"} />
           </p>
           <img
             src={product.image}
-            style={{ width: "250px", display: "block", margin: "auto" }}
+            style={{ width: "100%", height: "250px", objectFit: "cover" }}
             className="card-img-top"
             alt="..."
           />
