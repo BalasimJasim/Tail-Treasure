@@ -27,6 +27,8 @@ import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
+// import { CatProducts } from "./components/pages/ProductPage/productsByCategories/CatProducts.jsx";
+// import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
 
 
 function App() {
@@ -39,6 +41,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
+        {/* <Route
+          path="/admin-dashboard/products-table"
+          element={<ProductsTable />}
+        /> */}
         <Route
           path="/admin-dashboard/categories-table"
           element={<CategoriesTable />}
@@ -58,7 +64,9 @@ function App() {
 
         <Route path="/products" element={<Product />} />
         <Route path="/products/:productID" element={<ProductPage />} />
+
         <Route path="/products/:userId/favorites" element={<Favorites />} />
+
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />

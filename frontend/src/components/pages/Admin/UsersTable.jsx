@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./adminTable.scss";
-import AdminSideBar from "./AdminSideBr";
+import AdminSidebar from "./AdminSidebar.jsx";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";
 import { fetchAllUsers } from "./../../../Helpers/fetches.js";
@@ -35,7 +35,7 @@ const UsersTable = () => {
 
   return (
     <section className="table-container">
-      <AdminSideBar />
+      <AdminSidebar />
       <div className="table-wrapper">
         <h1 className="table-title">
           <input

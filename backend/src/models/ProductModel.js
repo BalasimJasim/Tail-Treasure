@@ -18,8 +18,11 @@ const productSchema = new Schema({
   },
   category: {
     type: String,
-    required,
-    enum: categories,
+    required: true,
+  },
+  isFeatured: {
+    type: Boolean,
+    default: false,
   },
   image: String,
   reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],

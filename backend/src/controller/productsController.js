@@ -3,7 +3,7 @@ import { Product } from "../models/ProductModel.js";
 export const getAllProducts = async (req, res, next) => {
   try {
     console.log("Fetching all products...");
-    const products = await Product.find({});
+    const products = await Product.find({}, "category").lean();
     console.log("Products fetched:", products);
     res.json({
       message: "Success",
@@ -36,10 +36,29 @@ export const getProduct = async (req, res, next) => {
   }
 };
 
+// export const addProduct = async (req, res, next) => {
+//   const { body } = req;
+//   try {
+//     const product = await Product.create(body);
+
+//     res.status(201).json({ message: "Success", data: product });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
 export const addProduct = async (req, res, next) => {
-  const { body } = req;
+  const { name, description, price, quantity, category, image } = req.body;
+
   try {
-    const product = await Product.create(body);
+    const product = await Product.create({
+      name,
+      description,
+      price,
+      quantity,
+      category,
+      image,
+    });
 
     res.status(201).json({ message: "Success", data: product });
   } catch (error) {
@@ -86,6 +105,22 @@ export const deleteProduct = async (req, res, next) => {
       data: deletedProduct,
     });
   } catch (error) {
+    next(error);
+  }
+};
+
+export const getProductsByCategory = async (req, res, next) => {
+  try {
+    const category = req.query.category;
+    const filter = category ? { category } : {};
+    const products = await Product.find(filter);
+    res.json({
+      message: "Success",
+      length: products.length,
+      data: products,
+    });
+  } catch (error) {
+    console.error("Error fetching products by category:", error);
     next(error);
   }
 };

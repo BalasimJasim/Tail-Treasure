@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./adminTable.scss";
-import AdminSideBar from "./AdminSideBr.jsx";
+import AdminSidebar from "./AdminSidebar.jsx";
 import { Link } from "react-router-dom";
 import { useCategoryContext } from "../../contexts/CategContext.jsx";
 import { fetchAllCategories } from "../../../Helpers/fetchCateg.js";
@@ -34,7 +34,7 @@ const CategoriesTable = () => {
   console.log("titles:", filteredCategory.title);
   return (
     <section className="table-container">
-      <AdminSideBar />
+      <AdminSidebar />
       <div className="table-wrapper">
         <h1 className="table-title">
           <input
