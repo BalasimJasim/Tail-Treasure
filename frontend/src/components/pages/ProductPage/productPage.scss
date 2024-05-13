@@ -2,16 +2,31 @@
   background-color: rgb(255, 248, 240);
   //rgb(245, 185, 73) orange
   //rgb(254, 230, 184) ligth yellow
-  width: 70vw;
+  width: 100vw;
+  height: 100vh;
+  padding: 5% 20%;
   margin: auto;
+  .quantity {
+    border: none;
+    color: white;
+  }
+  .cart-btn {
+    border: none;
+    color: white;
+    background-color: rgb(245, 185, 73);
+  }
+  .favorite:hover {
+    color: palevioletred;
+  }
   img {
     width: 400px;
-    padding: 4rem;
-    margin-left: 100px;
+    // padding: 4rem;
+    // margin-left: 100px;
+    border-radius: 0%;
   }
   .prod-text {
-    padding: 4rem;
-    width: 500px;
+    // padding: 4rem;
+    // width: 500px;
     margin-left: 100px;
   }
   .pls-mns {

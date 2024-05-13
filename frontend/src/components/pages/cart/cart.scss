@@ -1,0 +1,43 @@
+.cart-container {
+  margin: auto;
+  background-color: rgb(255, 248, 240);
+  .cart-item {
+    width: 60%;
+    margin: 1em auto;
+
+    .img-container {
+      background-color: white;
+      padding: 2rem;
+    }
+    img {
+      border-radius: 0%;
+      width: 250px;
+      height: 230px;
+    }
+    .quantity-controls {
+      button {
+        width: 30px;
+        background-color: rgb(245, 185, 73);
+        border: none;
+        color: white;
+      }
+    }
+    .rmv-cont {
+      display: flex;
+      justify-content: right;
+      .remove-btn {
+        background-color: rgb(245, 185, 73);
+        border: none;
+        color: white;
+        width: 100px;
+      }
+    }
+  }
+
+  .checkout-btn {
+    background-color: rgb(245, 185, 73);
+    border: none;
+    color: white;
+    padding: 1rem;
+  }
+}

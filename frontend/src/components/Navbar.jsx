@@ -37,10 +37,18 @@ function Navbar() {
     if (state.isAccountVerified) {
       return (
         <>
+
+          <li>
+            <Link to="/products">
+              {" "}
+              <span>Products</span>
+            </Link>
+
           <li className="nav-item">
             <button className="nav-button" onClick={handleLogout}>
               <span className="nav-span">Logout</span>
             </button>
+
           </li>
           <li className="nav-item">
             <button className="nav-button">
@@ -63,7 +71,17 @@ function Navbar() {
     } else {
       return (
         <>
+
+          <li>
+            <Link to="/products">
+              {" "}
+              <span>Products</span>
+            </Link>
+          </li>
+          <li>
+
           <li className="nav-item">
+
             {" "}
             <Link to="/login">
               <button className="nav-button">
@@ -127,8 +145,15 @@ function Navbar() {
               <FaShoppingCart size={30} />
             </Link>
           </li>
+
+          <li>
+            <Link to="/products/:userId/favorites">
+              <FaHeart size={30} />
+            </Link>
+
           <li className="nav-item">
             <FaHeart size={30} />
+
           </li>
         </ul>
       </motion.div>
