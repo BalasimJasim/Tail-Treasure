@@ -1,18 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import {
-  FaShoppingCart,
-  FaHeart,
-  FaSignInAlt,
-  FaUserPlus,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
-import "./routes/Navbar.css";
-import { motion } from "framer-motion";
-import { useUserContext } from "./contexts/UserContext";
-import { useState, useEffect } from "react";
-import Cart from "./pages/cart/Cart";
-
 function Navbar() {
   const { state, dispatch } = useUserContext();
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -37,18 +22,16 @@ function Navbar() {
     if (state.isAccountVerified) {
       return (
         <>
-
           <li>
             <Link to="/products">
               {" "}
               <span>Products</span>
             </Link>
-
+          </li>
           <li className="nav-item">
             <button className="nav-button" onClick={handleLogout}>
               <span className="nav-span">Logout</span>
             </button>
-
           </li>
           <li className="nav-item">
             <button className="nav-button">
@@ -71,17 +54,13 @@ function Navbar() {
     } else {
       return (
         <>
-
           <li>
             <Link to="/products">
               {" "}
               <span>Products</span>
             </Link>
           </li>
-          <li>
-
           <li className="nav-item">
-
             {" "}
             <Link to="/login">
               <button className="nav-button">
@@ -134,26 +113,19 @@ function Navbar() {
               </button>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/products">
-              <span className="nav-span">Products</span>
-            </Link>
-          </li>
           {authButton()}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
               <FaShoppingCart size={30} />
             </Link>
           </li>
-
           <li>
             <Link to="/products/:userId/favorites">
               <FaHeart size={30} />
             </Link>
-
+          </li>
           <li className="nav-item">
             <FaHeart size={30} />
-
           </li>
         </ul>
       </motion.div>
