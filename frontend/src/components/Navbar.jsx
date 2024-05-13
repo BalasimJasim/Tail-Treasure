@@ -15,78 +15,109 @@ function Navbar() {
   };
 
   const authButton = () => {
-    const handleLogout = () => {
-      dispatch({ type: "LOGOUT" });
-    };
-
     if (state.isAccountVerified) {
       return (
-        <>
-          <li>
-            <Link to="/products">
-              {" "}
-              <span>Products</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <button className="nav-button" onClick={handleLogout}>
-              <span className="nav-span">Logout</span>
-            </button>
-          </li>
-          <li className="nav-item">
-            <button className="nav-button">
-              <Link to="/products">
-                <span className="nav-span">Product</span>
-              </Link>
-            </button>
-          </li>
-          {state.isAdmin && (
-            <li className="nav-item">
-              <button className="nav-button">
-                <Link to="/admin-dashboard">
-                  <span className="nav-span">Admin</span>
-                </Link>
-              </button>
-            </li>
-          )}
-        </>
+        <li className="nav-item">
+          <button className="nav-button" onClick={handleLogout}>
+            <span className="nav-span">Logout</span>
+          </button>
+        </li>
       );
     } else {
       return (
-        <>
-          <li>
-            <Link to="/products">
-              {" "}
-              <span>Products</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            {" "}
-            <Link to="/login">
-              <button className="nav-button">
-                <FaSignInAlt
-                  className="mr-1"
-                  style={{ color: "red", fontSize: "1.2em" }}
-                />
-                <span className="nav-span">Login</span>
-              </button>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/register">
-              <button className="nav-button">
-                <FaUserPlus
-                  className="mr-1"
-                  style={{ color: "red", fontSize: "1.2em" }}
-                />
-                <span className="nav-span"> Register</span>
-              </button>
-            </Link>
-          </li>
-        </>
+        <li className="nav-item">
+          {" "}
+          <Link to="/login">
+            <button className="nav-button">
+              <FaSignInAlt
+                className="mr-1"
+                style={{ color: "red", fontSize: "1.2em" }}
+              />
+              <span className="nav-span">Login</span>
+            </button>
+          </Link>
+        </li>
       );
     }
   };
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
+  //     if (state.isAccountVerified) {
+  //       return (
+  //         <>
+
+  //           <li>
+  //             <Link to="/">
+  //               {" "}
+  //               <span>Home</span>
+  //             </Link>
+
+  //
+  //           <li className="nav-item">
+  //             <button className="nav-button">
+  //               <Link to="/products">
+  //                 <span className="nav-span">Product</span>
+  //               </Link>
+  //             </button>
+  //           </li>
+  //           {state.isAdmin && (
+  //             <li className="nav-item">
+  //               <button className="nav-button">
+  //                 <Link to="/admin-dashboard">
+  //                   <span className="nav-span">Admin</span>
+  //                 </Link>
+  //               </button>
+  //             </li>
+  //           )}
+  //         </>
+  //       );
+  //     } else {
+  //       return (
+  //         <>
+  //  <li>
+  //             <Link to="/">
+  //               {" "}
+  //               <span>Home</span>
+  //             </Link>
+  //           </li>
+  //           <li>
+  //             <Link to="/products">
+  //               {" "}
+  //               <span>Products</span>
+  //             </Link>
+  //           </li>
+  //           <li>
+
+  //           <li className="nav-item">
+
+  //             {" "}
+  //             <Link to="/login">
+  //               <button className="nav-button">
+  //                 <FaSignInAlt
+  //                   className="mr-1"
+  //                   style={{ color: "red", fontSize: "1.2em" }}
+  //                 />
+  //                 <span className="nav-span">Login</span>
+  //               </button>
+  //             </Link>
+  //           </li>
+  //           <li className="nav-item">
+  //             <Link to="/register">
+  //               <button className="nav-button">
+  //                 <FaUserPlus
+  //                   className="mr-1"
+  //                   style={{ color: "red", fontSize: "1.2em" }}
+  //                 />
+  //                 <span className="nav-span"> Register</span>
+  //               </button>
+  //             </Link>
+  //           </li>
+  //         </>
+  //       );
+  //     }
+  //   };
 
   return (
     <nav className="container-navbar">
@@ -107,13 +138,23 @@ function Navbar() {
       >
         <ul className="nav-ul">
           <li className="nav-item">
-            <Link to="/dashboard">
+            <Link to="/">
               <button className="nav-button">
                 <span className="nav-span">Home</span>
               </button>
             </Link>
           </li>
           {authButton()}
+
+          {state.isAdmin && (
+            <li className="nav-item">
+              <button className="nav-button">
+                <Link to="/admin-dashboard">
+                  <span className="nav-span">Admin</span>
+                </Link>
+              </button>
+            </li>
+          )}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
               <FaShoppingCart size={30} />
