@@ -21,12 +21,15 @@ import Discount from "./components/pages/Discount";
 import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 import { Home } from "./components/pages/Home";
+import Favorites from "./components/pages/Favorites/Favorites.jsx";
+
 import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
 // import { CatProducts } from "./components/pages/ProductPage/productsByCategories/CatProducts.jsx";
 // import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
+
 
 function App() {
   return (
@@ -61,6 +64,8 @@ function App() {
 
         <Route path="/products" element={<Product />} />
         <Route path="/products/:productID" element={<ProductPage />} />
+
+        <Route path="/products/:userId/favorites" element={<Favorites />} />
 
         <Route path="*" element={<NotFound />} />
 

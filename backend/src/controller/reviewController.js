@@ -14,7 +14,7 @@ export const getAllReview = async (req, res, next) => {
 export const getReviewsByProduct = async (req, res, next) => {
   try {
     const { productId } = req.params;
-    const review = await Review.find({ product: productId });
+    const review = await Review.find({ product: productId }).populate("user");
     res.json({ message: "success", data: review });
   } catch (error) {
     next(error);

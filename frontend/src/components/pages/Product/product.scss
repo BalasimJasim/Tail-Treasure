@@ -8,8 +8,38 @@ body {
   background-color: rgb(255, 248, 240);
   display: flex;
   flex-wrap: wrap;
-  .cart {
+  // width: 0%;
+  margin: auto;
+  a {
+    text-decoration: none;
+    color: black;
+    img {
+      height: 200px;
+      border-radius: 0%;
+    }
+  }
+
+  .card {
     height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .active {
+      color: palevioletred;
+    }
+    .favorite:hover {
+      color: palevioletred;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+  .card:hover {
+    .cart-btn {
+      visibility: visible;
+    }
   }
   .cart-btn {
     background-color: rgb(245, 185, 73);
@@ -17,7 +47,11 @@ body {
     width: 20rem;
     position: absolute;
     right: 0;
-    visibility: visible;
+    bottom: 0;
+    visibility: hidden;
+    border: none;
+    color: white;
+    padding-block: 4px;
   }
 
   .cart .cont-prod {
