@@ -67,7 +67,7 @@ const AdminMain = () => {
           <div className="admin-card-link-wrapper">
             <Link
               className="admin-card-link"
-              to="/admin-dashboard/products-table"
+              to="admin-dashboard/products-table"
             >
               See all products
             </Link>
