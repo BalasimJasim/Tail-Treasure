@@ -32,7 +32,7 @@ function Navbar() {
           <li>
             <Link to="/products">
               {" "}
-              <span>Product</span>
+              <span>Products</span>
             </Link>
           </li>
           <li>
@@ -46,6 +46,12 @@ function Navbar() {
     } else {
       return (
         <>
+          <li>
+            <Link to="/products">
+              {" "}
+              <span>Products</span>
+            </Link>
+          </li>
           <li>
             {" "}
             <Link to="/login">
@@ -104,7 +110,9 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <FaHeart size={30} />
+            <Link to="/products/:userId/favorites">
+              <FaHeart size={30} />
+            </Link>
           </li>
         </ul>
       </motion.div>

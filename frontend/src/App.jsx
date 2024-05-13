@@ -22,6 +22,7 @@ import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 import { Home } from "./components/pages/Home";
 import Verifying from "./components/pages/VeryfyingUser.jsx";
+import Favorites from "./components/pages/Favorites/Favorites.jsx";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
 
         <Route path="/products" element={<Product />} />
         <Route path="/products/:productID" element={<ProductPage />} />
+        <Route path="/products/:userId/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />

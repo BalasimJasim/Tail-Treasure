@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { IoPawOutline } from "react-icons/io5";
 import { CartContext } from "../../contexts/CartContext";
 import { useUserContext } from "../../contexts/UserContext";
+import { FaHeart } from "react-icons/fa";
 
 const ProductPage = () => {
   const { productID } = useParams();
@@ -18,15 +19,15 @@ const ProductPage = () => {
   );
   // const [user, setUser] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const { addProduct, removeProduct } = useContext(CartContext);
+  // const { addProduct, removeProduct } = useContext(CartContext);
   const { state: userState } = useUserContext();
-  const addProductHandler = (product) => addProduct(product);
-  const removeProductHandler = () => removeProduct(productID);
+  // const addProductHandler = (product) => addProduct(product);
+  // const removeProductHandler = () => removeProduct(productID);
   const [isFavorite, setIsFavorite] = useState(false);
 
   const user = {
-    firstName: userState.user.firstName,
-    lastName: userState.user.lastName,
+    firstName: userState.user?.firstName,
+    lastName: userState.user?.lastName,
   };
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -111,26 +112,43 @@ const ProductPage = () => {
   const decrementQuantity = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
-  const addProductToCart = (product) => {
-    setCart((prevCart) => {
-      const existingProductIndex = prevCart.findIndex(
-        (p) => p.id === product.id
-      );
-      let newCart;
 
-      if (existingProductIndex >= 0) {
-        newCart = [...prevCart];
-        newCart[existingProductIndex] = {
-          ...newCart[existingProductIndex],
-          quantity: newCart[existingProductIndex].quantity + 1,
-        };
+  const incrementItemCountInCart = (prevCart, currentProductInCart) => {
+    const newCart = prevCart.map((item) => {
+      if (item.id === currentProductInCart.id) {
+        return { ...item, quantity: item.quantity + quantity };
       } else {
-        newCart = [...prevCart, { ...product, quantity: 1 }];
+        return item;
       }
-
-      localStorage.setItem("cart", JSON.stringify(newCart));
-      return newCart;
     });
+    // console.log("Previous cart:", prevCart);
+    // console.log("New cart:", newCart);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    setCart(newCart);
+  };
+
+  const addNewItemToCart = (prevCart) => {
+    const newCart = [...prevCart, { ...product, quantity }];
+    // console.log("Previous cart:", prevCart);
+    // console.log("New cart:", newCart);
+
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    setCart(newCart);
+  };
+
+  const addProductToCart = (productID) => {
+    // console.log("Quantity received:", quantity); // Check what value is received
+    const productInCart = cart.find(
+      (p) => p._id === productID // Check for product ID equality
+    );
+    const isProductInCart = !!productInCart;
+    if (isProductInCart) {
+      // Product exists, update quantity
+      incrementItemCountInCart(cart, productInCart);
+    } else {
+      // Product does not exist, add new
+      addNewItemToCart(cart);
+    }
   };
   // const addProductToCart = (product) => {
   //   const existingProduct = cart.find((p) => p.id === product.id);
@@ -146,27 +164,40 @@ const ProductPage = () => {
   //     localStorage.setItem("cart", JSON.stringify(updatedCart));
   //   }
   // };
+  // console.log(localStorage.getItem("cart"));
   return (
     <div className="prod-container">
       {product ? (
         <div>
-          <div className="d-flex">
-            <div className="d-flex">
+          <div className="d-flex justify-content-between">
+            <div className="d-flex flex-column">
               <p className=" d-flex justify-content-end m-1">
-                <FiHeart
-                  onClick={toggleFavorite}
-                  className={`favorite ${isFavorite ? "active" : ""}`}
-                  fontSize={"1.5rem"}
-                />
+                {isFavorite ? (
+                  <FaHeart
+                    onClick={toggleFavorite}
+                    className="favorite active"
+                    fontSize="1.5rem"
+                  />
+                ) : (
+                  <FiHeart
+                    onClick={toggleFavorite}
+                    className="favorite"
+                    fontSize="1.5rem"
+                  />
+                )}
               </p>
-              <img src={product.image} className="d-block" />
+              <img
+                src={product.image}
+                className="d-block"
+                style={{ width: "400px", height: "400px" }}
+              />
             </div>
             <div className="prod-text">
               <h1> {product.name}</h1>
               <p>Price: {product.price}</p>
 
-              <div className=" d-flex justify-content-between">
-                <div className="cont-quant d-flex">
+              <div className=" d-flex justify-content-between flex-column ">
+                <div className="cont-quant d-flex ">
                   <button
                     onClick={decrementQuantity}
                     className="p-2 quantity"
@@ -178,7 +209,9 @@ const ProductPage = () => {
                   >
                     -
                   </button>
-                  <p className="quantity p-2 ">{quantity}</p>
+                  <p className="quantity p-2 " style={{ color: "black" }}>
+                    {quantity}
+                  </p>
                   <button
                     onClick={incrementQuantity}
                     className="p-2 quantity"
@@ -192,7 +225,7 @@ const ProductPage = () => {
                   </button>
                 </div>
                 <button
-                  onClick={() => addProductToCart(product)}
+                  onClick={() => addProductToCart(productID)}
                   style={{ fontSize: "1.4rem" }}
                   className=" px-5 py-0 cart-btn"
                   // style={{
@@ -232,10 +265,10 @@ const ProductPage = () => {
               </div>
               {reviews.length > 0 ? (
                 <div>
-                  {reviews.map((review, index) => (
-                    <div key={index}>
+                  {reviews.map((review) => (
+                    <div key={review._id}>
                       <h5>
-                        {user.firstName} {user.lastName}
+                        {review.user.firstName} {review.user.lastName}
                       </h5>
                       <p>{review.comment}</p>
                     </div>
