@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+
 import {
   FaShoppingCart,
   FaHeart,
   FaSignInAlt,
   FaUserPlus,
+  FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
@@ -12,6 +14,7 @@ import { motion } from "framer-motion";
 import { useUserContext } from "./contexts/UserContext";
 import { useState, useEffect } from "react";
 import Cart from "./pages/cart/Cart";
+import Profile from "./pages/Profile";
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
@@ -42,13 +45,7 @@ function Navbar() {
               <span className="nav-span">Logout</span>
             </button>
           </li>
-          <li className="nav-item">
-            <button className="nav-button">
-              <Link to="/products">
-                <span className="nav-span">Product</span>
-              </Link>
-            </button>
-          </li>
+
           {state.isAdmin && (
             <li className="nav-item">
               <button className="nav-button">
@@ -58,6 +55,15 @@ function Navbar() {
               </button>
             </li>
           )}
+          <li className="nav-item">
+            <button className="nav-button">
+              <Link to="/profile">
+                <span className="nav-span">
+                  <FaUser size={30} />
+                </span>
+              </Link>
+            </button>
+          </li>
         </>
       );
     } else {
@@ -110,7 +116,7 @@ function Navbar() {
       >
         <ul className="nav-ul">
           <li className="nav-item">
-            <Link to="/dashboard">
+            <Link to="/">
               <button className="nav-button">
                 <span className="nav-span">Home</span>
               </button>
