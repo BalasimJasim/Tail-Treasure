@@ -6,13 +6,16 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./components/contexts/UserContext.jsx";
 import { CartProvider } from "./components/contexts/CartContext.jsx";
+import { CategoryProvider } from "./components/contexts/CategContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-  <UserProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
+    <UserProvider>
+      <CategoryProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </CategoryProvider>
     </UserProvider>
   </BrowserRouter>
 );

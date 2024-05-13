@@ -3,12 +3,12 @@ import "./App.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Register from "./components/pages/Register";
+import Register from "./components/pages/forms/Register.jsx";
 import Terms from "./components/pages/Terms";
-import Dashboard from "./components/pages/Dashboard";
-import Login from "./components/pages/Login";
-import Reset from "./components/pages/Reset";
-import Forgot from "./components/pages/Forgot";
+import Login from "./components/pages/forms/Login";
+import Reset from "./components/pages/forms/Reset";
+import Forgot from "./components/pages/forms/Forgot";
+import Profile from "./components/pages/Profile.jsx";
 
 import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
@@ -21,8 +21,13 @@ import Discount from "./components/pages/Discount";
 import { HideNavBar } from "./components/hidenavbar/HideNavBar.jsx";
 import Cart from "./components/pages/cart/Cart";
 import { Home } from "./components/pages/Home";
-import Verifying from "./components/pages/VeryfyingUser.jsx";
 import Favorites from "./components/pages/Favorites/Favorites.jsx";
+
+import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
+import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
+import UsersTable from "./components/pages/Admin/UsersTable.jsx";
+import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
+
 
 function App() {
   return (
@@ -32,7 +37,14 @@ function App() {
       </HideNavBar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
+        <Route
+          path="/admin-dashboard/categories-table"
+          element={<CategoriesTable />}
+        />
+
+        <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

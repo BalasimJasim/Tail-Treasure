@@ -1,0 +1,45 @@
+.service-parent-container {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+}
+
+.service-child-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 2rem;
+  grid-column-gap: 3rem;
+  text-align: center;
+  padding: 5rem;
+}
+.service.card {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.service-bonus-icon {
+  grid-row: 1;
+  position: relative;
+}
+
+.service-bonus-icon::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.service-h2 {
+  grid-row: 2;
+  padding: 2rem;
+}
+
+.service-p {
+  grid-row: 3;
+}

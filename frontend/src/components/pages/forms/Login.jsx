@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import loginImage from "../../../images/loginImage.jpg";
+import loginImage from "../../../../images/loginImage.jpg";
 import { motion } from "framer-motion";
-import { userLoginApi } from "../../Helpers/fetches";
-import { useUserContext } from "../contexts/UserContext";
+import { userLoginApi } from "../../../Helpers/fetches";
+import { useUserContext } from "../../contexts/UserContext";
 import Cookies from "js-cookie";
 
 function Login() {
@@ -30,7 +30,7 @@ function Login() {
         Cookies.set("user", email);
 
         dispatch({ type: "LOGIN", payload: { user: data.user } });
-
+        console.log(navigate);
         navigate("/");
         setError("");
       }

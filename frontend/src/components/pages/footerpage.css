@@ -1,0 +1,51 @@
+.footer-parent-container {
+  background-color: rgb(238, 231, 191);
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+}
+.footer-icons {
+  margin-top: 1rem;
+}
+.footer-icons .footer-a {
+  margin-right: 0.4rem;
+  padding-left: 0.5rem;
+}
+.a-icon {
+  color: rgb(253, 250, 250);
+  background-color: black;
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 3rem;
+}
+.footer-card {
+  display: flex;
+  padding-left: 25rem;
+  padding-top: 1rem;
+}
+
+.footer-h2 {
+  text-align: left;
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
+  text-decoration: underline;
+}
+.footer-ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.footer-ul .footer-li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.footer-icon {
+  height: 1rem;
+}
+.footer-menu {
+  padding-right: 10rem;
+}
+.footer-catalogue {
+  padding-left: 5rem;
+}
+.footer-contact {
+  padding-left: 15rem;
+}
