@@ -89,3 +89,19 @@ export const deleteProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getProductsByCategory = async (req, res, next) => {
+  try {
+    const category = req.query.category;
+    const filter = category ? { category } : {};
+    const products = await Product.find(filter);
+    res.json({
+      message: "Success",
+      length: products.length,
+      data: products,
+    });
+  } catch (error) {
+    console.error("Error fetching products by category:", error);
+    next(error);
+  }
+};
