@@ -1,3 +1,24 @@
+
+
+/* eslint-disable no-unused-vars */
+import React from "react";
+
+import {
+  FaShoppingCart,
+  FaHeart,
+  FaSignInAlt,
+  FaUserPlus,
+  FaUser,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./routes/Navbar.css";
+import { motion } from "framer-motion";
+import { useUserContext } from "./contexts/UserContext";
+import { useState, useEffect } from "react";
+import Cart from "./pages/cart/Cart";
+import Profile from "./pages/Profile";
+
+
 function Navbar() {
   const { state, dispatch } = useUserContext();
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -17,11 +38,13 @@ function Navbar() {
   const authButton = () => {
     if (state.isAccountVerified) {
       return (
+
         <li className="nav-item">
           <button className="nav-button" onClick={handleLogout}>
             <span className="nav-span">Logout</span>
           </button>
         </li>
+
       );
     } else {
       return (
