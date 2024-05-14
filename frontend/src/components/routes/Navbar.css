@@ -31,8 +31,6 @@ body {
 
 .nav-ul .nav-item {
   list-style: none;
-  text-decoration: none;
-
   padding: 0 1rem;
   position: relative;
   color: rgb(235, 185, 185);
