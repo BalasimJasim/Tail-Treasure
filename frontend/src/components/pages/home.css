@@ -47,35 +47,37 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
+  height: 50vh;
 }
 
-.home-container .home-p {
-  font-size: medium;
-  margin-left: 20px;
-  margin-top: 1rem;
-  width: 30%;
-  color: rgb(58, 55, 55);
-}
-.home-container .home-h1 {
-  font-size: 2.2rem;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  margin-bottom: 3rem;
-  color: rgb(58, 55, 55);
-}
+.home-home-discount {
+  display: flex;
 
-.discount-link {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin-left: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+.home-h01 {
+  width: 80%;
+  padding-top: 6rem;
+  text-align: center;
+  color: rgb(250, 249, 249);
+
+  font-weight: bold;
+}
+.home-30 {
+  font-size: 4rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  color: rgb(255, 255, 255);
 }
 .home-button {
-  padding: 0.5rem;
+  padding: 0.8rem;
+  width: 80%;
+  margin-top: 0.1rem;
   margin-left: 1rem;
+
   border-radius: 1rem;
-  width: 40%;
+  border: none;
 }
 
 .product-background {
@@ -129,22 +131,18 @@ body {
   }
   .home-h01 {
     font-size: 1.2rem;
-    align-self: self-start;
-  }
-
-  .home-p {
-    max-width: 90%;
-    margin: 5px auto;
-    height: 300px;
-    overflow: hidden;
   }
 
   .home-button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    align-self: self-start;
+
     border-radius: 1rem;
-    width: 60%;
-    margin-right: -5rem;
+    width: 80%;
+    margin-left: 9px;
+  }
+  .home-home-discount {
+    align-self: start;
+    margin-left: -2rem;
   }
 }

@@ -48,10 +48,6 @@ function Navbar() {
           {" "}
           <Link to="/login">
             <button className="nav-button">
-              <FaSignInAlt
-                className="mr-1"
-                style={{ color: "red", fontSize: "1.2em" }}
-              />
               <span className="nav-span">Login</span>
             </button>
           </Link>
@@ -105,17 +101,17 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
-              <FaShoppingCart size={30} className="nav-icon" />
+              <FaShoppingCart size={20} className="nav-icon" />
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
-              <FaHeart size={30} className="nav-icon" />
+              <FaHeart size={20} className="nav-icon" />
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">
-              <FaUser size={30} className="nav-icon" />
+              <FaUser size={20} className="nav-icon" />
             </Link>
           </li>
         </ul>
