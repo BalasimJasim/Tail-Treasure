@@ -1,7 +1,4 @@
-/* Corrected CSS */
-body {
-  max-width: 1920px;
-}
+/* Navbar.css */
 
 .container-navbar {
   display: flex;
@@ -13,77 +10,99 @@ body {
   height: 6rem;
 }
 
-.name {
-  margin-top: 1rem;
-  font-size: 2rem;
-  font-style: italic;
-}
-
 .navbar-h1 {
-  font-size: 3.8rem;
+  font-size: 3rem;
 }
 
 .nav-ul {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.nav-ul .nav-item {
   list-style: none;
   text-decoration: none;
 
+  padding: 0;
+}
+
+.nav-item {
   padding: 0 1rem;
   position: relative;
-  color: rgb(235, 185, 185);
-  border: none;
-  border-radius: none;
 }
 
-.nav-item .nav-button {
+.nav-button {
   border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.nav-ul .nav-span {
-  color: black;
+.nav-span {
   margin-left: 0.3rem;
 }
 
-.nav-item .nav-span {
-  font-size: 1.2rem;
-  color: black;
-}
-
-.nav-ul .nav-item:hover .nav-span {
+.nav-span:hover {
   text-decoration: underline;
   font-weight: 900;
 }
-@media only screen and (max-width: 899px) {
-  .navbar-h1 {
-    font-size: 2.5rem;
-  }
+
+.nav-ul.show {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(226, 51, 51);
+  margin-top: 30rem;
+  padding-bottom: 1rem;
+  margin-left: 18rem;
+}
+.nav-ul.show .nav-item {
+  padding: 1rem;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+.nav-ul.show .nav-span {
+  font-size: 0.8rem;
+}
+
+.burger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.animation1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.animation2 {
+  opacity: 0;
+}
+
+.animation3 {
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 @media only screen and (max-width: 769px) {
   .navbar-h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .nav-ul {
     display: none;
   }
 
-  .img {
-    display: none;
-  }
-
-  .nav.responsive {
+  .burger-icon {
     display: block;
-    width: 100%;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
   }
-
-  .nav.responsive .nav-item {
-    text-align: center;
-    padding: 1rem 0;
+  .nav-icon {
+    font-size: 10px;
   }
 }

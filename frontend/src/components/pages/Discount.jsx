@@ -1,6 +1,7 @@
 import React from "react";
 import "./discount.css";
 import { FaHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import dogFood1 from "../../../discountimages/dogfood1.jpeg";
 import dogFood2 from "../../../discountimages/dogfood2.jpeg";
 import dogFood3 from "../../../discountimages/dogfood3.jpeg";
@@ -11,7 +12,15 @@ import catFood3 from "../../../discountimages/catfood3.jpeg";
 import catFood4 from "../../../discountimages/catfood4.jpeg";
 import { FooterPage } from "./FooterPage.jsx";
 
+// array for image
+
 const Discount = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateToDiscount = () => {
+    navigate("/discount");
+  };
+
   return (
     <div className="main-container">
       <h2 className="discount-h2">
@@ -277,6 +286,9 @@ const Discount = () => {
             </div>
           </div>
         </div>
+        <button className="dog-buy-button" onClick={handleNavigateToDiscount}>
+          Go to Discount
+        </button>
       </div>
       <FooterPage />
     </div>

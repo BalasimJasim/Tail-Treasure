@@ -2,10 +2,8 @@ import React from "react";
 import "./bannerone.css";
 import img from "../../../img/dog.jpg";
 import img1 from "../../../img/hamster.jpg";
-
 import img2 from "../../../img/bird.jpg";
 import img3 from "../../../img/cat.jpg";
-
 export const BannerOne = () => {
   return (
     <div className="bannerone-background">
@@ -20,7 +18,6 @@ export const BannerOne = () => {
         >
           <h3 className="dog"> For Dogs</h3>
         </div>
-
         <div
           className="photo"
           style={{
@@ -31,7 +28,6 @@ export const BannerOne = () => {
         >
           <h3 className="hamster">For Rodents</h3>
         </div>
-
         <div
           className="photo"
           style={{
@@ -42,7 +38,6 @@ export const BannerOne = () => {
         >
           <h3 className="bird">For the Birds</h3>
         </div>
-
         <div
           className="photo"
           style={{

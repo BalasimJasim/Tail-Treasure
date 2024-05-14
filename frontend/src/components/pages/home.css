@@ -28,11 +28,20 @@ body {
   );
   flex-direction: column;
 }
+.register-container-two {
+  max-width: 40%;
+
+  padding: 10px;
+  position: absolute;
+  right: 21%;
+}
+.home-span {
+  height: 500px;
+}
 
 .home-container {
   background-image: url("../../../../img/imgdog.jpg");
   background-size: cover;
-
   background-position: left 35%;
   display: flex;
   flex-direction: column;
@@ -65,10 +74,8 @@ body {
 .home-button {
   padding: 0.5rem;
   margin-left: 1rem;
-}
-.register-container-two {
-  margin-left: 45rem;
-  margin-top: -25rem;
+  border-radius: 1rem;
+  width: 40%;
 }
 
 .product-background {
@@ -103,14 +110,41 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
-  .home-container p {
+  .home-container .home-p {
     width: 50%;
+    font-size: 0.5;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .home-container p {
-    width: 80%;
-    color: rgb(0, 0, 0);
+  .home-container {
+    background-image: url("../../../../img/imgdog.jpg");
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: start;
+  }
+  .home-h01 {
+    font-size: 1.2rem;
+    align-self: self-start;
+  }
+
+  .home-p {
+    max-width: 90%;
+    margin: 5px auto;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .home-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    align-self: self-start;
+    border-radius: 1rem;
+    width: 60%;
+    margin-right: -5rem;
   }
 }
