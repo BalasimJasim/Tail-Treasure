@@ -94,7 +94,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Firstname"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -105,7 +105,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Lastname"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -116,7 +116,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="email"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -130,7 +130,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="City"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
@@ -141,7 +141,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="State"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
@@ -152,7 +152,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Street"
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
@@ -163,7 +163,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="text"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Postal Code"
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
@@ -174,7 +174,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="password"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -185,7 +185,7 @@ function Register() {
             <div className="input-box">
               <input
                 type="password"
-                className="input-field-register"
+                className="input-field"
                 placeholder="Repeat Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}

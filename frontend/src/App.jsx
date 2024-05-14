@@ -2,7 +2,6 @@ import "./App.css";
 
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-
 import { Routes, Route } from "react-router-dom";
 import Register from "./components/pages/forms/Register.jsx";
 import Terms from "./components/pages/Terms";
@@ -10,7 +9,7 @@ import Login from "./components/pages/forms/Login";
 import Reset from "./components/pages/forms/Reset";
 import Forgot from "./components/pages/forms/Forgot";
 import Profile from "./components/pages/Profile.jsx";
-import CustomerSupportForm from "./components/pages/CustomerSupportForm.jsx";
+
 import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
 import ProductPage from "./components/pages/ProductPage/ProductPage";
@@ -50,7 +49,7 @@ function App() {
           path="/admin-dashboard/categories-table"
           element={<CategoriesTable />}
         />
-        <Route path="/customersupportform" element={<CustomerSupportForm />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />
         <Route path="/register" element={<Register />} />

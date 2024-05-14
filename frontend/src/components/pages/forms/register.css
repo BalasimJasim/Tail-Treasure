@@ -68,7 +68,7 @@
   color: black;
 }
 
-.input-field-register {
+.input-field {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -83,8 +83,8 @@
   transition: 0.2s ease;
 }
 
-.input-field-register:hover,
-.input-field-register:focus {
+.input-field:hover,
+.input-field:focus {
   background: #ffd700;
 }
 
