@@ -4,7 +4,7 @@ import { Address } from "../models/AddressModel.js";
 const required = true;
 const unique = true;
 
-const userSchema = new Schema({
+export const userSchema = new Schema({
   firstName: { type: String, required },
   lastName: { type: String, required },
   email: { type: String, required, unique },

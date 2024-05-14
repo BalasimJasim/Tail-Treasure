@@ -30,6 +30,31 @@ export const getAllCategoriesCtrl = async (req, res, next) => {
   }
 };
 
+// @desc    Update Category
+// @route   PUT /categories/:id
+// @access  Private (only admin)
+
+export const updateCategoryCtrl = async (req, res, next) => {
+  const categoryId = req.params.id;
+  const { title } = req.body;
+
+  try {
+    let category = await Category.findById(categoryId);
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    category.title = title;
+    category = await category.save();
+
+    res.status(200).json({
+      message: "Category has been updated successfully",
+      category: category,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 // @desc    Delete Category
 // @route   DELETE /categories/:id
 // @access  Private (only admin)
