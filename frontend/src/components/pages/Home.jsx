@@ -15,13 +15,13 @@ import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
-  useNavigate();
+  const navigate = useNavigate();
 
   const togglePopover = () => {
     setShowPopover(!showPopover);
   };
   const handleDiscount = () => {
-    Navigate("/discount");
+    navigate("/discount");
   };
 
   const products = [

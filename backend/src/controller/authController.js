@@ -100,7 +100,7 @@ export const loginUser = async (req, res, next) => {
       isAdmin: user.isAdmin,
     };
     const token = jwt.sign(payload, process.env.SECRET_KEY, {
-      expiresIn: "60d",
+      expiresIn: "1d",
     });
     res.status(200).json({
       token,
@@ -109,6 +109,7 @@ export const loginUser = async (req, res, next) => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
+        isAdmin: user.isAdmin,
       },
     });
   } catch (error) {

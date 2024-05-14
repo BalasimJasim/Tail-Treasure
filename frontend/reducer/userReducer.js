@@ -1,11 +1,12 @@
 export const userReducer = (state, action) => {
+  // console.log("from reducer:", action.payload.user.isAdmin);
   switch (action.type) {
     case "LOGIN":
       return {
         ...state,
         user: action.payload.user,
         isAccountVerified: true,
-        isAdmin: action.payload.user || false,
+        isAdmin: action.payload.user.isAdmin || false,
       };
     case "LOGOUT":
       return {
