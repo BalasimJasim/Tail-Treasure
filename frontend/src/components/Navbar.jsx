@@ -1,3 +1,5 @@
+
+
 /* eslint-disable no-unused-vars */
 import React from "react";
 
@@ -15,6 +17,7 @@ import { useUserContext } from "./contexts/UserContext";
 import { useState, useEffect } from "react";
 import Cart from "./pages/cart/Cart";
 import Profile from "./pages/Profile";
+
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
@@ -164,11 +167,6 @@ function Navbar() {
               </button>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/products">
-              <span className="nav-span">Products</span>
-            </Link>
-          </li>
           {authButton()}
 
           {state.isAdmin && (
@@ -185,7 +183,6 @@ function Navbar() {
               <FaShoppingCart size={30} />
             </Link>
           </li>
-
           <li>
             <Link to="/products/:userId/favorites">
               <FaHeart size={30} />
