@@ -48,15 +48,15 @@ const Favorites = () => {
   const addToCart = (product) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const productIndex = cart.findIndex((item) => item._id === product._id);
-    const isProductInFavorites = productIndex !== -1;
+    const isProductInCart = productIndex !== -1;
 
-    if (!isProductInFavorites) {
-      const newProduct = { ...product, quantity: quantities[product._id] };
+    if (!isProductInCart) {
+      const newProduct = { ...product, quantity: 1 };
       cart.push(newProduct);
       // cart[productIndex].quantity += quantities[product._id]; // Use the adjusted quantity for the cart
     }
 
-    localStorage.setItem("favorites", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
   const removeFromFavorites = (productId) => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];

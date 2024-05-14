@@ -10,7 +10,7 @@ import ProductCard from "./ProductCard.jsx";
 import BannerTwo from "./BannerTwo.jsx";
 import ServicePage from "./ServicePage.jsx";
 import { FooterPage } from "./FooterPage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const [showPopover, setShowPopover] = useState(false);
@@ -83,10 +83,19 @@ export const Home = () => {
         <h1 className="product-h1">Best of this week</h1>
         <div className="product-child-container">
           <ul className="product-ul">
-            <li className="product-li">For Dogs</li>
-            <li className="product-li">For Cats</li>
-            <li className="product-li">For the Birds</li>
-            <li className="product-li">For Rodents</li>
+            <li className="product-li">
+              <Link to="/products/category/dogs">For Dogs</Link>
+            </li>
+            <li className="product-li">
+              {" "}
+              <Link to="/products/category/cats">For Cats</Link>
+            </li>
+            <li className="product-li">
+              <Link to="/products/category/birds">For the Birds</Link>
+            </li>
+            <li className="product-li">
+              <Link to="/products/category/rodents">For Rodents</Link>
+            </li>
           </ul>
 
           <div className="product-card">

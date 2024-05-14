@@ -1,5 +1,3 @@
-
-
 /* eslint-disable no-unused-vars */
 import React from "react";
 
@@ -17,7 +15,6 @@ import { useUserContext } from "./contexts/UserContext";
 import { useState, useEffect } from "react";
 import Cart from "./pages/cart/Cart";
 import Profile from "./pages/Profile";
-
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
@@ -38,13 +35,11 @@ function Navbar() {
   const authButton = () => {
     if (state.isAccountVerified) {
       return (
-
         <li className="nav-item">
           <button className="nav-button" onClick={handleLogout}>
             <span className="nav-span">Logout</span>
           </button>
         </li>
-
       );
     } else {
       return (
@@ -164,6 +159,13 @@ function Navbar() {
             <Link to="/">
               <button className="nav-button">
                 <span className="nav-span">Home</span>
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/products">
+              <button className="nav-button">
+                <span className="nav-span">Products</span>
               </button>
             </Link>
           </li>
