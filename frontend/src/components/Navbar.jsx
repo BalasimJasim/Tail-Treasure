@@ -86,9 +86,11 @@ function Navbar() {
               </button>
             </Link>
           </li>
-          <li className="nav-item">
+          <li>
             <Link to="/products">
-              <span className="nav-span">Products</span>
+              <button className="nav-button">
+                <span className="nav-span">Products</span>
+              </button>
             </Link>
           </li>
           {authButton()}

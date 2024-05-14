@@ -64,6 +64,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
 
         <Route path="/products" element={<Product />} />
+        <Route path="/products/category/:category" element={<Product />} />
         <Route path="/products/:productID" element={<ProductPage />} />
 
         <Route path="/products/:userId/favorites" element={<Favorites />} />
