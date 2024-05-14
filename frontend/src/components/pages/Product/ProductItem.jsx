@@ -11,6 +11,7 @@ export const ProductItem = ({ product }) => {
 
   const toggleFavorite = (productId) => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    console.log(favorites);
     if (isFavorite) {
       console.log({ favorites });
       const filteredFavorites = favorites.filter((id) => id !== productId);

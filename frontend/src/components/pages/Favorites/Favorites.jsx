@@ -12,12 +12,14 @@ const Favorites = () => {
   }, []);
 
   const fetchFavoriteProducts = async (favoriteIds) => {
+    console.log(favoriteIds);
     try {
       const requests = favoriteIds.map((id) =>
         axios.get(`http://localhost:5000/products/${id}`)
       );
       const responses = await Promise.all(requests);
       const favoriteProducts = responses.map((res) => res.data.data);
+      console.log(favoriteProducts);
       setProducts(favoriteProducts);
       const initialQuantities = {};
       favoriteProducts.forEach((product) => {
