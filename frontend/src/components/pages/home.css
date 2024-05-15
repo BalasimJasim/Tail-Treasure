@@ -28,47 +28,56 @@ body {
   );
   flex-direction: column;
 }
+.register-container-two {
+  max-width: 40%;
+
+  padding: 10px;
+  position: absolute;
+  right: 21%;
+}
+.home-span {
+  height: 500px;
+}
 
 .home-container {
   background-image: url("../../../../img/imgdog.jpg");
   background-size: cover;
-
   background-position: left 35%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
+  height: 50vh;
 }
 
-.home-container .home-p {
-  font-size: medium;
-  margin-left: 20px;
-  margin-top: 1rem;
-  width: 30%;
-  color: rgb(58, 55, 55);
-}
-.home-container .home-h1 {
-  font-size: 2.2rem;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  margin-bottom: 3rem;
-  color: rgb(58, 55, 55);
-}
+.home-home-discount {
+  display: flex;
 
-.discount-link {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin-left: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+.home-h01 {
+  width: 80%;
+  padding-top: 6rem;
+  text-align: center;
+  color: rgb(250, 249, 249);
+
+  font-weight: bold;
+}
+.home-30 {
+  font-size: 4rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  color: rgb(255, 255, 255);
 }
 .home-button {
-  padding: 0.5rem;
+  padding: 0.8rem;
+  width: 80%;
+  margin-top: 0.1rem;
   margin-left: 1rem;
-}
-.register-container-two {
-  margin-left: 45rem;
-  margin-top: -25rem;
+
+  border-radius: 1rem;
+  border: none;
 }
 
 .product-background {
@@ -92,7 +101,7 @@ body {
 .product-li {
   font-size: 2rem;
   list-style: none;
-  text-decoration: underline;
+  text-decoration: none;
   margin: 5rem;
 }
 
@@ -103,14 +112,37 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
-  .home-container p {
+  .home-container .home-p {
     width: 50%;
+    font-size: 0.5;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .home-container p {
+  .home-container {
+    background-image: url("../../../../img/imgdog.jpg");
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: start;
+  }
+  .home-h01 {
+    font-size: 1.2rem;
+  }
+
+  .home-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+
+    border-radius: 1rem;
     width: 80%;
-    color: rgb(0, 0, 0);
+    margin-left: 9px;
+  }
+  .home-home-discount {
+    align-self: start;
+    margin-left: -2rem;
   }
 }
