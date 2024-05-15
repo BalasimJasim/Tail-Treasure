@@ -7,7 +7,18 @@ import BannerTwo from "./BannerTwo.jsx";
 import ServicePage from "./ServicePage.jsx";
 import { FooterPage } from "./FooterPage";
 import ProductCard from "./ProductCard.jsx";
-import { Link, useNavigate } from "react-router-dom";
+
+const products = [
+  { _id: 1, image: "../../../img/dog1.jpg", name: "Dog", price: 39.99 },
+  { _id: 2, image: "../../../img/cat.jpg", name: "Cat", price: 39.99 },
+  { _id: 3, image: "../../../img/bird.jpg", name: "Birds", price: 39.99 },
+  {
+    _id: 4,
+    image: "../../../img/hamster.jpg",
+    name: "Rodents",
+    price: 39.99,
+  },
+];
 
 export const Home = () => {
   return (
@@ -49,12 +60,12 @@ export const Home = () => {
 
           <div className="product-card">
             <div className="product-text-container"></div>
-            {product.length > 0 ? (
-              product.map((product) => (
-                <ProductCard key={product.id} product={product} />
+            {products.length > 0 ? (
+              products.map((product) => (
+                <ProductCard key={product._id} product={product} />
               ))
             ) : (
-              <div>No Products</div>
+              <div>No products</div>
             )}
           </div>
         </div>

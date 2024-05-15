@@ -101,7 +101,7 @@ body {
 .product-li {
   font-size: 2rem;
   list-style: none;
-  text-decoration: underline;
+  text-decoration: none;
   margin: 5rem;
 }
 
