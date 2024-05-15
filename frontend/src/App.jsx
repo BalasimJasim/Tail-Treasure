@@ -28,6 +28,7 @@ import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
+// import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
 import { FooterPage } from "./components/pages/FooterPage";
 import { useUserContext } from "./components/contexts/UserContext.jsx";
 
