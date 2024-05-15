@@ -166,3 +166,20 @@ p {
 .error-text {
   color: red;
 }
+
+@media (max-width: 480px) {
+  .top h1 {
+    margin-left: 0;
+    font-size: 25px;
+  }
+  .top header {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  .form-box {
+    align-items: center;
+    justify-content: start;
+  }
+}

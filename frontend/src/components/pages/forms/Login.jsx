@@ -57,8 +57,15 @@ function Login() {
         <div className="form-box-login">
           <div className="login-container" id="login">
             <div className="top-login">
-              <span>
-                Don't have an account? <Link to="/register">Sign up</Link>
+              <span
+                style={{
+                  fontFamily: "Shadows Into Light",
+                  fontSize: "25px",
+                  color: "black",
+                }}
+              >
+                Don't have an account?
+                <Link to="/register">Sign up</Link>
               </span>
               <header>Login</header>
             </div>
