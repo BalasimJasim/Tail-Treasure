@@ -18,6 +18,9 @@ import Profile from "./pages/Profile";
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
+  const { isAdmin, isAccountVerified } = state;
+
+  // const { state, dispatch } = useUserContext();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [framerMotion, setFramerMotion] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -34,7 +37,7 @@ function Navbar() {
     setShowMenu(!showMenu);
   };
   const authButton = () => {
-    if (state.isAccountVerified) {
+    if (isAccountVerified) {
       return (
         <li className="nav-item">
           <button className="nav-button" onClick={handleLogout}>
@@ -90,7 +93,7 @@ function Navbar() {
             </Link>
           </li>
           {authButton()}
-          {state.isAdmin && (
+          {isAdmin && (
             <li className="nav-item">
               <button className="nav-button">
                 <Link to="/admin-dashboard">

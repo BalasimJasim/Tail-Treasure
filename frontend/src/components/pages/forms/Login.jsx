@@ -21,16 +21,16 @@ function Login() {
     try {
       const loginObj = { email, password };
       const response = await userLoginApi(loginObj);
-
       const { data } = response;
-      console.log("data from login:", data);
 
       if (data.token) {
-        console.log(data);
-        Cookies.set("token", data.token);
-        Cookies.set("user", email);
-        console.log("isAdmin from backend:", data.user.isAdmin);
+        // Store authdata in LS
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", email);
+        localStorage.setItem("isAdmin", data.user.isAdmin);
+
         dispatch({ type: "LOGIN", payload: { user: data.user } });
+
         navigate("/");
         setError("");
       }
@@ -40,14 +40,6 @@ function Login() {
       setTimeout(() => {
         setError("");
       }, 3000);
-    }
-  };
-  const handleLogout = async () => {
-    try {
-      await dispatch({ type: "LOGOUT" });
-      navigate("login");
-    } catch (error) {
-      console.error(error);
     }
   };
 
