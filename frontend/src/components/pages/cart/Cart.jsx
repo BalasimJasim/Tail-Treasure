@@ -9,7 +9,7 @@ const Cart = () => {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
-  }, []);
+  }, [cartItems]);
 
   const updateCartInLocalStorage = (items) => {
     localStorage.setItem("cart", JSON.stringify(items));

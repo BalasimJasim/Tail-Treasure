@@ -23,14 +23,14 @@ function Login() {
       const response = await userLoginApi(loginObj);
 
       const { data } = response;
+      console.log("data from login:", data);
 
       if (data.token) {
         console.log(data);
         Cookies.set("token", data.token);
         Cookies.set("user", email);
-
+        console.log("isAdmin from backend:", data.user.isAdmin);
         dispatch({ type: "LOGIN", payload: { user: data.user } });
-        console.log(navigate);
         navigate("/");
         setError("");
       }
