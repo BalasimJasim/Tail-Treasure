@@ -11,8 +11,8 @@ import { userReducer } from "../../../reducer/userReducer";
 
 import {
   deleteUserById,
-  fetchAllUsers,
   fetchUserCount,
+  userLoginApi,
 } from "../../Helpers/fetches";
 import Swal from "sweetalert2";
 import { FiCloudLightning } from "react-icons/fi";
@@ -29,22 +29,29 @@ const UserContext = createContext(initialState);
 
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
-
   const [userCount, setUserCount] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userData = await fetchAllUsers();
-        dispatch({ type: "LOGIN", payload: { user: userData } });
+        //  user data exists in local storage?
 
-        const count = await fetchUserCount();
-        setUserCount(count);
+        const storedUserData = localStorage.getItem("userData");
+        if (storedUserData) {
+          dispatch({ type: "LOGIN", payload: JSON.parse(storedUserData) });
+        } else {
+          const userData = await userLoginApi();
+          dispatch({ type: "LOGIN", payload: { user: userData } });
+        }
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("userData", JSON.stringify(state));
+  }, [state]);
 
   const deleteUser = async (userId) => {
     try {
@@ -78,7 +85,7 @@ export const UserProvider = ({ children }) => {
       });
     }
   };
-  console.log("user from context:", state); //console
+  // console.log("user from context:", state); //console
   return (
     <UserContext.Provider value={{ state, dispatch, deleteUser, userCount }}>
       {children}
