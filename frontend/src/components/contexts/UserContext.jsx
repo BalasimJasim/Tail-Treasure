@@ -15,6 +15,7 @@ import {
   fetchUserCount,
 } from "../../Helpers/fetches";
 import Swal from "sweetalert2";
+import { FiCloudLightning } from "react-icons/fi";
 
 const initialState = {
   user: null,
@@ -35,6 +36,7 @@ export const UserProvider = ({ children }) => {
       try {
         const userData = await fetchAllUsers();
         dispatch({ type: "LOGIN", payload: { user: userData } });
+
         const count = await fetchUserCount();
         setUserCount(count);
       } catch (error) {
@@ -76,6 +78,7 @@ export const UserProvider = ({ children }) => {
       });
     }
   };
+  console.log("user from context:", state); //console
   return (
     <UserContext.Provider value={{ state, dispatch, deleteUser, userCount }}>
       {children}
