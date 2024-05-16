@@ -3,13 +3,13 @@ body {
   max-width: 1920px;
   margin: 0;
   padding: 0;
-  background: rgb(253, 253, 253);
-  background: linear-gradient(
+  background: rgb(255, 248, 240);
+  /* background: linear-gradient(
     90deg,
     rgba(250, 255, 132, 1) 25%,
     rgba(251, 198, 56, 1) 50%,
     rgba(250, 255, 132, 1) 75%
-  );
+  ); */
 }
 */ .wrapper {
   display: flex;

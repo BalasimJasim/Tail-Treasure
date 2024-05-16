@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 function CartProcess({ goTo }) {
   const [cartItems, setCartItems] = useState([]);
-
+  const [isRemoved, setIsRemoved] = useState(false);
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
-  }, []);
+  }, [isRemoved]);
 
   const updateCartInLocalStorage = (items) => {
     localStorage.setItem("cart", JSON.stringify(items));
@@ -42,9 +42,11 @@ function CartProcess({ goTo }) {
   };
   const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
   const shippingMessage =
-    calculateTotal() > 40
-      ? "Free Shipping: 0"
-      : `Shipping Cost: $${shippingCost}`;
+    calculateTotal() > 40 ? "Free Shipping: " : `Shipping Cost: `;
+  const totalWithShipping = (
+    parseFloat(calculateTotal()) + shippingCost
+  ).toFixed(2);
+
   if (cartItems.length === 0) {
     return (
       <div>
@@ -58,6 +60,7 @@ function CartProcess({ goTo }) {
     const newCart = cart.filter((item) => item._id !== productId);
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+    setIsRemoved(!isRemoved);
   };
   // const [orderDetails, setOrderDetails] = useState({
   //   delivery: {},
@@ -153,12 +156,15 @@ function CartProcess({ goTo }) {
             </div>
           </div>
         ))}
-        <div>
-          <p>Subtotal:</p> <p>${calculateTotal()}</p>
+        <div className="d-flex justify-content-between mx-2">
+          <p>Subtotal:</p> <p>{calculateTotal()}€</p>
         </div>
-        <div>{shippingMessage}</div>
-        <div className="total">
-          <p>Total:</p> <p>{calculateTotal()}</p>
+        <div className="d-flex justify-content-between mx-2">
+          <p>{shippingMessage}</p>
+          <p>{shippingCost}€</p>
+        </div>
+        <div className="total d-flex justify-content-between mx-2">
+          <p>Total:</p> <p>{totalWithShipping}€</p>
         </div>
         <button onClick={nextStep} className="checkout-btn ">
           Checkout
