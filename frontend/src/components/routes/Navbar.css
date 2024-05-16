@@ -1,7 +1,4 @@
-/* Corrected CSS */
-body {
-  max-width: 1920px;
-}
+/* Navbar.css */
 
 .container-navbar {
   display: flex;
@@ -13,77 +10,110 @@ body {
   height: 6rem;
 }
 
-.name {
-  margin-top: 1rem;
-  font-size: 2rem;
-  font-style: italic;
-}
-
 .navbar-h1 {
-  font-size: 3.8rem;
+  font-size: 3rem;
 }
 
 .nav-ul {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.nav-ul .nav-item {
   list-style: none;
   text-decoration: none;
 
+  padding: 0;
+}
+
+.nav-item {
   padding: 0 1rem;
   position: relative;
-  color: rgb(235, 185, 185);
+}
+.nav-item a {
+  text-decoration: none;
+}
+.nav-button {
   border: none;
-  border-radius: none;
+  background: none;
+  cursor: pointer;
 }
 
-.nav-item .nav-button {
-  border: none;
-}
-
-.nav-ul .nav-span {
-  color: black;
+.nav-span {
   margin-left: 0.3rem;
-}
-
-.nav-item .nav-span {
-  font-size: 1.2rem;
   color: black;
+  padding: 3rem;
+  font-size: 1rem;
 }
 
-.nav-ul .nav-item:hover .nav-span {
-  text-decoration: underline;
+.nav-span:hover {
+  text-decoration: dashed;
   font-weight: 900;
 }
-@media only screen and (max-width: 899px) {
-  .navbar-h1 {
-    font-size: 2.5rem;
-  }
+
+.nav-ul.show {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  margin-top: 30rem;
+  padding-bottom: 1rem;
+  margin-left: 18rem;
+  width: 20%;
+}
+.nav-ul.show .nav-item {
+  padding: 1rem;
+  height: auto;
+  margin: 0.1rem;
+}
+
+.nav-ul.show .nav-span {
+  font-size: 0.8rem;
+}
+
+.burger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.animation1 {
+  transform: rotate(-35deg) translate(-1px, 4px);
+}
+
+.animation2 {
+  opacity: 0;
+}
+
+.animation3 {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+.burger-icon {
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 769px) {
   .navbar-h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .nav-ul {
     display: none;
+    margin: -8rem;
+    margin-bottom: 1em;
   }
 
-  .img {
-    display: none;
-  }
-
-  .nav.responsive {
+  .burger-icon {
     display: block;
-    width: 100%;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
   }
-
-  .nav.responsive .nav-item {
-    text-align: center;
-    padding: 1rem 0;
+  .nav-icon {
+    font-size: 10px;
   }
 }

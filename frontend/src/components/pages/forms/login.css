@@ -38,27 +38,26 @@
   max-width: 850px;
 }
 
-.top-login span {
+/* .top-login span {
   width: 385px;
   font-size: 35px;
   font-family: "Shadows Into Light", cursive;
-}
+} */
 
 .top-login span a {
-  align-items: center;
-  font-size: medium;
-  font-weight: 500;
-  color: #800080;
-  margin-left: 5px;
+  align-items: end;
+  margin-left: 80%;
+  font-size: 25px;
+  color: black;
 }
 
 .top-login header {
   font-size: 25px;
   display: flex;
-  margin-left: 55%;
-
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
-  color: red;
+  color: #800080;
 }
 
 .input-field-login {
@@ -121,4 +120,36 @@
   width: 70%;
   height: 45%;
   object-fit: cover;
+}
+
+.two-col-login label {
+  color: #800080;
+  margin-left: 15px;
+}
+
+@media (max-width: 480px) {
+  .top-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .top-login span a {
+    align-items: center;
+    margin-left: 35%;
+  }
+  .top-login span {
+    align-items: center;
+    margin-left: 5%;
+  }
+  .forgot-password-link {
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 24%;
+  }
+
+  .one-login {
+    margin-left: 22%;
+    margin-right: 10px;
+  }
 }

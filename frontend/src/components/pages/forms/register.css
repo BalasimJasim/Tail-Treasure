@@ -166,3 +166,77 @@ p {
 .error-text {
   color: red;
 }
+
+@media (max-width: 480px) {
+  .top h1 {
+    margin-left: 0;
+    font-size: 25px;
+  }
+  .top header {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  .form-box {
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .form-box {
+    flex-direction: column;
+  }
+  .register-container {
+    width: 300px;
+  }
+  .input-box {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-field {
+    font-size: 12px;
+    text-align: start;
+  }
+  .two-col p {
+    font-size: 16px;
+  }
+  .two p {
+    font-size: 12px;
+  }
+  .input-box input {
+    font-size: 12px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .image-box {
+    display: none;
+  }
+
+  .image-box img {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+  }
+  .container header {
+    font-size: 14px;
+  }
+
+  .register-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .top h1 {
+    margin-left: 0;
+    font-size: 20px;
+  }
+}

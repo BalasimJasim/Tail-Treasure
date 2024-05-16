@@ -129,50 +129,6 @@ function Register() {
 
             <div className="input-box">
               <input
-                type="text"
-                className="input-field-register"
-                placeholder="City"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-box">
-              <input
-                type="text"
-                className="input-field-register"
-                placeholder="State"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-box">
-              <input
-                type="text"
-                className="input-field-register"
-                placeholder="Street"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-box">
-              <input
-                type="text"
-                className="input-field-register"
-                placeholder="Postal Code"
-                value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-box">
-              <input
                 type="password"
                 className="input-field-register"
                 placeholder="Password"

@@ -2,11 +2,9 @@ import React from "react";
 import "./bannerone.css";
 import img from "../../../img/dog.jpg";
 import img1 from "../../../img/hamster.jpg";
-
 import img2 from "../../../img/bird.jpg";
 import img3 from "../../../img/cat.jpg";
 import { Link } from "react-router-dom";
-
 export const BannerOne = () => {
   return (
     <div className="bannerone-background">
@@ -23,7 +21,6 @@ export const BannerOne = () => {
             <Link to="/products/category/dogs">For Dogs</Link>
           </h3>
         </div>
-
         <div
           className="photo"
           style={{
@@ -36,7 +33,6 @@ export const BannerOne = () => {
             <Link to="/products/category/rodents">For Rodents</Link>
           </h3>
         </div>
-
         <div
           className="photo"
           style={{
@@ -49,7 +45,6 @@ export const BannerOne = () => {
             <Link to="/products/category/birds">For the Birds</Link>
           </h3>
         </div>
-
         <div
           className="photo"
           style={{

@@ -53,3 +53,13 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
+/*responsive style*/
+
+@media screen and (max-width: 768px) {
+  .footer-card {
+    padding-left: 0.5rem;
+    flex-direction: column;
+    align-items: left;
+  }
+}

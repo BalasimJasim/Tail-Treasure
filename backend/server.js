@@ -16,6 +16,7 @@ import passwordRoute from "./src/routes/passwordRoute.js";
 
 import { getResetPasswordLink } from "./src/controller/passwordController.js";
 import categoryRoute from "./src/routes/categoryRoute.js";
+import adminRouter from "./src/routes/adminRoute.js";
 
 const app = express();
 config();
@@ -28,11 +29,13 @@ app.use(
     credentials: true,
   })
 );
+app.options("*", cors());
 
 const port = process.env.PORT || 4000;
 
 app.use("/users", userRoute, favoritesRouter);
 app.use("/auth", authRoute);
+app.use("/admin-dashboard", adminRouter);
 // app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
 app.use("/products", productsRouter);

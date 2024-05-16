@@ -1,9 +1,9 @@
 import "./App.css";
 
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Register from "./components/pages/forms/Register.jsx";
 import Terms from "./components/pages/Terms";
 import Login from "./components/pages/forms/Login";
@@ -28,11 +28,20 @@ import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
+// import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
 import { FooterPage } from "./components/pages/FooterPage";
+
 import { ProductsCatalog } from "./components/pages/Product/ProdactsCatalog.jsx";
 import CartProcess from "./components/pages/cart/CartProcess.jsx";
 
+import { useUserContext } from "./components/contexts/UserContext.jsx";
+
+
 function App() {
+  const { state } = useUserContext();
+  const { user } = state;
+
+  console.log("App check if user is admin:", user);
   return (
     <>
       <HideNavBar>
@@ -40,8 +49,14 @@ function App() {
       </HideNavBar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/admin-dashboard/users-table" element={<UsersTable />} />
+        <Route
+          path="/admin-dashboard"
+          element={user?.isAdmin ? <AdminDashboard /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/admin-dashboard/users-table"
+          element={user?.isAdmin ? <UsersTable /> : <Navigate to="/" />}
+        />
         {/* <Route
           path="/admin-dashboard/products-table"
           element={<ProductsTable />}
@@ -50,15 +65,24 @@ function App() {
 
         <Route
           path="/admin-dashboard/categories-table"
-          element={<CategoriesTable />}
+          element={user?.isAdmin ? <CategoriesTable /> : <Home />}
         />
         <Route path="/customersupportform" element={<CustomerSupportForm />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/discount" element={<Discount />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/register"
+          element={!user ? <Register /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/login"
+          element={!user ? <Login /> : <Navigate to="/" />}
+        />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/auth/:userId/verify/:token" element={<Verifying />} />
+        <Route
+          path="/auth/:userId/verify/:token"
+          element={!user ? <Verifying /> : <Navigate to="/" />}
+        />
 
         <Route path="/reset" element={<Reset />} />
         <Route path="/forgot/" element={<Forgot />} />

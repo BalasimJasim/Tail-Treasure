@@ -21,16 +21,16 @@ function Login() {
     try {
       const loginObj = { email, password };
       const response = await userLoginApi(loginObj);
-
       const { data } = response;
 
       if (data.token) {
-        console.log(data);
-        Cookies.set("token", data.token);
-        Cookies.set("user", email);
+        // Store authdata in LS
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", email);
+        localStorage.setItem("isAdmin", data.user.isAdmin);
 
         dispatch({ type: "LOGIN", payload: { user: data.user } });
-        console.log(navigate);
+
         navigate("/");
         setError("");
       }
@@ -42,14 +42,6 @@ function Login() {
       }, 3000);
     }
   };
-  const handleLogout = async () => {
-    try {
-      await dispatch({ type: "LOGOUT" });
-      navigate("login");
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   return (
     <>
@@ -57,8 +49,15 @@ function Login() {
         <div className="form-box-login">
           <div className="login-container" id="login">
             <div className="top-login">
-              <span>
-                Don't have an account? <Link to="/register">Sign up</Link>
+              <span
+                style={{
+                  fontFamily: "Shadows Into Light",
+                  fontSize: "25px",
+                  color: "black",
+                }}
+              >
+                Don't have an account?
+                <Link to="/register">Sign up</Link>
               </span>
               <header>Login</header>
             </div>

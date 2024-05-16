@@ -62,7 +62,7 @@ function CustomerSupportForm() {
             <label htmlFor="message"></label>
             <textarea
               id="message"
-              placeholder="Message:"
+              placeholder="How we can Help?"
               value={message}
               onChange={handleMessageChange}
               required

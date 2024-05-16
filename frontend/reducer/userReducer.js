@@ -1,4 +1,5 @@
 export const userReducer = (state, action) => {
+  // console.log("from reducer:", action.payload.user);
   switch (action.type) {
     case "LOGIN":
       return {

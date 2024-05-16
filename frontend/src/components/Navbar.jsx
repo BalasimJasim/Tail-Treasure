@@ -18,22 +18,26 @@ import Profile from "./pages/Profile";
 
 function Navbar() {
   const { state, dispatch } = useUserContext();
+  const { isAdmin, isAccountVerified } = state;
+
+  // const { state, dispatch } = useUserContext();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [framerMotion, setFramerMotion] = useState(false);
-
+  const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
     if (!framerMotion) {
       setFramerMotion(true);
     }
     setTimeout(() => {}, 3000);
   }, []);
-
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
-
+  const toggleMobileMenu = () => {
+    setShowMenu(!showMenu);
+  };
   const authButton = () => {
-    if (state.isAccountVerified) {
+    if (isAccountVerified) {
       return (
         <li className="nav-item">
           <button className="nav-button" onClick={handleLogout}>
@@ -47,10 +51,6 @@ function Navbar() {
           {" "}
           <Link to="/login">
             <button className="nav-button">
-              <FaSignInAlt
-                className="mr-1"
-                style={{ color: "red", fontSize: "1.2em" }}
-              />
               <span className="nav-span">Login</span>
             </button>
           </Link>
@@ -61,82 +61,6 @@ function Navbar() {
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
-
-  //     if (state.isAccountVerified) {
-  //       return (
-  //         <>
-
-  //           <li>
-  //             <Link to="/">
-  //               {" "}
-  //               <span>Home</span>
-  //             </Link>
-
-  //
-  //           <li className="nav-item">
-  //             <button className="nav-button">
-  //               <Link to="/products">
-  //                 <span className="nav-span">Product</span>
-  //               </Link>
-  //             </button>
-  //           </li>
-  //           {state.isAdmin && (
-  //             <li className="nav-item">
-  //               <button className="nav-button">
-  //                 <Link to="/admin-dashboard">
-  //                   <span className="nav-span">Admin</span>
-  //                 </Link>
-  //               </button>
-  //             </li>
-  //           )}
-  //         </>
-  //       );
-  //     } else {
-  //       return (
-  //         <>
-  //  <li>
-  //             <Link to="/">
-  //               {" "}
-  //               <span>Home</span>
-  //             </Link>
-  //           </li>
-  //           <li>
-  //             <Link to="/products">
-  //               {" "}
-  //               <span>Products</span>
-  //             </Link>
-  //           </li>
-  //           <li>
-
-  //           <li className="nav-item">
-
-  //             {" "}
-  //             <Link to="/login">
-  //               <button className="nav-button">
-  //                 <FaSignInAlt
-  //                   className="mr-1"
-  //                   style={{ color: "red", fontSize: "1.2em" }}
-  //                 />
-  //                 <span className="nav-span">Login</span>
-  //               </button>
-  //             </Link>
-  //           </li>
-  //           <li className="nav-item">
-  //             <Link to="/register">
-  //               <button className="nav-button">
-  //                 <FaUserPlus
-  //                   className="mr-1"
-  //                   style={{ color: "red", fontSize: "1.2em" }}
-  //                 />
-  //                 <span className="nav-span"> Register</span>
-  //               </button>
-  //             </Link>
-  //           </li>
-  //         </>
-  //       );
-  //     }
-  //   };
-
   return (
     <nav className="container-navbar">
       <motion.h1
@@ -147,14 +71,13 @@ function Navbar() {
       >
         Tail-Treasure
       </motion.h1>
-
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
         style={{ fontSize: "" }}
       >
-        <ul className="nav-ul">
+        <ul className={`nav-ul ${showMenu ? "show" : ""}`}>
           <li className="nav-item">
             <Link to="/">
               <button className="nav-button">
@@ -170,8 +93,7 @@ function Navbar() {
             </Link>
           </li>
           {authButton()}
-
-          {state.isAdmin && (
+          {isAdmin && (
             <li className="nav-item">
               <button className="nav-button">
                 <Link to="/admin-dashboard">
@@ -182,22 +104,28 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
-              <FaShoppingCart size={30} />
+              <FaShoppingCart size={20} className="nav-icon" />
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
-              <FaHeart size={30} />
+              <FaHeart size={20} className="nav-icon" />
             </Link>
           </li>
           <li className="nav-item">
-            <FaHeart size={30} />
+            <Link to="/profile">
+              <FaUser size={20} className="nav-icon" />
+            </Link>
           </li>
         </ul>
       </motion.div>
+      <div className="burger-icon" onClick={toggleMobileMenu}>
+        <div className={`bar ${showMenu ? "animation1" : ""}`}></div>
+        <div className={`bar ${showMenu ? "animation2" : ""}`}></div>
+        <div className={`bar ${showMenu ? "animation3" : ""}`}></div>
+      </div>
       {/* {isCartOpen && <Cart />} */}
     </nav>
   );
 }
-
 export default Navbar;
