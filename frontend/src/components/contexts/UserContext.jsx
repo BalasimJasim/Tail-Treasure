@@ -85,7 +85,7 @@ export const UserProvider = ({ children }) => {
       });
     }
   };
-  // console.log("user from context:", state); //console
+  console.log("user from context:", state); //console
   return (
     <UserContext.Provider value={{ state, dispatch, deleteUser, userCount }}>
       {children}

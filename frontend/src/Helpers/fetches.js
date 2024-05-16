@@ -7,7 +7,7 @@ axios.defaults.baseURL = "http://localhost:5000";
 export const fetchAllUsers = async () => {
   try {
     axios.defaults.withCredentials = true;
-    const token = Cookies.get("token");
+    const token = localStorage.getItem("token");
     console.log("Token from cookies:", token);
     const response = await axios.get("/users", {
       headers: {
@@ -31,7 +31,7 @@ export const fetchUserCount = async () => {
 
 export const deleteUserById = async (userId) => {
   try {
-    const token = Cookies.get("token");
+    const token = localStorage.getItem("token");
     await axios.delete(`/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
