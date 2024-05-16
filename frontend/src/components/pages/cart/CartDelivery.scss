@@ -1,0 +1,47 @@
+.deliv-cont {
+  width: 50%;
+  margin: auto;
+  input {
+    width: 90%;
+    margin: auto;
+    font-size: 1.3rem;
+    padding: 8px;
+    border: 1px solid rgb(245, 185, 73);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  input:focus {
+    outline: 3px solid rgb(245, 185, 73);
+  }
+  .btn-save {
+    background-color: rgb(245, 185, 73);
+    border: none;
+    color: white;
+    display: block;
+    margin: 1rem 0;
+    width: 90%;
+    padding: 5px;
+    font-size: 1.5rem;
+    // font-weight: bold;
+    border-radius: 10px;
+  }
+}
+.deliv-info {
+  width: 50%;
+  margin: auto;
+  p {
+    font-size: 1.4rem;
+  }
+
+  .btn-change {
+    background-color: rgb(245, 185, 73);
+    border: none;
+    color: white;
+    display: block;
+    margin: 1rem 0;
+    width: 30%;
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+}

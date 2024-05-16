@@ -1,8 +1,30 @@
 .cart-container {
   margin: auto;
   background-color: rgb(255, 248, 240);
+  .processing-line {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    border-top: solid rgb(245, 185, 73) 3px;
+    .circle {
+      position: relative;
+      bottom: 25px;
+      border-radius: 50%;
+      font-size: 2rem;
+      padding: 0 15px;
+      background-color: white;
+      border: solid rgb(245, 185, 73) 2px;
+    }
+    .circle-active {
+      background-color: rgb(245, 185, 73);
+      color: white;
+    }
+  }
+  .card {
+    width: 50%;
+    margin: auto;
+  }
   .cart-item {
-    width: 60%;
     margin: 1em auto;
 
     .img-container {
