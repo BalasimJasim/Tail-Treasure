@@ -61,6 +61,7 @@ const ProductPage = () => {
   };
 
   const addReviewHandler = async () => {
+    console.log({ userState });
     try {
       await axios.post(`http://localhost:5000/reviews/product`, {
         comment: reviewInput,

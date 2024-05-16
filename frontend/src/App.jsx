@@ -30,7 +30,12 @@ import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
 // import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
 import { FooterPage } from "./components/pages/FooterPage";
+
+import { ProductsCatalog } from "./components/pages/Product/ProdactsCatalog.jsx";
+import CartProcess from "./components/pages/cart/CartProcess.jsx";
+
 import { useUserContext } from "./components/contexts/UserContext.jsx";
+
 
 function App() {
   const { state } = useUserContext();
@@ -84,7 +89,7 @@ function App() {
 
         <Route path="/cart" element={<Cart />} />
 
-        <Route path="/products" element={<Product />} />
+        <Route path="/products" element={<ProductsCatalog />} />
         <Route path="/products/category/:category" element={<Product />} />
         <Route path="/products/:productID" element={<ProductPage />} />
 

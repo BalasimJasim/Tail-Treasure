@@ -26,6 +26,7 @@ export const addNewReview = async (req, res, next) => {
     const { userId, productId, rating, comment } = req.body;
     const user = await User.findById(userId);
     const product = await Product.findById(productId);
+    console.log(product);
     const newReview = new Review({
       user: user._id,
       product: product._id,

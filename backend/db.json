@@ -471,3 +471,114 @@
     }
   ]
     
+
+  [
+    {
+      "name": "Vitakraft Menu Vital Dwarf Rabbit 3kg",
+      "description": "Menu Vital is a species-appropriate, balanced mixture for dwarf rabbits that not only tastes delicious to the animals, but also gives them everything they need for a healthy life. The proven vital complex also prevents deficiency symptoms and provides an extra boost of vitality! Alfalfa rich in crude fiber, fruity apples, valuable grains, delicious vegetables such as aromatic pumpkin. The food contains exactly the ingredients that a dwarf rabbit would look for in nature and is made according to a sugar-free recipe. Vital vitamins, minerals and trace elements help provide the animals with optimal nutrition.",
+      "price": 11.19,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-menu-vital-zwergkaninchen-3kg.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft LIFE Power Dwarf Rabbit",
+      "description": "This powerful mixture brings power and fitness to the food bowl! The delicious mix for dwarf rabbits contains, among other things, crunchy carrots for an extra portion of vitamins and fruity bananas as a source of energy and minerals. Valuable beta-glucans strengthen the animals' defenses, and the healthy proportion of crude fiber also supports digestion. The fiber-rich composition of the mixture also helps with the important abrasion of the constantly growing rodent teeth. Developed by rodent experts and veterinarians!",
+      "price": 10.19,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-zwergkaninchen-life-power.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Degus Premium Menu Vital 600g",
+      "description": "Ensure that your degus receive a balanced, tasty and healthy diet with the sugar-free Vital menu from Vitakraft. Delicious grains with vegetables such as peas and carrots are specifically tailored to the animals. An effective vital complex provides extra vitality. Vital vitamins and minerals prevent deficiency symptoms. Crude fibers extend the chewing time and help with the abrasion of the nail teeth, which is important for degus. Ensure optimal nutrition for your animal with this meal!",
+      "price": 3.49,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-degus-premium-menu-vital-600g5df8dda16da5f.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Menu Vital for guinea pigs",
+      "description": "With Vitakraft Menu Vital you can ensure a balanced and species-appropriate diet for your guinea pig. Fruity apples, delicious vegetables such as pumpkin and beetroot and a proven vital complex ensure a healthy life. The sugar-free recipe is enriched with vital vitamins, minerals and trace elements. Zinc and biotin ensure a healthy coat. A special combination of active ingredients that reduces unpleasant smells ensures a better smell in the rodent shelter. ",
+      "price": 16.49,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-menu-vital-fur-meerschweinchen.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft VITA Special Adult Dwarf Rabbit 600g",
+      "description": "Dwarf rabbits like to choose only what they like to eat most from the food bowl. To ensure that even picky animals are optimally cared for in every phase of their life, VITA® Special should be on the menu: thanks to the all-in-one food body, no selection is possible - and malnutrition can be ruled out; VITA® Special Adult is a life cycle food developed by veterinarians that is optimally adapted to the needs of adult dwarf rabbits. It provides the animals with all the important nutrients and building materials they need for a healthy and active life. The raw fiber-rich composition of VITA® Special encourages them to chew for longer and thereby supports the important abrasion of the nail teeth. Crude fiber also promotes digestion and ensures an intact metabolism.",
+      "price": 4.39,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-vita-special-adult-zwergkaninchen-600g.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Loftys 100g",
+      "description": "The airy, light baked Loftys are ideal as a small treat in between and are great as a reward snack. The delicious crunchy pillows contain valuable oats and tasty timothy hay and are wonderfully crispy piece by piece. It's really fun to listen to the animals eating! ",
+      "price": 2.09,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-loftys-100g.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft LIFE Wellness Dwarf Rabbit 600g",
+      "description": "LIFE Wellness contains neither grains, bran nor flour and is therefore ideal for feeding nutritionally sensitive dwarf rabbits. The soothing mix with marigolds, chamomile, cornflowers and meadow grasses contains valuable vitamins and minerals as well as a healthy proportion of crude fiber - important for supporting digestion and tooth abrasion. High-quality omega fatty acids also promote healthy skin and shiny rabbit fur. Developed by rodent experts and veterinarians!",
+      "price": 3.99,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-life-wellness-zwergkaninchen-600g.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Rollis Party 500g",
+      "description": "This “party mix” brings variety to the food bowl: the low-calcium party rollies for dwarf rabbits, guinea pigs, hamsters etc. are not only a hit in terms of taste, but also a great eye-catcher! In addition to sun-ripened grain and tasty alfalfa, the colorful crispy rings also contain valuable vitamins and minerals as well as a healthy proportion of crude fiber. Ideal as a supplement to the main food or as a snack in between.",
+      "price": 3.99,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-rollis-party-500g.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft LIFE Dream dwarf rabbit",
+      "description": "With the local food African from Vitakraft you can offer your lovebirds a very special food highlight. The food mixture is refined with acacia flowers, carob as well as delicious dates and figs - ingredients like those from Africa, the animals' original homeland! The rich mixture was scientifically developed by veterinarians and bird experts and of course contains all important nutrients and building materials such as vitamins, minerals and trace elements. ",
+      "price": 11.09,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-zwergkaninchen-life-dream.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft LIFE Power Dwarf Rabbit 600g",
+      "description": "Parakeet Perle® is a species-appropriate, balanced staple food for parakeets that not only tastes delicious to the birds, but also gives them everything they need for a healthy life. The proven iodine vital complex also prevents deficiency symptoms and provides an extra boost of vitality! With high-quality seeds and sun-ripened grain, aromatic eucalyptus leaves and delicious carrot pieces, the mixture is ideally tailored to the nutritional needs of parakeets. Vital vitamins, minerals and trace elements help provide optimal care for the animals.",
+      "price": 3.99,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-life-power-zwergkaninchen-600g.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Menu Vital for dwarf rabbits",
+      "description": "With the Vitakraft Menu Vital you can ensure a healthy and balanced meal for your dwarf rabbit. A proven vital complex ensures that deficiency symptoms are prevented and provides your animal with an extra portion of vitality. The ingredients are similar to natural food sources.The sugar-free food specially developed for dwarf rabbits contains vital vitamins, minerals and trace elements. Crude fibers have a digestive effect and ensure healthy intestinal flora. Unpleasant odors are reduced by special combinations of active ingredients and lead to better air in the rodent home.",
+      "price": 16.99,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-menu-vital-fur-zwergkaninchen.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "name": "Vitakraft Premium Menu Vital for Rats 1kg",
+      "description": "The complete food Vitakraft Vital optimally ensures the basic nutrition of your rat. The sugar-free recipe contributes to a healthy and balanced diet. Seedy grains, fruits, vegetables and delicious nuts are specifically designed to meet the needs of rats. Animal proteins and a developed vital complex give your animal an extra boost of vitality and vitality. In addition, special combinations of active ingredients reduce unpleasant odors in the rodent home.",
+      "price": 3.99,
+      "quantity": 80,
+      "category": "rodents",
+      "image": "https://www.zooroyal.de/cdn-cgi/image/height=600,fit=cover//media/image/vitakraft-premium-menu-vital-fur-ratten-1kg.jpg",
+      "createdAt": "2024-04-11T00:00:00.000Z"
+    }
+  ]

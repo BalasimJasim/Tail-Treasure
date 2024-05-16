@@ -2,100 +2,179 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./cart.scss";
+// import CartDelivery from "./CartDelivery";
+import { Steps } from "./constants";
+import Stepper from "./Stepper";
+import CartPayment from "./CartPayment";
+import CartConfirm from "./CartConfirm.jsx";
+import CartPlacedOrder from "./CartPlacedOrder.jsx";
+import CartDelivery from "./CartDelivery";
+import CartProcess from "./CartProcess";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [step, setStep] = useState(Steps.first); // Start with Cart (step 1)
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
-  }, [cartItems]);
-
-  const updateCartInLocalStorage = (items) => {
-    localStorage.setItem("cart", JSON.stringify(items));
-    setCartItems(items);
+  const goTo = (step) => {
+    setStep(step);
   };
 
-  const incrementQuantity = (id) => {
-    const newCart = cartItems.map((item) => {
-      console.log(id, item._id);
-      return item._id === id ? { ...item, quantity: item.quantity + 1 } : item;
-    });
-    updateCartInLocalStorage(newCart);
-  };
+  // const handleCheckout = () => {
+  //   setShowCheckout(true);
+  //   goTo(Steps.second); // Hide cart items and show the checkout form
+  // };
 
-  const decrementQuantity = (id) => {
-    const newCart = cartItems.map((item) => {
-      return item._id === id
-        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
-        : item;
-    });
-    updateCartInLocalStorage(newCart);
-  };
+  // const updateCartInLocalStorage = (items) => {
+  //   localStorage.setItem("cart", JSON.stringify(items));
+  //   setCartItems(items);
+  // };
 
-  const calculateTotal = () => {
-    return cartItems
-      .reduce((total, item) => total + item.quantity * item.price, 0)
-      .toFixed(2);
-  };
+  // const incrementQuantity = (id) => {
+  //   const newCart = cartItems.map((item) => {
+  //     console.log(id, item._id);
+  //     return item._id === id ? { ...item, quantity: item.quantity + 1 } : item;
+  //   });
+  //   updateCartInLocalStorage(newCart);
+  // };
 
-  if (cartItems.length === 0) {
-    return (
-      <div>
-        Your cart is empty. <Link to="/products">Go to Products</Link>
-      </div>
-    );
-  }
-  console.log({ cartItems });
+  // const decrementQuantity = (id) => {
+  //   const newCart = cartItems.map((item) => {
+  //     return item._id === id
+  //       ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+  //       : item;
+  //   });
+  //   updateCartInLocalStorage(newCart);
+  // };
 
-  const removeFromCart = (productId) => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const newCart = cart.filter((item) => item._id !== productId);
+  // const calculateTotal = () => {
+  //   return cartItems
+  //     .reduce((total, item) => total + item.quantity * item.price, 0)
+  //     .toFixed(2);
+  // };
+  // const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
+  // const shippingMessage =
+  //   calculateTotal() > 40
+  //     ? "Free Shipping: 0"
+  //     : `Shipping Cost: $${shippingCost}`;
+  // if (cartItems.length === 0) {
+  //   return (
+  //     <div>
+  //       Your cart is empty. <Link to="/products">Go to Products</Link>
+  //     </div>
+  //   );
+  // }
+  // console.log({ step, cartItems });
 
-    localStorage.setItem("cart", JSON.stringify(newCart));
+  // const removeFromCart = (productId) => {
+  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const newCart = cart.filter((item) => item._id !== productId);
+
+  //   localStorage.setItem("cart", JSON.stringify(newCart));
+  // };
+
+  const renderStep = () => {
+    switch (step) {
+      case Steps.first:
+        return <CartProcess step={step} goTo={goTo} />;
+      case Steps.second:
+        return (
+          <CartDelivery
+            // onNext={(details) => goTo(Steps.third, { delivery: details })}
+            goTo={goTo}
+          />
+        );
+      case Steps.third:
+        return (
+          <CartPayment
+            goTo={goTo}
+            // onNext={(details) => goTo(Steps.fourth, { payment: details })}
+          />
+        );
+      case Steps.fourth:
+        return (
+          <CartConfirm
+            goTo={goTo}
+            // details={orderDetails}
+            // onConfirm={() =>   }
+            // onBack={() => goTo(Steps.third)}
+          />
+        );
+      case Steps.fifth:
+        return <CartPlacedOrder onNext={goTo} />;
+
+      default:
+        return <div>Unknown step</div>;
+    }
   };
   return (
     <div className="cart-container d-flex flex-column">
-      {cartItems.map((item) => (
-        <div key={item._id} className="card cart-item d-flex flex-row">
-          <p className="m-3 img-container">
-            <img src={item.image} alt={item.name} className="product-image" />
-          </p>
-
-          <div>
-            <h4 className="m-3">{item.name}</h4>
-            <p className="m-3">Price: ${item.price}</p>
-            <div className="quantity-controls d-flex justify-content-between">
-              <p>
-                <button
-                  className="p-2 m-3"
-                  onClick={() => decrementQuantity(item._id)}
-                >
-                  -
-                </button>
-                <span> {item.quantity} </span>
-                <button
-                  className="p-2 m-3"
-                  onClick={() => incrementQuantity(item._id)}
-                >
-                  +
-                </button>
+      <Stepper step={step} />
+      {/* <div
+        className="processing-line d-flex justify-content-between
+      "
+      >
+        <p className="circle circle-active">1</p>
+        <p className="circle ">2</p>
+        <p className="circle ">3</p>
+        <p className="circle">4</p>
+        <p className="circle ">5</p>
+      </div> */}
+      {/* {!showCheckout ? ( */}
+      <>
+        {renderStep()}
+        {/* <div className="card">
+          {cartItems.map((item) => (
+            <div key={item._id} className="cart-item d-flex flex-row">
+              <p className="m-3 img-container">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="product-image"
+                />
               </p>
 
-              <p className="rmv-cont">
-                <button
-                  className="p-2 m-3 remove-btn"
-                  onClick={() => removeFromCart(item._id)}
-                >
-                  Remove
-                </button>
-              </p>
+              <div>
+                <h4 className="m-3">{item.name}</h4>
+                <p className="m-3">Price: ${item.price}</p>
+                <div className="quantity-controls d-flex justify-content-between">
+                  <p>
+                    <button
+                      className="p-2 m-3"
+                      onClick={() => decrementQuantity(item._id)}
+                    >
+                      -
+                    </button>
+                    <span> {item.quantity} </span>
+                    <button
+                      className="p-2 m-3"
+                      onClick={() => incrementQuantity(item._id)}
+                    >
+                      +
+                    </button>
+                  </p>
+
+                  <p className="rmv-cont">
+                    <button
+                      className="p-2 m-3 remove-btn"
+                      onClick={() => removeFromCart(item._id)}
+                    >
+                      Remove
+                    </button>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-      <div className="total">Total: ${calculateTotal()}</div>
-      <button className="checkout-btn">Checkout</button>
+          ))}
+          <div>Subtotal: ${calculateTotal()}</div>
+          <div>{shippingMessage}</div>
+          <div className="total">Total: {calculateTotal()}</div>
+          <button onClick={handleCheckout} className="checkout-btn ">
+            Checkout
+          </button>
+        </div> */}
+      </>
+      {/* ) : (
+        <CartDelivery /> // Show CartDelivery component when checkout is initiated
+      )} */}
     </div>
   );
 };

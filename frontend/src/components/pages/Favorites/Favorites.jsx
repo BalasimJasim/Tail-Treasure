@@ -9,7 +9,7 @@ const Favorites = () => {
   useEffect(() => {
     const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
     fetchFavoriteProducts(favoriteIds);
-  }, []);
+  }, [products]);
 
   const fetchFavoriteProducts = async (favoriteIds) => {
     console.log(favoriteIds);
@@ -60,7 +60,7 @@ const Favorites = () => {
   };
   const removeFromFavorites = (productId) => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const newFavorites = favorites.filter((item) => item._id !== productId);
+    const newFavorites = favorites.filter((id) => id !== productId);
 
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
     console.log(productId);
@@ -72,7 +72,10 @@ const Favorites = () => {
     <div className="favorites-container">
       {products.length > 0 ? (
         products.map((product) => (
-          <div key={product._id} className="product-card card d-flex flex-row ">
+          <div
+            key={product._id}
+            className="product-card card d-flex flex-row  "
+          >
             <p className="m-3 p-3 img-cont">
               <img
                 src={product.image}

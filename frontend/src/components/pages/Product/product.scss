@@ -14,13 +14,14 @@ body {
     text-decoration: none;
     color: black;
     img {
-      height: 200px;
+      height: 250px;
       border-radius: 0%;
     }
   }
 
   .card {
-    height: 400px;
+    height: 450px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
