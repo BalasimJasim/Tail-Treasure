@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import CartPayment from "./CartPayment";
 import "./CartDelivery.scss";
 import { Steps } from "./constants";
-
+import { useUserContext } from "../../contexts/UserContext";
 function CartDelivery({ goTo }) {
+  const { state } = useUserContext();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,7 +14,15 @@ function CartDelivery({ goTo }) {
   });
   const [showForm, setShowForm] = useState(true);
   // const [showPayment, setShowPayment] = useState(false);
-
+  useEffect(() => {
+    if (state.user) {
+      setFormData((prev) => ({
+        ...prev,
+        firstName: state.user.firstName || "",
+        lastName: state.user.lastName || "",
+      }));
+    }
+  }, [state.user]);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({

@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { Address } from "../models/AddressModel.js";
+// import { Address } from "../models/AddressModel.js";
 
 const required = true;
 const unique = true;
@@ -9,7 +9,7 @@ export const userSchema = new Schema({
   lastName: { type: String, required },
   email: { type: String, required, unique },
   password: { type: String, required },
-  address: { type: Address.schema, required },
+  // address: { type: Address.schema },
   phoneNumber: { type: String },
   bonusPoints: {
     type: Number,

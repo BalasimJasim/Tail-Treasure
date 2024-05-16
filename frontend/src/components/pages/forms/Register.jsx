@@ -18,10 +18,6 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [street, setStreet] = useState("");
-  const [postalCode, setPostalCode] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,12 +34,6 @@ function Register() {
         lastName,
         email,
         password,
-        address: {
-          city,
-          state,
-          street,
-          postalCode,
-        },
       };
 
       dispatch({ type: "REGISTER_USER_START" });
@@ -58,10 +48,6 @@ function Register() {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      setCity("");
-      setState("");
-      setStreet("");
-      setPostalCode("");
     } catch (error) {
       console.error("Registration failed:", error);
       dispatch({ type: "REGISTER_USER_FAILURE", payload: error.message });
@@ -185,10 +171,6 @@ function Register() {
                   !email ||
                   !password ||
                   !confirmPassword ||
-                  !city ||
-                  !state ||
-                  !street ||
-                  !postalCode ||
                   confirmPassword !== password
                 }
               />
