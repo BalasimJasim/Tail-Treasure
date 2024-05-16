@@ -1,16 +1,15 @@
-// export default Profile;
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import "./profile.css";
-
 import av1 from "../../../images/av1.png";
+import { useUserContext } from "../contexts/UserContext";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const [isEditing, setIsEditing] = useState(false);
-
+  const { state } = useUserContext();
+  const { user } = state;
   // Function to handle settings change
   function handleSettingsChange() {
-    console.log("button is working");
     setIsEditing(!isEditing);
   }
 
@@ -31,25 +30,35 @@ function Profile() {
       </header>
 
       <main className="dash-content">
-        <div className="profile-container">
-          <div className="profile-info">
-            <div className="profile-image">
-              <img src={av1} alt="Profile" />
-            </div>
-            <div className="profile-details">
-              <h2>Dr Balasim</h2>
-              <p>User ID: 12345</p>
-              <p>Customer ID: ABC123</p>
+        {state.user ? (
+          <div className="profile-container">
+            <div className="profile-info">
+              <div className="profile-image">
+                <img src={av1} alt="Profile" />
+              </div>
+              <div className="profile-details">
+                <h2>{user.firstName}</h2>
+                <p>User ID: {user.id}</p>
+                {/* <p>Customer ID: {state.user.customerId}</p> */}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="login-link">
+            <p>
+              Please <Link to="/login">login</Link> to view your profile.
+            </p>
+          </div>
+        )}
 
         <div className="profile-information">
-          <h2>Balasim's Profile Information</h2>
+          <h2> {user.firstName} Profile Information</h2>
           <div className="profile-details">
             <div>
               <label htmlFor="name">Name:</label>
-              <span className={isEditing ? "hidden" : "info"}>Balasim</span>
+              <span className={isEditing ? "hidden" : "info"}>
+                {user.firstName}
+              </span>
               <input
                 type="text"
                 id="name"
@@ -58,7 +67,9 @@ function Profile() {
             </div>
             <div>
               <label htmlFor="lastname">Lastname:</label>
-              <span className={isEditing ? "hidden" : "info"}>Balasimos</span>
+              <span className={isEditing ? "hidden" : "info"}>
+                {user.lastName}
+              </span>
               <input
                 type="text"
                 id="lastname"
@@ -68,7 +79,7 @@ function Profile() {
             <div>
               <label htmlFor="email">Email:</label>
               <span className={isEditing ? "hidden" : "info"}>
-                dr.Balasimos@hotmail.com
+                {user.email}
               </span>
               <input
                 type="email"
@@ -79,7 +90,7 @@ function Profile() {
             <div>
               <label htmlFor="address">Address:</label>
               <span className={isEditing ? "hidden" : "info"}>
-                BabylonStraße-3
+                {user.address}
               </span>
               <input
                 type="text"
@@ -89,7 +100,9 @@ function Profile() {
             </div>
             <div>
               <label htmlFor="region">Region:</label>
-              <span className={isEditing ? "hidden" : "info"}>Wukanda</span>
+              <span className={isEditing ? "hidden" : "info"}>
+                {state.city}
+              </span>
               <input
                 type="text"
                 id="region"
@@ -105,6 +118,7 @@ function Profile() {
           </button>
         </div>
       </main>
+
       <div className="navigation-buttons">
         <button className="navigation-btn">Your Orders</button>
         <button className="navigation-btn">Track Order</button>

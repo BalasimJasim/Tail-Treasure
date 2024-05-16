@@ -6,13 +6,7 @@ import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
 export const registerUser = async (req, res, next) => {
   try {
-    const {
-      firstName,
-      lastName,
-      email,
-      password,
-      address: { street, city, state, postalCode },
-    } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     const user = await User.findOne({ email });
     if (user) {
@@ -26,7 +20,6 @@ export const registerUser = async (req, res, next) => {
       lastName,
       email,
       password: hashedPassword,
-      address: { street, city, state, postalCode },
     });
 
     await newUser.save();

@@ -9,19 +9,10 @@ export const validateUser = async (req, res, next) => {
       lastName,
       email,
       password,
-      address: { street, city, state, postalCode },
+      // address: { street, city, state, postalCode },
     } = req.body;
     console.log(req.body);
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !password ||
-      !street ||
-      !city ||
-      !state ||
-      !postalCode
-    ) {
+    if (!firstName || !lastName || !email || !password) {
       res.status(400).json({ error: "All fields are required" });
       return;
     }

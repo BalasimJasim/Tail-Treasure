@@ -10,6 +10,7 @@ import Login from "./components/pages/forms/Login";
 import Reset from "./components/pages/forms/Reset";
 import Forgot from "./components/pages/forms/Forgot";
 import Profile from "./components/pages/Profile.jsx";
+
 import CustomerSupportForm from "./components/pages/CustomerSupportForm.jsx";
 import { Product } from "./components/pages/Product/Product";
 import NotFound from "./components/pages/NotFound";
@@ -35,7 +36,7 @@ import { ProductsCatalog } from "./components/pages/Product/ProdactsCatalog.jsx"
 import CartProcess from "./components/pages/cart/CartProcess.jsx";
 
 import { useUserContext } from "./components/contexts/UserContext.jsx";
-
+// import ProfileSidebar from "./components/pages/profileSidebar/ProfileSidebar.jsx";
 
 function App() {
   const { state } = useUserContext();
@@ -69,6 +70,8 @@ function App() {
         />
         <Route path="/customersupportform" element={<CustomerSupportForm />} />
         <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/profile-sidebar" element={<ProfileSidebar />} /> */}
+
         <Route path="/discount" element={<Discount />} />
         <Route
           path="/register"
