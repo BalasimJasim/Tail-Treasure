@@ -5,11 +5,12 @@ import "./favorites.scss";
 const Favorites = () => {
   const [products, setProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
+  const [isREmoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
     const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
     fetchFavoriteProducts(favoriteIds);
-  }, [products]);
+  }, [isREmoved]);
 
   const fetchFavoriteProducts = async (favoriteIds) => {
     console.log(favoriteIds);
@@ -63,6 +64,7 @@ const Favorites = () => {
     const newFavorites = favorites.filter((id) => id !== productId);
 
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    setIsRemoved(!isREmoved);
     console.log(productId);
     console.log(favorites);
     console.log(newFavorites);
