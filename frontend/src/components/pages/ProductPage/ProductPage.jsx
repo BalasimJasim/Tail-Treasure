@@ -272,6 +272,7 @@ const ProductPage = () => {
                         {review.user.firstName} {review.user.lastName}
                       </h5>
                       <p>{review.comment}</p>
+                      <p>{review.rating}</p>
                     </div>
                   ))}
                 </div>
