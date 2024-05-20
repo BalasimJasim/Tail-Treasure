@@ -37,8 +37,8 @@ function Profile() {
                 <img src={av1} alt="Profile" />
               </div>
               <div className="profile-details">
-                <h2>{user.firstName}</h2>
-                <p>User ID: {user.id}</p>
+                <h2>{user?.firstName}</h2>
+                <p>User ID: {user?.id}</p>
                 {/* <p>Customer ID: {state.user.customerId}</p> */}
               </div>
             </div>
@@ -52,7 +52,7 @@ function Profile() {
         )}
 
         <div className="profile-information">
-          <h2> {user.firstName} Profile Information</h2>
+          <h2> {user?.firstName} Profile Information</h2>
           <div className="profile-details">
             <div>
               <label htmlFor="name">Name:</label>

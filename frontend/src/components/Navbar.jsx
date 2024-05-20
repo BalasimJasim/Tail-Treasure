@@ -59,6 +59,8 @@ function Navbar() {
     }
   };
   const handleLogout = () => {
+    localStorage.removeItem("token");
+
     dispatch({ type: "LOGOUT" });
   };
   return (

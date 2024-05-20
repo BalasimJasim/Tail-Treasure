@@ -69,7 +69,10 @@ function App() {
           element={user?.isAdmin ? <CategoriesTable /> : <Home />}
         />
         <Route path="/customersupportform" element={<CustomerSupportForm />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={user ? <Profile /> : <Navigate to="/login" />}
+        />
         {/* <Route path="/profile-sidebar" element={<ProfileSidebar />} /> */}
 
         <Route path="/discount" element={<Discount />} />
