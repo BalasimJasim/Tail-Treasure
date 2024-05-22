@@ -1,8 +1,8 @@
 .deliv-cont {
-  width: 50%;
+  width: 100%;
   margin: auto;
   input {
-    width: 90%;
+    width: 100%;
     margin: auto;
     font-size: 1.3rem;
     padding: 8px;
@@ -13,35 +13,80 @@
   input:focus {
     outline: 3px solid rgb(245, 185, 73);
   }
-  .btn-save {
-    background-color: rgb(245, 185, 73);
-    border: none;
-    color: white;
-    display: block;
-    margin: 1rem 0;
-    width: 90%;
-    padding: 5px;
-    font-size: 1.5rem;
-    // font-weight: bold;
-    border-radius: 10px;
-  }
+}
+.btn-save {
+  background-color: rgb(245, 185, 73);
+  border: none;
+  color: white;
+  display: block;
+  // margin: 1rem 0;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 0 0 5px 5px;
+  font-weight: bold;
+  // border-radius: 5px;
 }
 .deliv-info {
-  width: 50%;
+  width: 70%;
   margin: auto;
-  p {
+  .info-field {
+    border: 1px solid rgb(245, 185, 73);
+    border-radius: 10px;
+    padding: 5px;
     font-size: 1.4rem;
+    margin-block: 1.5rem;
   }
 
   .btn-change {
-    background-color: rgb(245, 185, 73);
-    border: none;
-    color: white;
+    background-color: white;
+    // background-color: rgb(255, 248, 240);
+    border: 1px solid rgb(245, 185, 73);
+    color: rgb(245, 185, 73);
     display: block;
     margin: 1rem 0;
-    width: 30%;
+    width: 40%;
     padding: 5px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 10px;
   }
+}
+// .btn-action {
+//   width: 50%;
+//   background-color: rgb(245, 185, 73);
+//   border: none;
+//   color: white;
+//   display: block;
+//   margin: 0;
+//   padding: 5px;
+//   font-size: 1.5rem;
+//   text-transform: uppercase;
+// font-weight: bold;
+// border-radius: 10px;
+//}
+.back-btn {
+  border-right: white 1px solid;
+  border-radius: 0 0 0 5px;
+  width: 50%;
+  background-color: rgb(245, 185, 73);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+}
+.next-btn {
+  border-left: white 1px solid;
+  border-radius: 0 0 5px 0;
+  width: 50%;
+  background-color: rgb(245, 185, 73);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
 }

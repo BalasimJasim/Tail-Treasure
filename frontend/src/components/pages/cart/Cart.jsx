@@ -13,7 +13,50 @@ import CartProcess from "./CartProcess";
 
 const Cart = () => {
   const [step, setStep] = useState(Steps.first); // Start with Cart (step 1)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    postcode: "",
+    city: "",
+  });
+  const [cartItems, setCartItems] = useState([]);
+  const [paymentMethod, setPaymentMethod] = useState("creditCard");
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCart);
+  }, []);
+  const updateCartInLocalStorage = (items) => {
+    localStorage.setItem("cart", JSON.stringify(items));
+    setCartItems(items);
+  };
 
+  const incrementQuantity = (id) => {
+    const newCart = cartItems.map((item) =>
+      item._id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    updateCartInLocalStorage(newCart);
+  };
+
+  const decrementQuantity = (id) => {
+    const newCart = cartItems.map((item) =>
+      item._id === id
+        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+        : item
+    );
+    updateCartInLocalStorage(newCart);
+  };
+
+  const calculateTotal = () => {
+    return cartItems
+      .reduce((total, item) => total + item.quantity * item.price, 0)
+      .toFixed(2);
+  };
+
+  const total = calculateTotal();
+  const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
+  const shipping = total > 40 ? 0 : shippingCost;
+  const finalTotal = parseFloat(total) + parseFloat(shipping);
   const goTo = (step) => {
     setStep(step);
   };
@@ -74,32 +117,59 @@ const Cart = () => {
   const renderStep = () => {
     switch (step) {
       case Steps.first:
-        return <CartProcess step={step} goTo={goTo} />;
+        return (
+          <CartProcess
+            cartItems={cartItems}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+            calculateTotal={calculateTotal}
+            finalTotal={finalTotal}
+            step={step}
+            goTo={goTo}
+          />
+        );
       case Steps.second:
         return (
           <CartDelivery
             // onNext={(details) => goTo(Steps.third, { delivery: details })}
             goTo={goTo}
+            formData={formData}
+            setFormData={setFormData}
           />
         );
       case Steps.third:
         return (
           <CartPayment
             goTo={goTo}
+            formData={formData}
+            setFormData={setFormData}
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod}
             // onNext={(details) => goTo(Steps.fourth, { payment: details })}
           />
         );
       case Steps.fourth:
         return (
           <CartConfirm
+            cartItems={cartItems}
+            finalTotal={finalTotal}
             goTo={goTo}
+            formData={formData}
+            setFormData={setFormData}
+            paymentMethod={paymentMethod}
             // details={orderDetails}
             // onConfirm={() =>   }
             // onBack={() => goTo(Steps.third)}
           />
         );
       case Steps.fifth:
-        return <CartPlacedOrder onNext={goTo} />;
+        return (
+          <CartPlacedOrder
+            formData={formData}
+            setFormData={setFormData}
+            onNext={goTo}
+          />
+        );
 
       default:
         return <div>Unknown step</div>;

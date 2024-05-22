@@ -130,7 +130,7 @@ export const ProductItem = ({ product }) => {
             className="px-2 cart-btn"
             onClick={() => addProductToCart(product)}
           >
-            <FaCartPlus /> ADD TO CART
+            <FaCartPlus className="faCart" /> ADD TO CART
           </button>
         </div>
       </div>

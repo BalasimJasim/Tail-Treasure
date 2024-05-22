@@ -8,6 +8,7 @@ import { IoPawOutline } from "react-icons/io5";
 import { CartContext } from "../../contexts/CartContext";
 import { useUserContext } from "../../contexts/UserContext";
 import { FaHeart } from "react-icons/fa";
+import { PiStarFill } from "react-icons/pi";
 
 const ProductPage = () => {
   const { productID } = useParams();
@@ -271,6 +272,20 @@ const ProductPage = () => {
                       <h5>
                         {review.user.firstName} {review.user.lastName}
                       </h5>
+                      {new Array(5)
+                        .fill("<PiStarFill />")
+                        .map((star, index) => {
+                          return (
+                            <span
+                              key={index}
+                              className="star"
+                              style={{
+                                backgroundColor:
+                                  index < review.rating ? "yellow" : "white",
+                              }}
+                            ></span>
+                          );
+                        })}
                       <p>{review.comment}</p>
                     </div>
                   ))}
