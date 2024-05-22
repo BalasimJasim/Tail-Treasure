@@ -3,13 +3,17 @@ import "./Admin.css";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import AddCattegoryForm from "./AddCategoryForm";
-// import { useUserContext } from "../../contexts/UserContext";
 import { fetchAllUsers } from "../../../Helpers/fetches";
 import { fetchAllCategories } from "../../../Helpers/fetchCateg";
+import { fetchProducts } from "../../../Helpers/fetchProducts";
+import { fetchAllReviews } from "../../../Helpers/fetchProducts";
+
 const AdminMain = () => {
-  // const { userCount } = useUserContext();
   const [usersCount, setUserCount] = useState([]);
   const [categoriesCount, setCategCount] = useState([]);
+  const [productsCount, setProductsCount] = useState(0);
+  const [reviewsCount, setReviewsCount] = useState(0);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,7 +39,31 @@ const AdminMain = () => {
     };
     fetchData();
   }, []);
-  console.log("USERcounts:", usersCount);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const productData = await fetchProducts();
+        setProductsCount(productData.length);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchReviewsCount = async () => {
+      try {
+        const reviewsData = await fetchAllReviews();
+        setReviewsCount(reviewsData.length);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
+    fetchReviewsCount();
+  }, []);
+
   return (
     <div className="admin-main">
       <div className="admin-main-header">
@@ -63,7 +91,7 @@ const AdminMain = () => {
 
         <div className="admin-main-card">
           <h5 className="admin-main-title">Products </h5>
-          <div className="admin-main-count">200</div>
+          <div className="admin-main-count">{productsCount}</div>
           <div className="admin-card-link-wrapper">
             <Link
               className="admin-card-link"
@@ -76,11 +104,11 @@ const AdminMain = () => {
 
         <div className="admin-main-card">
           <h5 className="admin-main-title">Reviews </h5>
-          <div className="admin-main-count">120</div>
+          <div className="admin-main-count">{reviewsCount}</div>
           <div className="admin-card-link-wrapper">
             <Link
               className="admin-card-link"
-              to="admin-dashboard/reviews-table"
+              to="/admin-dashboard/reviews-table"
             >
               See all reviews
             </Link>

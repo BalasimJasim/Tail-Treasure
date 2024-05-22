@@ -1,4 +1,4 @@
-body {
+/* body {
   height: 100%;
   max-width: 1920px;
   margin: 0;
@@ -10,6 +10,7 @@ body {
     rgba(251, 198, 56, 1) 50%,
     rgba(250, 255, 132, 1) 75%
   ); */
+
 }
 */ .wrapper {
   display: flex;
@@ -28,6 +29,7 @@ body {
   ); */
   flex-direction: column;
 }
+
 .background-banner-two {
 }
 .banner-container {

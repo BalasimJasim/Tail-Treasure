@@ -14,13 +14,13 @@ const reviewSchema = new Schema({
   },
   comment: {
     type: String,
-    required,
   },
   rating: {
     type: Number,
     min: 1,
     max: 5,
   },
+
   image: String,
   createdAt: {
     type: Date,

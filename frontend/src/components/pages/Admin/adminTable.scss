@@ -148,6 +148,46 @@ $table-breakpoint-smallest: 520px;
   }
 }
 
+/* Adding product form */
+.table-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  input,
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1;
+  }
+
+  input[type="number"] {
+    width: calc(50% - 5px);
+  }
+
+  input[type="submit"],
+  button {
+    background-color: $table-button-background-color !important;
+    color: $table-text-color !important;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #80d680 !important;
+    }
+  }
+
+  button[type="button"] {
+    background-color: $table-delete-button-background-color !important;
+
+    &:hover {
+      background-color: #f66 !important;
+    }
+  }
+}
+
 @media (max-width: $table-breakpoint-medium) {
   .table-wrapper {
     padding: 15px;

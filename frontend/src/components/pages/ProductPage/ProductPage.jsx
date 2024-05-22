@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import "./productPage.scss";
+import "./productPage.css";
 import { FaCartPlus } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { useParams } from "react-router-dom";
@@ -18,6 +18,27 @@ const ProductPage = () => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
+
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 320 || window.innerWidth <= 768
+  );
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleShow = () => {
+    setIsClicked(!isClicked);
+  };
+
+  // this is for responsive
   // const [user, setUser] = useState(null);
   const [quantity, setQuantity] = useState(1);
   // const { addProduct, removeProduct } = useContext(CartContext);
@@ -188,11 +209,7 @@ const ProductPage = () => {
                   />
                 )}
               </p>
-              <img
-                src={product.image}
-                className="d-block"
-                style={{ width: "400px", height: "400px" }}
-              />
+              <img src={product.image} className="d-block" />
             </div>
             <div className="prod-text">
               <h1> {product.name}</h1>
@@ -246,8 +263,30 @@ const ProductPage = () => {
             </div>
           </div>
           <div>
-            {" "}
-            <p>Description: {product.description}</p>
+            <div>
+              <div>
+                {isMobile ? (
+                  <div>
+                    {isClicked ? (
+                      <div>
+                        Description {product.description}
+                        <span style={{ color: "blue" }} onClick={handleShow}>
+                          Read less
+                        </span>
+                      </div>
+                    ) : (
+                      <span style={{ color: "blue" }} onClick={handleShow}>
+                        Read more..
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <p className="description">
+                    Description: {product.description}
+                  </p>
+                )}
+              </div>
+            </div>
             <div>
               <h3>Reviews</h3>
               <div>
@@ -259,7 +298,12 @@ const ProductPage = () => {
                       cols="60"
                       rows="5"
                     ></textarea>
-                    <button onClick={addReviewHandler}>Submit</button>
+                    <button
+                      className="sub-button-pro"
+                      onClick={addReviewHandler}
+                    >
+                      Submit
+                    </button>
                   </div>
                 ) : (
                   <p>Please log in to add a review</p>
@@ -287,6 +331,7 @@ const ProductPage = () => {
                           );
                         })}
                       <p>{review.comment}</p>
+                      <p>{review.rating}</p>
                     </div>
                   ))}
                 </div>

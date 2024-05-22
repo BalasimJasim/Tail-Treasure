@@ -29,7 +29,9 @@ import Verifying from "./components/pages/forms/VeryfyingUser.jsx";
 import AdminDashboard from "./components/pages/Admin/AdminDashboard.jsx";
 import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
-// import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
+import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
+import ReviewTable from "./components/pages/Admin/ReviewTable.jsx";
+
 import { FooterPage } from "./components/pages/FooterPage";
 
 import { ProductsCatalog } from "./components/pages/Product/ProdactsCatalog.jsx";
@@ -58,10 +60,14 @@ function App() {
           path="/admin-dashboard/users-table"
           element={user?.isAdmin ? <UsersTable /> : <Navigate to="/" />}
         />
-        {/* <Route
+        <Route
+          path="/admin-dashboard/reviews-table"
+          element={user?.isAdmin ? <ReviewTable /> : <Navigate to="/" />}
+        />
+        <Route
           path="/admin-dashboard/products-table"
           element={<ProductsTable />}
-        /> */}
+        />
         <Route path="/footer-page" element={<FooterPage />} />
 
         <Route
@@ -69,7 +75,10 @@ function App() {
           element={user?.isAdmin ? <CategoriesTable /> : <Home />}
         />
         <Route path="/customersupportform" element={<CustomerSupportForm />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={user ? <Profile /> : <Navigate to="/login" />}
+        />
         {/* <Route path="/profile-sidebar" element={<ProfileSidebar />} /> */}
 
         <Route path="/discount" element={<Discount />} />
