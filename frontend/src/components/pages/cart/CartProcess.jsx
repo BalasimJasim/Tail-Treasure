@@ -69,6 +69,7 @@ function CartProcess({
     const newCart = cart.filter((item) => item._id !== productId);
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+    setIsRemoved(!isRemoved);
   };
   // const [orderDetails, setOrderDetails] = useState({
   //   delivery: {},
