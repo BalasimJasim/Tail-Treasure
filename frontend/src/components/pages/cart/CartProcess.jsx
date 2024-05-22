@@ -12,6 +12,8 @@ function CartProcess({
   calculateTotal,
   finalTotal,
   goTo,
+  isRemoved,
+  setIsRemoved,
 }) {
   // const [cartItems, setCartItems] = useState([]);
 

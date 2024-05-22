@@ -22,10 +22,11 @@ const Cart = () => {
   });
   const [cartItems, setCartItems] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
+  const [isRemoved, setIsRemoved] = useState(false);
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
-  }, []);
+  }, [isRemoved]);
   const updateCartInLocalStorage = (items) => {
     localStorage.setItem("cart", JSON.stringify(items));
     setCartItems(items);
@@ -126,6 +127,8 @@ const Cart = () => {
             finalTotal={finalTotal}
             step={step}
             goTo={goTo}
+            isRemoved={isRemoved}
+            setIsRemoved={setIsRemoved}
           />
         );
       case Steps.second:
