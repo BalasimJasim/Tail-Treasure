@@ -1,0 +1,38 @@
+.cart-placed-order {
+  //   width: 100%;
+  padding-block: 6rem;
+  img {
+    background-color: white;
+    width: 180px;
+    display: block;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    margin-block: 2rem;
+    font-size: 2.2rem;
+  }
+  p {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  button {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    width: 50%;
+    margin: 3rem auto;
+    display: block;
+    background-color: rgb(245, 185, 73);
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-radius: 10px;
+  }
+}
