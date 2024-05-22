@@ -1,8 +1,10 @@
 .footer-parent-container {
-  background-color: rgb(238, 231, 191);
+  background-color: rgb(240, 186, 80);
   color: rgb(0, 0, 0);
   padding: 1rem;
+  height: auto;
 }
+
 .footer-icons {
   margin-top: 1rem;
 }
@@ -19,12 +21,12 @@
 }
 .footer-card {
   display: flex;
-  padding-left: 25rem;
+  justify-content: space-evenly;
+
   padding-top: 1rem;
 }
 
 .footer-h2 {
-  text-align: left;
   padding-top: 0.2rem;
   padding-bottom: 0.5rem;
   text-decoration: underline;
@@ -41,25 +43,56 @@
   height: 1rem;
 }
 .footer-menu {
-  padding-right: 10rem;
+  padding-right: 0;
 }
-.footer-catalogue {
-  padding-left: 5rem;
+.footer-catalog {
+  padding-left: 0rem;
 }
 .footer-contact {
-  padding-left: 15rem;
+  padding-left: 0rem;
+  max-width: 35%;
 }
 .footer-a {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-
-/*responsive style*/
-
-@media screen and (max-width: 768px) {
+@media only screen and (max-device-width: 480px) {
   .footer-card {
-    padding-left: 0.5rem;
-    flex-direction: column;
-    align-items: left;
+    display: block;
+    padding-left: 0.8rem;
+    padding-top: 0.8rem;
+  }
+
+  .footer-menu {
+    padding-right: 1rem;
+  }
+
+  .footer-catalog {
+    padding-left: 1rem;
+  }
+
+  .footer-contact {
+  }
+  .footer-icons {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .footer-card {
+    padding-left: 0;
+    padding-bottom: 1rem;
+  }
+
+  .footer-menu {
+    padding-right: 10%;
+  }
+
+  .footer-catalog {
+    padding-left: 10%;
+  }
+
+  .footer-contact {
+    padding-left: 10%;
   }
 }

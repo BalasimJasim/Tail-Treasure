@@ -1,1 +1,15 @@
-
+.product-container {
+  display: flex;
+}
+.product-h1 {
+  font-size: 2rem;
+}
+.card-title {
+  text-decoration: none;
+}
+.product-text-container {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}

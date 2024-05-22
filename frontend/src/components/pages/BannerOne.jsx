@@ -17,8 +17,16 @@ export const BannerOne = () => {
             backgroundSize: "cover",
           }}
         >
-          <h3 className="dog">
-            <Link to="/products/category/dogs">For Dogs</Link>
+          <h3
+            className="dog"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <Link
+              to="/products/category/dogs"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              For Dogs
+            </Link>
           </h3>
         </div>
         <div
@@ -29,8 +37,16 @@ export const BannerOne = () => {
             backgroundSize: "cover",
           }}
         >
-          <h3 className="hamster">
-            <Link to="/products/category/rodents">For Rodents</Link>
+          <h3
+            className="hamster"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <Link
+              to="/products/category/rodents"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              For Rodents
+            </Link>
           </h3>
         </div>
         <div
@@ -42,7 +58,12 @@ export const BannerOne = () => {
           }}
         >
           <h3 className="bird">
-            <Link to="/products/category/birds">For the Birds</Link>
+            <Link
+              to="/products/category/birds"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              For the Birds
+            </Link>
           </h3>
         </div>
         <div
@@ -54,7 +75,12 @@ export const BannerOne = () => {
           }}
         >
           <h3 className="cat">
-            <Link to="/products/category/cats">For Cats</Link>
+            <Link
+              to="/products/category/cats"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              For Cats
+            </Link>
           </h3>
         </div>
       </div>
