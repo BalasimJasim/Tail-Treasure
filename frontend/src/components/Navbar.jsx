@@ -65,14 +65,17 @@ function Navbar() {
   };
   return (
     <nav className="container-navbar">
-      <motion.h1
+      <div>
+        <img className="logo" src="../images/logo.jpg" alt="" />
+      </div>
+      {/* <motion.h1
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 1 }}
         className="navbar-h1"
       >
         Tail-Treasure
-      </motion.h1>
+      </motion.h1>*/}
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
