@@ -54,7 +54,7 @@ const Cart = () => {
       .toFixed(2);
   };
 
-  const total = calculateTotal();
+  const total = parseFloat(calculateTotal()).toFixed(2);
   const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
   const shipping = total > 40 ? 0 : shippingCost;
   const finalTotal = parseFloat(total) + parseFloat(shipping);

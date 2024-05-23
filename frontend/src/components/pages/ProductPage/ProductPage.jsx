@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./productPage.css";
+import "./productPage.scss";
 import { FaCartPlus } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { useParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import { CartContext } from "../../contexts/CartContext";
 import { useUserContext } from "../../contexts/UserContext";
 import { FaHeart } from "react-icons/fa";
 import { PiStarFill } from "react-icons/pi";
-
+import { FaRegCircleUser } from "react-icons/fa6";
 const ProductPage = () => {
   const { productID } = useParams();
   const [product, setProduct] = useState(null);
@@ -191,9 +192,9 @@ const ProductPage = () => {
   return (
     <div className="prod-container">
       {product ? (
-        <div>
+        <div className="card">
           <div className="d-flex justify-content-between">
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column cont-img">
               <p className=" d-flex justify-content-end m-1">
                 {isFavorite ? (
                   <FaHeart
@@ -213,13 +214,13 @@ const ProductPage = () => {
             </div>
             <div className="prod-text">
               <h1> {product.name}</h1>
-              <p>Price: {product.price}</p>
+              <p>Price: {product.price}€</p>
 
               <div className=" d-flex justify-content-between flex-column ">
                 <div className="cont-quant d-flex ">
                   <button
                     onClick={decrementQuantity}
-                    className="p-2 quantity"
+                    className=" quantity"
                     style={{
                       height: "40px",
                       backgroundColor: " rgb(245, 185, 73)",
@@ -228,12 +229,12 @@ const ProductPage = () => {
                   >
                     -
                   </button>
-                  <p className="quantity p-2 " style={{ color: "black" }}>
+                  <p className="quantity " style={{ color: "black" }}>
                     {quantity}
                   </p>
                   <button
                     onClick={incrementQuantity}
-                    className="p-2 quantity"
+                    className=" quantity"
                     style={{
                       height: "40px",
                       backgroundColor: " rgb(245, 185, 73)",
@@ -243,10 +244,11 @@ const ProductPage = () => {
                     +
                   </button>
                 </div>
+
                 <button
                   onClick={() => addProductToCart(productID)}
                   style={{ fontSize: "1.4rem" }}
-                  className=" px-5 py-0 cart-btn"
+                  className="  cart-btn"
                   // style={{
                   //   backgroundColor: " rgb(245, 185, 73)",
                   //   fontSize: "1.3rem",
@@ -264,12 +266,12 @@ const ProductPage = () => {
           </div>
           <div>
             <div>
-              <div>
+              <div className="desc-cont">
                 {isMobile ? (
                   <div>
                     {isClicked ? (
                       <div>
-                        Description {product.description}
+                        Description: {product.description}
                         <span style={{ color: "blue" }} onClick={handleShow}>
                           Read less
                         </span>
@@ -282,7 +284,8 @@ const ProductPage = () => {
                   </div>
                 ) : (
                   <p className="description">
-                    Description: {product.description}
+                    <h3>Description</h3>
+                    {product.description}
                   </p>
                 )}
               </div>
@@ -312,10 +315,23 @@ const ProductPage = () => {
               {reviews.length > 0 ? (
                 <div>
                   {reviews.map((review) => (
-                    <div key={review._id}>
-                      <h5>
-                        {review.user.firstName} {review.user.lastName}
-                      </h5>
+                    <div className="cont-review" key={review._id}>
+                      <div className="d-flex justify-content-between review-cont-name">
+                        <h5 className="review-name">
+                          {review.user.firstName} {review.user.lastName}
+                        </h5>
+                        <p className="">
+                          {" "}
+                          {new Date(review.createdAt).toLocaleDateString(
+                            "en-US",
+                            {
+                              day: "2-digit",
+                              month: "2-digit",
+                              year: "numeric",
+                            }
+                          )}
+                        </p>
+                      </div>
                       {new Array(5)
                         .fill("<PiStarFill />")
                         .map((star, index) => {
