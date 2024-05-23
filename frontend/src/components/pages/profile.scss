@@ -1,0 +1,141 @@
+$background-color: #fff8f0; // light yellow
+$header-footer-color: #fee6b8; // for footer
+$primary-color: #edb44b; // orange
+$text-color: #333; // dark text
+$secondary-text-color: #666; // lighter text
+$input-border-color: #ccc; // input border color
+
+.dash-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background-color;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+.dash-header h1 {
+  margin: 0;
+}
+
+.dash-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dash-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.dash-sidebar ul li a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.dash-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.profile-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-details {
+  text-align: left;
+}
+
+.profile-information {
+  text-align: left;
+}
+
+.profile-details > div {
+  margin-bottom: 10px;
+}
+
+.profile-details label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: $text-color;
+}
+
+.profile-details .info {
+  display: block;
+  margin-bottom: 5px;
+  color: $secondary-text-color;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid $input-border-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.change-settings-btn {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.change-settings-btn:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation-btn {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navigation-btn:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+.dash-footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: $header-footer-color;
+  color: $text-color;
+}
