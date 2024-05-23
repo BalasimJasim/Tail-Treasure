@@ -57,12 +57,12 @@
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
   .service-child-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjust grid for tablets */
-    padding: 1.5rem; /* Adjust padding */
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
   }
 
   .service-h2 {
-    padding: 0.5rem; /* Adjust padding */
+    padding: 0.5rem;
   }
 }
 
@@ -89,12 +89,13 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: rgb(235, 180, 71);
   }
 
   .service-h2 {
     grid-row: 2;
     padding: 1rem;
+    font-size: 1rem;
   }
 
   .service-p {
