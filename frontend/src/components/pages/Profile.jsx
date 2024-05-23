@@ -1,47 +1,65 @@
 import React, { useState } from "react";
-import "./profile.css";
+import "./profile.scss";
 import av1 from "../../../images/av1.png";
 import { useUserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 
-function Profile() {
+const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const { state } = useUserContext();
   const { user } = state;
-  // Function to handle settings change
-  function handleSettingsChange() {
+  const [formData, setFormData] = useState({
+    firstName: user?.firstName || "",
+    lastName: user?.lastName || "",
+    email: user?.email || "",
+    address: user?.address || "",
+    region: user?.region || "",
+  });
+
+  const handleSettingsChange = () => {
+    if (isEditing) {
+      // Save changes (you would implement saving logic here)
+      console.log("Saving changes:", formData);
+    }
     setIsEditing(!isEditing);
-  }
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
 
   return (
     <div className="dash-container">
       <header className="dash-header">
-        <h1>Profile</h1>
+        <h1>{user?.firstName}</h1>
         <nav className="dash-sidebar">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/CustomerSupportForm">Support</a>
+              <Link to="/CustomerSupportForm">Support</Link>
             </li>
           </ul>
         </nav>
       </header>
 
       <main className="dash-content">
-        {state.user ? (
+        {user ? (
           <div className="profile-container">
-            <div className="profile-info">
-              <div className="profile-image">
-                <img src={av1} alt="Profile" />
-              </div>
-              <div className="profile-details">
-                <h2>{user?.firstName}</h2>
-                <p>User ID: {user?.id}</p>
-                {/* <p>Customer ID: {state.user.customerId}</p> */}
-              </div>
-            </div>
+            <ProfileHeader user={user} avatar={av1} />
+            <ProfileInformation
+              isEditing={isEditing}
+              formData={formData}
+              handleInputChange={handleInputChange}
+            />
+            <button
+              className="change-settings-btn"
+              onClick={handleSettingsChange}
+            >
+              {isEditing ? "Save Changes" : "Change Settings"}
+            </button>
           </div>
         ) : (
           <div className="login-link">
@@ -51,86 +69,59 @@ function Profile() {
           </div>
         )}
 
-        <div className="profile-information">
-          <h2> {user?.firstName} Profile Information</h2>
-          <div className="profile-details">
-            <div>
-              <label htmlFor="name">Name:</label>
-              <span className={isEditing ? "hidden" : "info"}>
-                {user.firstName}
-              </span>
-              <input
-                type="text"
-                id="name"
-                className={`input-field ${isEditing ? "" : "hidden"}`}
-              />
-            </div>
-            <div>
-              <label htmlFor="lastname">Lastname:</label>
-              <span className={isEditing ? "hidden" : "info"}>
-                {user.lastName}
-              </span>
-              <input
-                type="text"
-                id="lastname"
-                className={`input-field ${isEditing ? "" : "hidden"}`}
-              />
-            </div>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <span className={isEditing ? "hidden" : "info"}>
-                {user.email}
-              </span>
-              <input
-                type="email"
-                id="email"
-                className={`input-field ${isEditing ? "" : "hidden"}`}
-              />
-            </div>
-            <div>
-              <label htmlFor="address">Address:</label>
-              <span className={isEditing ? "hidden" : "info"}>
-                {user.address}
-              </span>
-              <input
-                type="text"
-                id="address"
-                className={`input-field ${isEditing ? "" : "hidden"}`}
-              />
-            </div>
-            <div>
-              <label htmlFor="region">Region:</label>
-              <span className={isEditing ? "hidden" : "info"}>
-                {state.city}
-              </span>
-              <input
-                type="text"
-                id="region"
-                className={`input-field ${isEditing ? "" : "hidden"}`}
-              />
-            </div>
-          </div>
-          <button
-            className="change-settings-btn"
-            onClick={handleSettingsChange}
-          >
-            {isEditing ? "Save Changes" : "Change Settings"}
-          </button>
+        <div className="navigation-buttons">
+          <button className="navigation-btn">Your Orders</button>
+          <button className="navigation-btn">Track Order</button>
+          <button className="navigation-btn">Buy Again</button>
+          <button className="navigation-btn">Your Lists</button>
         </div>
       </main>
-
-      <div className="navigation-buttons">
-        <button className="navigation-btn">Your Orders</button>
-        <button className="navigation-btn">Track Order</button>
-        <button className="navigation-btn">Buy Again</button>
-        <button className="navigation-btn">Your Lists</button>
-      </div>
 
       <footer className="dash-footer">
         <p>&copy; 2024 Tail Treasure</p>
       </footer>
     </div>
   );
-}
+};
+
+const ProfileHeader = ({ user, avatar }) => (
+  <div className="profile-info">
+    <div className="profile-image">
+      <img src={avatar} alt="Profile" />
+    </div>
+    <div className="profile-details">
+      <h2>
+        {user?.firstName} {user?.lastName}
+      </h2>
+      <p>User ID: {user?.id}</p>
+    </div>
+  </div>
+);
+
+const ProfileInformation = ({ isEditing, formData, handleInputChange }) => (
+  <div className="profile-information">
+    <h2>{formData.firstName} Profile Information</h2>
+    <div className="profile-details">
+      {["firstName", "lastName", "email", "address", "region"].map((field) => (
+        <div key={field}>
+          <label htmlFor={field}>{capitalize(field)}:</label>
+          {isEditing ? (
+            <input
+              type={field === "email" ? "email" : "text"}
+              id={field}
+              value={formData[field]}
+              onChange={handleInputChange}
+              className="input-field"
+            />
+          ) : (
+            <span className="info">{formData[field]}</span>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 export default Profile;
