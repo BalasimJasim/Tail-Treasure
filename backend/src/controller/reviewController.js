@@ -4,7 +4,10 @@ import { User } from "../models/UserModel.js";
 
 export const getAllReview = async (req, res, next) => {
   try {
-    const reviews = await Review.find({});
+    const reviews = await Review.find({}).populate(
+      "user",
+      "firstName lastName"
+    );
     res.json({ message: "success", data: reviews });
   } catch (error) {
     next(error);

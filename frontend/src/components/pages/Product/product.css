@@ -35,10 +35,12 @@ body {
 }
 .Product .card:hover .cart-btn {
   visibility: visible;
+  font-weight: 900;
 }
 .Product .cart-btn {
   background-color: rgb(245, 185, 73);
   font-size: 1.3rem;
+  /* font-weight: 900; */
   width: 20rem;
   position: absolute;
   right: 0;
@@ -76,4 +78,5 @@ body {
 
 .cart:hover .cart-btn {
   visibility: visible;
-}/*# sourceMappingURL=product.css.map */
+  font-weight: bold;
+} /*# sourceMappingURL=product.css.map */
