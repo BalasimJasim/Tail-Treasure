@@ -23,12 +23,7 @@ const Discount = () => {
 
   return (
     <div className="main-container">
-      <h2 className="discount-h2">
-        Enjoy a 30% discount on a wide range of premium food and accessories,
-        exclusively for new customers. Treat your furry friend to the best
-        products while saving big! Hurry, grab your favorites now and pamper
-        your pet with quality items at unbeatable prices!
-      </h2>
+      <h2 className="discount-h2">Enjoy a 30% discount on first Purchase</h2>
 
       <h1 className="discount-h1">Premium food for Dogs</h1>
       <div className="dog-container">
