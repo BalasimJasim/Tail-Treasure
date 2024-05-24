@@ -5,46 +5,59 @@ import { Steps } from "./constants.js";
 // import Stepper from "./Stepper.jsx";
 import { Link } from "react-router-dom";
 
-function CartProcess({ goTo }) {
-  const [cartItems, setCartItems] = useState([]);
+function CartProcess({
+  cartItems,
+  incrementQuantity,
+  decrementQuantity,
+  calculateTotal,
+  finalTotal,
+  goTo,
+  isRemoved,
+  setIsRemoved,
+}) {
+  // const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
-  }, []);
+  // useEffect(() => {
+  //   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   setCartItems(storedCart);
+  // }, []);
 
-  const updateCartInLocalStorage = (items) => {
-    localStorage.setItem("cart", JSON.stringify(items));
-    setCartItems(items);
-  };
+  // const updateCartInLocalStorage = (items) => {
+  //   localStorage.setItem("cart", JSON.stringify(items));
+  //   setCartItems(items);
+  // };
 
-  const incrementQuantity = (id) => {
-    const newCart = cartItems.map((item) => {
-      console.log(id, item._id);
-      return item._id === id ? { ...item, quantity: item.quantity + 1 } : item;
-    });
-    updateCartInLocalStorage(newCart);
-  };
+  // const incrementQuantity = (id) => {
+  //   const newCart = cartItems.map((item) => {
+  //     console.log(id, item._id);
+  //     return item._id === id ? { ...item, quantity: item.quantity + 1 } : item;
+  //   });
+  //   updateCartInLocalStorage(newCart);
+  // };
 
-  const decrementQuantity = (id) => {
-    const newCart = cartItems.map((item) => {
-      return item._id === id
-        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
-        : item;
-    });
-    updateCartInLocalStorage(newCart);
-  };
+  // const decrementQuantity = (id) => {
+  //   const newCart = cartItems.map((item) => {
+  //     return item._id === id
+  //       ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+  //       : item;
+  //   });
+  //   updateCartInLocalStorage(newCart);
+  // };
 
-  const calculateTotal = () => {
-    return cartItems
-      .reduce((total, item) => total + item.quantity * item.price, 0)
-      .toFixed(2);
-  };
+  // const calculateTotal = () => {
+  //   return cartItems
+  //     .reduce((total, item) => total + item.quantity * item.price, 0)
+  //     .toFixed(2);
+  // };
+  const total = calculateTotal();
+
   const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
-  const shippingMessage =
-    calculateTotal() > 40
-      ? "Free Shipping: 0"
-      : `Shipping Cost: $${shippingCost}`;
+  const shipping = total > 40 ? 0 : shippingCost;
+  // const finalTotal = parseFloat(total) + parseFloat(shipping);
+  // const shippingMessage =
+  //   calculateTotal() > 40
+  //     ? "Free Shipping: 0"
+  //     : `Shipping Cost: ${shippingCost}`;
   if (cartItems.length === 0) {
     return (
       <div>
@@ -58,6 +71,7 @@ function CartProcess({ goTo }) {
     const newCart = cart.filter((item) => item._id !== productId);
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+    setIsRemoved(!isRemoved);
   };
   // const [orderDetails, setOrderDetails] = useState({
   //   delivery: {},
@@ -121,7 +135,7 @@ function CartProcess({ goTo }) {
               <img src={item.image} alt={item.name} className="product-image" />
             </p>
 
-            <div>
+            <div className="w-75">
               <h4 className="m-3">{item.name}</h4>
               <p className="m-3">Price: ${item.price}</p>
               <div className="quantity-controls d-flex justify-content-between">
@@ -153,12 +167,24 @@ function CartProcess({ goTo }) {
             </div>
           </div>
         ))}
-        <div>
-          <p>Subtotal:</p> <p>${calculateTotal()}</p>
-        </div>
-        <div>{shippingMessage}</div>
-        <div className="total">
-          <p>Total:</p> <p>{calculateTotal()}</p>
+        <div className="total-cart">
+          <div className="d-flex justify-content-between mx-2">
+            <p>Subtotal:</p> <p>{calculateTotal()}€</p>
+          </div>
+          <div className="d-flex justify-content-between mx-2">
+            {total > 40 ? (
+              <>
+                <p>Free Shipping:</p> <p>0€</p>
+              </>
+            ) : (
+              <>
+                <p>Shipping Cost:</p> <p>{shipping}€</p>
+              </>
+            )}
+          </div>
+          <div className="total d-flex justify-content-between mx-2">
+            <p>Total:</p> <p>{parseFloat(finalTotal).toFixed(2)}€</p>
+          </div>
         </div>
         <button onClick={nextStep} className="checkout-btn ">
           Checkout

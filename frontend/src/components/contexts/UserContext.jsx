@@ -8,7 +8,6 @@ import React, {
   useState,
 } from "react";
 import { userReducer } from "../../../reducer/userReducer";
-
 import {
   deleteUserById,
   fetchUserCount,
@@ -16,7 +15,6 @@ import {
 } from "../../Helpers/fetches";
 import Swal from "sweetalert2";
 import { FiCloudLightning } from "react-icons/fi";
-
 const initialState = {
   user: null,
   isAccountVerified: false,
@@ -26,15 +24,13 @@ const initialState = {
 };
 console.log(initialState);
 const UserContext = createContext(initialState);
-
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
   const [userCount, setUserCount] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //  user data exists in local storage?
-
+        // user data exists in local storage?
         const storedUserData = localStorage.getItem("userData");
         if (storedUserData) {
           dispatch({ type: "LOGIN", payload: JSON.parse(storedUserData) });
@@ -48,11 +44,9 @@ export const UserProvider = ({ children }) => {
     };
     fetchData();
   }, []);
-
   useEffect(() => {
     localStorage.setItem("userData", JSON.stringify(state));
   }, [state]);
-
   const deleteUser = async (userId) => {
     try {
       const result = await Swal.fire({
@@ -62,7 +56,6 @@ export const UserProvider = ({ children }) => {
         buttons: true,
         dangerMode: true,
       });
-
       if (result.isConfirmed) {
         await deleteUserById(userId);
         dispatch({ type: "DELETE_USER", payload: userId });
@@ -92,5 +85,4 @@ export const UserProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
-
 export const useUserContext = () => useContext(UserContext);

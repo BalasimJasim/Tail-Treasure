@@ -77,3 +77,17 @@ export const userResetPassword = async ({ userId, token, password }) => {
     throw error;
   }
 };
+
+export const fetchUserById = async (userId) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axios.get(`/users/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

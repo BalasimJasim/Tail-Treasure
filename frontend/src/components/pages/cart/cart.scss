@@ -26,10 +26,12 @@
   }
   .cart-item {
     margin: 1em auto;
+    width: 90%;
+    justify-content: stretch;
 
     .img-container {
       background-color: white;
-      padding: 2rem;
+      // padding: 2rem;
     }
     img {
       border-radius: 0%;
@@ -55,11 +57,22 @@
       }
     }
   }
-
+  .total-cart {
+    margin: 2rem auto;
+    padding-block: 2rem;
+    width: 90%;
+    border-bottom: solid 2px rgb(245, 185, 73);
+    border-top: solid 2px rgb(245, 185, 73);
+  }
   .checkout-btn {
     background-color: rgb(245, 185, 73);
     border: none;
     color: white;
     padding: 1rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0 0 5px 5px;
   }
 }
