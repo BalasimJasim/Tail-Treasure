@@ -4,7 +4,9 @@ import axios from "axios";
 import "./product.scss";
 import { ProductItem } from "./ProductItem";
 import { useParams } from "react-router-dom";
-
+import "./product.scss";
+// import "../ProductPage/productPage.scss";
+import { Audio, RotatingLines } from "react-loader-spinner";
 export const Product = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
@@ -37,14 +39,36 @@ export const Product = () => {
   // };
   console.log({ products });
   return (
-    <div className="Product">
-      {products.length > 0 ? (
-        products.map((product) => (
-          <ProductItem product={product} key={product._id} />
-        ))
-      ) : (
-        <div>No products found</div>
-      )}
-    </div>
+    <>
+      <div className="line">
+        <div className="Product">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <ProductItem product={product} key={product._id} />
+            ))
+          ) : (
+            <>
+              <div>
+                {" "}
+                render(
+                <RotatingLines
+                  visible={true}
+                  height="96"
+                  width="96"
+                  color=" rgb(245, 185, 73) 2px;"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  ariaLabel="rotating-lines-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+                ){/* <div className="line"> </div> */}
+                <div>Loading</div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </>
   );
 };

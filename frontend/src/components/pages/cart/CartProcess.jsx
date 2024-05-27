@@ -60,8 +60,16 @@ function CartProcess({
   //     : `Shipping Cost: ${shippingCost}`;
   if (cartItems.length === 0) {
     return (
-      <div>
-        Your cart is empty. <Link to="/products">Go to Products</Link>
+      <div className="card text-center p-5">
+        <img
+          className="empty-cart-img"
+          src="https://www.godinein.com/assets/frontend/default/images/empty-cart.png"
+          alt=""
+        />
+        <p className="empty-cart">Your cart is empty.</p>{" "}
+        <Link className="back-to-prod" to="/products">
+          Go to Products
+        </Link>
       </div>
     );
   }
@@ -137,7 +145,7 @@ function CartProcess({
 
             <div className="w-75">
               <h4 className="m-3">{item.name}</h4>
-              <p className="m-3">Price: ${item.price}</p>
+              <p className="m-3">Price: {item.price}€</p>
               <div className="quantity-controls d-flex justify-content-between">
                 <p>
                   <button

@@ -190,176 +190,178 @@ const ProductPage = () => {
   // };
   // console.log(localStorage.getItem("cart"));
   return (
-    <div className="prod-container">
-      {product ? (
-        <div className="card">
-          <div className="d-flex justify-content-between">
-            <div className="d-flex flex-column cont-img">
-              <p className=" d-flex justify-content-end m-1">
-                {isFavorite ? (
-                  <FaHeart
-                    onClick={toggleFavorite}
-                    className="favorite active"
-                    fontSize="1.5rem"
-                  />
-                ) : (
-                  <FiHeart
-                    onClick={toggleFavorite}
-                    className="favorite"
-                    fontSize="1.5rem"
-                  />
-                )}
-              </p>
-              <img src={product.image} className="d-block" />
-            </div>
-            <div className="prod-text">
-              <h1> {product.name}</h1>
-              <p>Price: {product.price}€</p>
-
-              <div className=" d-flex justify-content-between flex-column ">
-                <div className="cont-quant d-flex ">
-                  <button
-                    onClick={decrementQuantity}
-                    className=" quantity"
-                    style={{
-                      height: "40px",
-                      backgroundColor: " rgb(245, 185, 73)",
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    -
-                  </button>
-                  <p className="quantity " style={{ color: "black" }}>
-                    {quantity}
-                  </p>
-                  <button
-                    onClick={incrementQuantity}
-                    className=" quantity"
-                    style={{
-                      height: "40px",
-                      backgroundColor: " rgb(245, 185, 73)",
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    +
-                  </button>
-                </div>
-
-                <button
-                  onClick={() => addProductToCart(productID)}
-                  style={{ fontSize: "1.4rem" }}
-                  className="  cart-btn"
-                  // style={{
-                  //   backgroundColor: " rgb(245, 185, 73)",
-                  //   fontSize: "1.3rem",
-                  //   width: "20rem",
-                  //   marginLeft: "0",
-                  //   position: "absolute",
-                  //   right: "0",
-                  //   opacity: "0",
-                  // }}
-                >
-                  <FaCartPlus /> ADD TO CART
-                </button>
+    <div className="line">
+      <div className="prod-container">
+        {product ? (
+          <div className="card">
+            <div className="d-flex justify-content-between">
+              <div className="d-flex flex-column cont-img">
+                <p className=" d-flex justify-content-end m-1">
+                  {isFavorite ? (
+                    <FaHeart
+                      onClick={toggleFavorite}
+                      className="favorite active"
+                      fontSize="1.5rem"
+                    />
+                  ) : (
+                    <FiHeart
+                      onClick={toggleFavorite}
+                      className="favorite"
+                      fontSize="1.5rem"
+                    />
+                  )}
+                </p>
+                <img src={product.image} className="d-block" />
               </div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div className="desc-cont">
-                {isMobile ? (
-                  <div>
-                    {isClicked ? (
-                      <div>
-                        Description: {product.description}
-                        <span style={{ color: "blue" }} onClick={handleShow}>
-                          Read less
-                        </span>
-                      </div>
-                    ) : (
-                      <span style={{ color: "blue" }} onClick={handleShow}>
-                        Read more..
-                      </span>
-                    )}
-                  </div>
-                ) : (
-                  <p className="description">
-                    <h3>Description</h3>
-                    {product.description}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div>
-              <h3>Reviews</h3>
-              <div>
-                {userState.isAccountVerified ? (
-                  <div>
-                    <textarea
-                      value={reviewInput}
-                      onChange={(e) => setReviewInput(e.target.value)}
-                      cols="60"
-                      rows="5"
-                    ></textarea>
+              <div className="prod-text">
+                <h1> {product.name}</h1>
+                <p>Price: {product.price}€</p>
+
+                <div className=" d-flex justify-content-between flex-column ">
+                  <div className="cont-quant d-flex ">
                     <button
-                      className="sub-button-pro"
-                      onClick={addReviewHandler}
+                      onClick={decrementQuantity}
+                      className=" quantity"
+                      style={{
+                        height: "40px",
+                        backgroundColor: " rgb(245, 185, 73)",
+                        fontSize: "1.5rem",
+                      }}
                     >
-                      Submit
+                      -
+                    </button>
+                    <p className="quantity " style={{ color: "black" }}>
+                      {quantity}
+                    </p>
+                    <button
+                      onClick={incrementQuantity}
+                      className=" quantity"
+                      style={{
+                        height: "40px",
+                        backgroundColor: " rgb(245, 185, 73)",
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      +
                     </button>
                   </div>
+
+                  <button
+                    onClick={() => addProductToCart(productID)}
+                    style={{ fontSize: "1.4rem" }}
+                    className="  cart-btn"
+                    // style={{
+                    //   backgroundColor: " rgb(245, 185, 73)",
+                    //   fontSize: "1.3rem",
+                    //   width: "20rem",
+                    //   marginLeft: "0",
+                    //   position: "absolute",
+                    //   right: "0",
+                    //   opacity: "0",
+                    // }}
+                  >
+                    <FaCartPlus /> ADD TO CART
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div className="desc-cont">
+                  {isMobile ? (
+                    <div>
+                      {isClicked ? (
+                        <div>
+                          Description: {product.description}
+                          <span style={{ color: "blue" }} onClick={handleShow}>
+                            Read less
+                          </span>
+                        </div>
+                      ) : (
+                        <span style={{ color: "blue" }} onClick={handleShow}>
+                          Read more..
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="description">
+                      <h3>Description</h3>
+                      {product.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div>
+                <h3>Reviews</h3>
+                <div>
+                  {userState.isAccountVerified ? (
+                    <div>
+                      <textarea
+                        value={reviewInput}
+                        onChange={(e) => setReviewInput(e.target.value)}
+                        cols="60"
+                        rows="5"
+                      ></textarea>
+                      <button
+                        className="sub-button-pro"
+                        onClick={addReviewHandler}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  ) : (
+                    <p>Please log in to add a review</p>
+                  )}
+                </div>
+                {reviews.length > 0 ? (
+                  <div>
+                    {reviews.map((review) => (
+                      <div className="cont-review" key={review._id}>
+                        <div className="d-flex justify-content-between review-cont-name">
+                          <h5 className="review-name">
+                            {review.user.firstName} {review.user.lastName}
+                          </h5>
+                          <p className="">
+                            {" "}
+                            {new Date(review.createdAt).toLocaleDateString(
+                              "en-US",
+                              {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric",
+                              }
+                            )}
+                          </p>
+                        </div>
+                        {new Array(5)
+                          .fill("<PiStarFill />")
+                          .map((star, index) => {
+                            return (
+                              <span
+                                key={index}
+                                className="star"
+                                style={{
+                                  backgroundColor:
+                                    index < review.rating ? "yellow" : "white",
+                                }}
+                              ></span>
+                            );
+                          })}
+                        <p>{review.comment}</p>
+                        <p>{review.rating}</p>
+                      </div>
+                    ))}
+                  </div>
                 ) : (
-                  <p>Please log in to add a review</p>
+                  <p>No reviews yet</p>
                 )}
               </div>
-              {reviews.length > 0 ? (
-                <div>
-                  {reviews.map((review) => (
-                    <div className="cont-review" key={review._id}>
-                      <div className="d-flex justify-content-between review-cont-name">
-                        <h5 className="review-name">
-                          {review.user.firstName} {review.user.lastName}
-                        </h5>
-                        <p className="">
-                          {" "}
-                          {new Date(review.createdAt).toLocaleDateString(
-                            "en-US",
-                            {
-                              day: "2-digit",
-                              month: "2-digit",
-                              year: "numeric",
-                            }
-                          )}
-                        </p>
-                      </div>
-                      {new Array(5)
-                        .fill("<PiStarFill />")
-                        .map((star, index) => {
-                          return (
-                            <span
-                              key={index}
-                              className="star"
-                              style={{
-                                backgroundColor:
-                                  index < review.rating ? "yellow" : "white",
-                              }}
-                            ></span>
-                          );
-                        })}
-                      <p>{review.comment}</p>
-                      <p>{review.rating}</p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p>No reviews yet</p>
-              )}
             </div>
           </div>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 };

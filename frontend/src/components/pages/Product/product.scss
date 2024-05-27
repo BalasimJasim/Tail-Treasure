@@ -3,13 +3,18 @@ body {
   //rgb(245, 185, 73) orange
   //rgb(254, 230, 184) ligth yellow
 }
-
+.line {
+  width: 92%;
+  border-top: 3px solid rgb(245, 185, 73);
+  margin: auto;
+  margin-top: 0.5rem;
+}
 .Product {
   background-color: rgb(255, 248, 240);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 70%;
+  width: 80%;
   margin: auto;
   a {
     text-decoration: none;
@@ -22,7 +27,7 @@ body {
 
   .card {
     height: 450px;
-
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -20,7 +20,7 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
 
   return (
     <div className="cart-confirm card">
-      <h2 className="text-center">Order Summary</h2>
+      <h2 className="text-center title-confirm">Order Summary</h2>
       <div className="order-cont">
         <div>
           <h3 className="conf-title">Products</h3>
@@ -35,7 +35,7 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
               </p>
               <div className="w-75">
                 <h4 className="m-3">{item.name}</h4>
-                <p className="m-3">Price: ${item.price}</p>{" "}
+                <p className="m-3">Price: {item.price}€</p>{" "}
                 <p className="m-3">Quantity: {item.quantity}</p>
               </div>
             </div>
