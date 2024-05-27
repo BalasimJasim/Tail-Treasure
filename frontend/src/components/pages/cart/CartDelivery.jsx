@@ -62,6 +62,7 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
+                required
               />
               <p>Last name*</p>
               <input
@@ -69,6 +70,7 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
+                required
               />
               <p>Address line*</p>
               <input
@@ -76,6 +78,7 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
+                required
               />
               <p>Postcode*</p>
               <input
@@ -83,6 +86,7 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 name="postcode"
                 value={formData.postcode}
                 onChange={handleChange}
+                required
               />
               <p>Town / City*</p>
               <input
@@ -90,6 +94,7 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
+                required
               />{" "}
             </div>
             <p>*mandatory field</p>

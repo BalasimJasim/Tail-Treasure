@@ -2,10 +2,10 @@
   background-color: rgb(255, 248, 240);
   //rgb(245, 185, 73) orange
   //rgb(254, 230, 184) ligth yellow
-  width: 100vw;
+  width: 80%;
   height: 100vh;
-  padding: 5% 20%;
-  margin: auto;
+  padding: 3% 10%;
+  // margin: auto;
   .card {
     padding: 2rem;
     .desc-cont {
@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 1.4rem;
   }
   .pls-mns {
     width: 40px;

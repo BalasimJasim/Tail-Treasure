@@ -4,7 +4,7 @@
 // }
 form {
   input {
-    width: 90%;
+    width: 100%;
     margin: auto;
     font-size: 1.3rem;
     padding: 8px;
@@ -16,8 +16,13 @@ form {
     outline: 3px solid rgb(245, 185, 73);
   }
 }
+.credit-form {
+  width: 100%;
+}
 .visa {
   width: 250px;
+  margin: auto;
+  display: block;
 }
 .paypal {
   width: 200px;
@@ -28,14 +33,15 @@ form {
   font-family: Poppins;
   font-weight: 400;
 
-  width: 70%;
+  width: 100%;
+  font-size: 1.2rem;
   p {
     color: rgb(95, 95, 95);
   }
   .paypal-input {
     width: 100%;
     margin: auto;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 8px;
     border: 1px solid lightgray;
     border-radius: 5px;

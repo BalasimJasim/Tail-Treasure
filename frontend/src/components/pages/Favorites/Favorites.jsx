@@ -72,6 +72,7 @@ const Favorites = () => {
 
   return (
     <div className="favorites-container">
+      <div className="line"></div>
       {products.length > 0 ? (
         products.map((product) => (
           <div
@@ -89,7 +90,7 @@ const Favorites = () => {
             <div className="product-details">
               <h4 className="m-3">{product.name}</h4>
 
-              <p className="m-3">Price: {product.price}</p>
+              <p className="m-3">Price: {product.price}€</p>
               {/* <div className="quantity-controls">
                 <button onClick={() => decrementQuantity(product.id)}>-</button>
                 <span> {quantities[product.id]} </span>
