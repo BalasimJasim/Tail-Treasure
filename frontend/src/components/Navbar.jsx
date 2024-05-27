@@ -3,11 +3,14 @@ import React from "react";
 
 import {
   FaShoppingCart,
-  FaHeart,
   FaSignInAlt,
   FaUserPlus,
   FaUser,
 } from "react-icons/fa";
+
+import { BiHeart } from "react-icons/bi";
+import { FaRegUser } from "react-icons/fa6";
+import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
@@ -110,20 +113,30 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
-              <FaShoppingCart size={20} className="nav-icon" />
+
               <span className="nav-name">Cart</span>
+
+              <BsCart size={22} className="nav-icon" />
+
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
-              <FaHeart size={20} className="nav-icon" />
+
               <span className="nav-name">Favorites</span>
+
+              <BiHeart size={22} className="nav-icon" />
+
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">
-              <FaUser size={20} className="nav-icon" />
+
+             
               <span className="nav-name">Profile</span>
+
+              <FaRegUser size={22} className="nav-icon" />
+
             </Link>
           </li>
         </ul>
