@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
+
 import { FaHeart, FaSignInAlt, FaUserPlus, FaUser } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 import { LuHeart } from "react-icons/lu";
+
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
@@ -44,7 +46,7 @@ function Navbar() {
       );
     } else {
       return (
-        <li className="nav-item">
+        <li className="nav-item logout-item">
           {" "}
           <Link to="/login">
             <button className="nav-button">
@@ -64,6 +66,7 @@ function Navbar() {
     <nav className="container-navbar">
       <div>
         <img className="logo" src="../images/logo.jpg" alt="" />
+        <h1 className="navbar-h1">Tail-Treasure</h1>
       </div>
       {/* <motion.h1
         initial={{ opacity: 0, x: -100 }}
@@ -106,17 +109,33 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
+
               <FiShoppingCart size={20} className="nav-icon" />
+
+
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
+
               <LuHeart size={20} className="nav-icon" />
+
+
+          
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">
+
               <FaRegUser size={20} className="nav-icon" />
+
+
+             
+              
+
+              
+
+
             </Link>
           </li>
         </ul>

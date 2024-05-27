@@ -1,12 +1,12 @@
 .product-background {
   background-color: rgb(255, 255, 255);
-  min-height: 1000px;
+  min-height: 800px;
 }
 
 .product-h1 {
   text-align: center;
   font-size: 3.5rem;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
 }
 .product-ul {
   width: auto;
@@ -14,20 +14,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  padding-top: 0rem;
 }
 
 .product-li {
   font-size: 1.5rem;
   list-style: none;
   text-decoration: none;
-  margin: 4rem;
+  margin: 1rem;
 }
 
 .product-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(211, 108, 108);
+
   margin-top: 0.5rem;
 }
 .product-text-container {
@@ -39,7 +40,7 @@
   margin: 1rem;
 }
 
-.card {
+.card1 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -57,7 +58,7 @@ a {
   text-decoration: none;
 }
 
-.card:hover {
+.card1:hover {
   transform: scale(1.05);
 }
 
@@ -67,52 +68,51 @@ a {
   overflow: hidden;
 }
 
-.card-img-top {
+.card-img-top1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card-body {
+.card-body1 {
   padding: 1rem;
   text-align: left;
 }
 
-.card-title {
+.card-title1 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
-.card-text {
+.card-text1 {
   font-size: 1rem;
-  color: #777;
+  color: #fa0000;
   text-align: right;
 }
 
-.favorite {
+.favorite1 {
   color: #ff6b6b;
   cursor: pointer;
 }
 
-.cart-btn {
+.cart-btn1 {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
 }
 
-.cart-btn button {
+.cart-btn1 {
   background-color: rgb(233, 178, 69);
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 2px 2px 2px 2px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
 
-.cart-btn button:hover {
+.cart-btn1:hover {
   background-color: rgb(233, 178, 69);
 }
 
@@ -130,7 +130,7 @@ a {
     display: none;
   }
 
-  .card {
+  .card1 {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem;
@@ -142,19 +142,19 @@ a {
     margin: 2px auto;
   }
 
-  .card-body {
+  .card-body1 {
     padding: 0.5rem;
     text-align: center;
     margin: 1rem auto;
   }
 
-  .card-title {
+  .card-title1 {
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 0.5rem;
   }
 
-  .card-text {
+  .card-text1 {
     font-size: 1.2rem;
     text-align: center;
     margin-top: 1rem;
@@ -165,10 +165,9 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-left: ;
   }
 
-  .cart-btn button {
+  .cart-btn1 button {
     padding: 0.5rem;
     font-size: 0.8rem;
   }
@@ -185,7 +184,7 @@ a {
     flex-direction: column;
   }
 
-  .card {
+  .card1 {
     width: 100%;
     max-width: 280px;
     margin: 1rem;
@@ -194,25 +193,25 @@ a {
   .img-container {
     height: 250px;
   }
-  .card-img-top {
+  .card-img-top1 {
     max-width: 200px;
     margin: 2px;
   }
 
-  .card-body {
+  .card-body1 {
     padding: 0.7rem;
   }
-  .card-title {
+  .card-title1 {
     font-size: 1.1rem;
     text-decoration: none;
     text-align: center;
     margin-bottom: 0.5rem;
   }
 
-  .card-text {
+  .card-text1 {
     font-size: 1rem;
   }
-  .cart-btn button {
+  .cart-btn1 button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
