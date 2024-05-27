@@ -21,48 +21,48 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
 
   return (
     <div className="card ">
-      <div className="m-auto">
+      <div className="m-auto w-75">
         <h2 className="text-center my-2">Choose Payment Method</h2>
         <div
-          className="d-flex justify-content-around m-auto"
+          className="d-flex justify-content-around m-auto w-50"
           onChange={onPaymentMethodChange}
         >
           <input
             type="radio"
-            value="creditCard"
+            value="CreditCard"
             name="paymentMethod"
             defaultChecked
           />{" "}
           Credit/Debit Card
-          <input type="radio" value="paypal" name="paymentMethod" /> PayPal
+          <input type="radio" value="PayPal" name="paymentMethod" /> PayPal
         </div>
 
-        {paymentMethod === "creditCard" ? (
+        {paymentMethod === "CreditCard" ? (
           <div>
             <img
               className="visa"
               src="https://financialit.net/sites/default/files/visa-mastercard-amex_0.png"
               alt=""
             />
-            <form onSubmit={onPaymentSubmission}>
+            <form className="credit-form" onSubmit={onPaymentSubmission}>
               <p>Card Holder*</p>
               <input type="text" name="cardHolder" required />
               <p>Card Number*</p>
               <input
                 type="text"
                 name="cardNumber"
-                required
                 placeholder="Enter card number"
+                required
               />
               <p>Expiry Date*</p>
               <input
                 type="text"
                 name="expiryDate"
-                required
                 placeholder="MM/YY"
+                required
               />
               <p>Security Code*</p>
-              <input type="text" name="cvv" required placeholder="CVV" />
+              <input type="text" name="cvv" placeholder="CVV" required />
               {/* <button type="submit">Pay</button> */}
             </form>
             <p>*mandatory field</p>
@@ -82,6 +82,7 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
                 name=""
                 id=""
                 placeholder="Email address"
+                required
               />
               <input
                 className="paypal-input"
@@ -89,6 +90,7 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
                 name=""
                 id=""
                 placeholder="Password"
+                required
               />
               <button className="paypal-btn">Log In</button>
             </form>
@@ -101,7 +103,11 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
         <button className="btn-action back-btn" onClick={goBack}>
           Back
         </button>
-        <button className="btn-action next-btn" onClick={onPaymentSubmission}>
+        <button
+          className="btn-action next-btn"
+          type="submit"
+          onClick={onPaymentSubmission}
+        >
           Confirm Payment
         </button>
       </div>

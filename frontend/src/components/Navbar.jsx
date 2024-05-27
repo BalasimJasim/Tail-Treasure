@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-import {
-  FaShoppingCart,
-  FaHeart,
-  FaSignInAlt,
-  FaUserPlus,
-  FaUser,
-} from "react-icons/fa";
+
+import { FaHeart, FaSignInAlt, FaUserPlus, FaUser } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa6";
+import { FiShoppingCart } from "react-icons/fi";
+import { LuHeart } from "react-icons/lu";
+
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
@@ -110,20 +109,33 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/cart">
-              <FaShoppingCart size={20} className="nav-icon" />
-              <span className="nav-name">Cart</span>
+
+              <FiShoppingCart size={20} className="nav-icon" />
+
+
             </Link>
           </li>
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/products/:userId/favorites">
-              <FaHeart size={20} className="nav-icon" />
-              <span className="nav-name">Favorites</span>
+
+              <LuHeart size={20} className="nav-icon" />
+
+
+          
             </Link>
           </li>
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/profile">
-              <FaUser size={20} className="nav-icon" />
-              <span className="nav-name">Profile</span>
+
+              <FaRegUser size={20} className="nav-icon" />
+
+
+             
+              
+
+              
+
+
             </Link>
           </li>
         </ul>
