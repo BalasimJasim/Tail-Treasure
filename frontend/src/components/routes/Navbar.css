@@ -198,7 +198,6 @@
     margin-bottom: -10px;
   }
 
-
   .nav-span::after {
     content: "";
     position: absolute;
@@ -208,7 +207,6 @@
     height: 5px;
     background-color: rgb(228, 184, 79);
   }
-
 
   .burger-icon {
     display: flex;
