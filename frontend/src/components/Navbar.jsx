@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-
 import { FaHeart, FaSignInAlt, FaUserPlus, FaUser } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
@@ -65,7 +64,7 @@ function Navbar() {
   return (
     <nav className="container-navbar">
       <div>
-        <img className="logo" src="../images/logo.jpg" alt="" />
+        <img className="logo" src="/images/logo.jpg" alt="Tail-Treasure Logo" />
         <h1 className="navbar-h1">Tail-Treasure</h1>
       </div>
       {/* <motion.h1
@@ -109,33 +108,17 @@ function Navbar() {
           )}
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/cart">
-
               <FiShoppingCart size={20} className="nav-icon" />
-
-
             </Link>
           </li>
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/products/:userId/favorites">
-
               <LuHeart size={20} className="nav-icon" />
-
-
-          
             </Link>
           </li>
           <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/profile">
-
               <FaRegUser size={20} className="nav-icon" />
-
-
-             
-              
-
-              
-
-
             </Link>
           </li>
         </ul>
