@@ -39,7 +39,7 @@ function Navbar() {
   const authButton = () => {
     if (isAccountVerified) {
       return (
-        <li className="nav-item">
+        <li className="nav-item" onClick={() => setShowMenu(false)}>
           <button className="nav-button" onClick={handleLogout}>
             <span className="nav-span">Logout</span>
           </button>
@@ -47,7 +47,7 @@ function Navbar() {
       );
     } else {
       return (
-        <li className="nav-item logout-item">
+        <li className="nav-item" onClick={() => setShowMenu(false)}>
           {" "}
           <Link to="/login">
             <button className="nav-button">
@@ -78,20 +78,20 @@ function Navbar() {
         Tail-Treasure
       </motion.h1>*/}
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 1, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 1, duration: 0 }}
         style={{ fontSize: "" }}
       >
         <ul className={`nav-ul ${showMenu ? "show" : ""}`}>
-          <li className="nav-item">
+          <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/">
               <button className="nav-button">
                 <span className="nav-span">Home</span>
               </button>
             </Link>
           </li>
-          <li>
+          <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/products">
               <button className="nav-button">
                 <span className="nav-span">Products</span>
@@ -100,7 +100,7 @@ function Navbar() {
           </li>
           {authButton()}
           {isAdmin && (
-            <li className="nav-item">
+            <li className="nav-item" onClick={() => setShowMenu(false)}>
               <button className="nav-button">
                 <Link to="/admin-dashboard">
                   <span className="nav-span">Admin</span>
@@ -108,19 +108,19 @@ function Navbar() {
               </button>
             </li>
           )}
-          <li className="nav-item" onClick={toggleCart}>
+          <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/cart">
               <FaShoppingCart size={20} className="nav-icon" />
               <span className="nav-name">Cart</span>
             </Link>
           </li>
-          <li>
+          <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/products/:userId/favorites">
               <FaHeart size={20} className="nav-icon" />
               <span className="nav-name">Favorites</span>
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={() => setShowMenu(false)}>
             <Link to="/profile">
               <FaUser size={20} className="nav-icon" />
               <span className="nav-name">Profile</span>

@@ -16,6 +16,7 @@
   width: 40%;
   padding-top: 1.5rem;
   color: rgb(255, 255, 255);
+  display: none;
 }
 
 .bannertwo-button {
