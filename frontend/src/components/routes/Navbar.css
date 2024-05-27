@@ -29,6 +29,7 @@
   position: relative;
 }
 .nav-item a {
+  color: black;
   text-decoration: none;
 }
 .nav-button {
@@ -47,6 +48,9 @@
 .nav-span:hover {
   text-decoration: dashed;
   font-weight: 900;
+}
+.nav-icon {
+  color: black;
 }
 
 .nav-ul.show {
