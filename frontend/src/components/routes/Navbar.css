@@ -1,4 +1,3 @@
-
 /* routes/Navbar.css */
 
 /* Navbar.css */
@@ -21,7 +20,6 @@
   padding: 2rem 2rem;
   width: 100%;
   height: 6rem;
-
 }
 
 .navbar-h1 {
@@ -42,6 +40,9 @@
 .nav-item {
   margin: 0 1rem;
 }
+.nav-icon {
+  color: black;
+}
 
 .nav-button {
   background: none;
@@ -55,10 +56,6 @@
 
 .nav-span {
   margin-left: 0.5rem;
-}
-
-.nav-icon {
-  color: #002292;
 }
 
 .burger-icon {
