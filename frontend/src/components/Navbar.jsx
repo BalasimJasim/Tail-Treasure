@@ -1,85 +1,32 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-
-import { FaHeart, FaSignInAlt, FaUserPlus, FaUser } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 import { LuHeart } from "react-icons/lu";
-
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
 import { useUserContext } from "./contexts/UserContext";
-import { useState, useEffect } from "react";
-import Cart from "./pages/cart/Cart";
-import Profile from "./pages/Profile";
 
 function Navbar() {
-  const { state, dispatch } = useUserContext();
+  const { state } = useUserContext();
   const { isAdmin, isAccountVerified } = state;
-
-  // const { state, dispatch } = useUserContext();
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [framerMotion, setFramerMotion] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  useEffect(() => {
-    if (!framerMotion) {
-      setFramerMotion(true);
-    }
-    setTimeout(() => {}, 3000);
-  }, []);
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
+
   const toggleMobileMenu = () => {
     setShowMenu(!showMenu);
   };
-  const authButton = () => {
-    if (isAccountVerified) {
-      return (
-        <li className="nav-item" onClick={() => setShowMenu(false)}>
-          <button className="nav-button" onClick={handleLogout}>
-            <span className="nav-span">Logout</span>
-          </button>
-        </li>
-      );
-    } else {
-      return (
-        <li className="nav-item" onClick={() => setShowMenu(false)}>
-          {" "}
-          <Link to="/login">
-            <button className="nav-button">
-              <span className="nav-span">Login</span>
-            </button>
-          </Link>
-        </li>
-      );
-    }
-  };
-  const handleLogout = () => {
-    localStorage.removeItem("token");
 
-    dispatch({ type: "LOGOUT" });
-  };
   return (
     <nav className="container-navbar">
       <div>
         <img className="logo" src="/images/logo.jpg" alt="Tail-Treasure Logo" />
         <h1 className="navbar-h1">Tail-Treasure</h1>
       </div>
-      {/* <motion.h1
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="navbar-h1"
-      >
-        Tail-Treasure
-      </motion.h1>*/}
       <motion.div
         initial={{ opacity: 1, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0 }}
-        style={{ fontSize: "" }}
       >
         <ul className={`nav-ul ${showMenu ? "show" : ""}`}>
           <li className="nav-item" onClick={() => setShowMenu(false)}>
@@ -96,14 +43,28 @@ function Navbar() {
               </button>
             </Link>
           </li>
-          {authButton()}
+          {isAccountVerified ? (
+            <li className="nav-item" onClick={() => setShowMenu(false)}>
+              <Link to="/profile">
+                <FaRegUser size={20} className="nav-icon" />
+              </Link>
+            </li>
+          ) : (
+            <li className="nav-item" onClick={() => setShowMenu(false)}>
+              <Link to="/login">
+                <button className="nav-button">
+                  <span className="nav-span">Login</span>
+                </button>
+              </Link>
+            </li>
+          )}
           {isAdmin && (
             <li className="nav-item" onClick={() => setShowMenu(false)}>
-              <button className="nav-button">
-                <Link to="/admin-dashboard">
+              <Link to="/admin-dashboard">
+                <button className="nav-button">
                   <span className="nav-span">Admin</span>
-                </Link>
-              </button>
+                </button>
+              </Link>
             </li>
           )}
           <li className="nav-item" onClick={() => setShowMenu(false)}>
@@ -116,11 +77,6 @@ function Navbar() {
               <LuHeart size={20} className="nav-icon" />
             </Link>
           </li>
-          <li className="nav-item" onClick={() => setShowMenu(false)}>
-            <Link to="/profile">
-              <FaRegUser size={20} className="nav-icon" />
-            </Link>
-          </li>
         </ul>
       </motion.div>
       <div className="burger-icon" onClick={toggleMobileMenu}>
@@ -128,8 +84,8 @@ function Navbar() {
         <div className={`bar ${showMenu ? "animation2" : ""}`}></div>
         <div className={`bar ${showMenu ? "animation3" : ""}`}></div>
       </div>
-      {/* {isCartOpen && <Cart />} */}
     </nav>
   );
 }
+
 export default Navbar;
