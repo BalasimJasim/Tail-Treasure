@@ -96,8 +96,9 @@ function CartDelivery({ goTo, formData, setFormData }) {
                 onChange={handleChange}
                 required
               />{" "}
+              <p>*mandatory field</p>
             </div>
-            <p>*mandatory field</p>
+
             <button className="btn-save" type="submit">
               SAVE
             </button>

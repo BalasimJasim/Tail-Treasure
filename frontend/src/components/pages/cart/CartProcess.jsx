@@ -51,7 +51,7 @@ function CartProcess({
   // };
   const total = calculateTotal();
 
-  const shippingCost = calculateTotal() > 39.99 ? 0 : 15;
+  const shippingCost = calculateTotal() > 39.99 ? 0 : 4.99;
   const shipping = total > 40 ? 0 : shippingCost;
   // const finalTotal = parseFloat(total) + parseFloat(shipping);
   // const shippingMessage =

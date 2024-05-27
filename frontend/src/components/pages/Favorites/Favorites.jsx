@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./favorites.scss";
+import { BsHeartbreak } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { MdHeartBroken } from "react-icons/md";
 
 const Favorites = () => {
   const [products, setProducts] = useState([]);
@@ -106,7 +109,16 @@ const Favorites = () => {
           </div>
         ))
       ) : (
-        <p>No favorites added yet!</p>
+        <div className="card empty-favorite">
+          <p>
+            <MdHeartBroken className="brocken-heart" />
+            {/* <BsHeartbreak className="brocken-heart" /> */}
+          </p>
+          <p>No favorites added yet!</p>
+          <button className="back-to-prod">
+            <Link to="/products">Go to Products</Link>
+          </button>
+        </div>
       )}
     </div>
   );

@@ -16,7 +16,7 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
     goTo(Steps.fourth);
   };
   const goBack = () => {
-    goTo(Steps.third);
+    goTo(Steps.second);
   };
 
   return (
