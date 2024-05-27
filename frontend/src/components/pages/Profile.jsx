@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const { state } = useUserContext();
+  const { state, dispatch } = useUserContext();
   const { user } = state;
   const [formData, setFormData] = useState({
     firstName: user?.firstName || "",
@@ -18,7 +18,6 @@ const Profile = () => {
 
   const handleSettingsChange = () => {
     if (isEditing) {
-      // Save changes (you would implement saving logic here)
       console.log("Saving changes:", formData);
     }
     setIsEditing(!isEditing);
@@ -27,6 +26,11 @@ const Profile = () => {
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    dispatch({ type: "LOGOUT" });
   };
 
   return (
@@ -59,6 +63,9 @@ const Profile = () => {
               onClick={handleSettingsChange}
             >
               {isEditing ? "Save Changes" : "Change Settings"}
+            </button>
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
             </button>
           </div>
         ) : (
