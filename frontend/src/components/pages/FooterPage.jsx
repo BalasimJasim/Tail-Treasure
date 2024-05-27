@@ -68,17 +68,18 @@ export const FooterPage = () => {
                 21:00
               </li>
               <li className="footer-li">
-                <a
-                  href="https://www.google.com/maps/place/Alexanderplatz+Strasse+77,+77777+Berlin,+Germany"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-a"
-                >
-                  <FaMapMarkerAlt className="footer-icon" /> - Address
-                  <span className="footer-span">
-                    - Alexanderplatz Strasse 77, 77777 Berlin, Germany
-                  </span>
-                </a>
+                <FaMapMarkerAlt className="footer-icon" /> - Address
+                <span className="footer-span">
+                  -
+                  <a
+                    className="footer-a"
+                    href="https://www.google.com/maps/place/Alexanderplatz+Strasse+77,+77777+Berlin,+Germany"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Alexanderplatz Strasse 77, 77777 Berlin, Germany
+                  </a>
+                </span>
               </li>
             </ul>
           </div>

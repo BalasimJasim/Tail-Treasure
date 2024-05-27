@@ -82,49 +82,28 @@ body {
   border: none;
 }
 
-.product-background {
-  background-color: white;
-  height: 1000px;
-}
-
-.product-h1 {
-  text-align: center;
-  font-size: 4rem;
-  padding-top: 5rem;
-}
-.product-ul {
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.product-li {
-  font-size: 2rem;
-  list-style: none;
-  text-decoration: none;
-  margin: 5rem;
-}
-
-.product-card {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-}
-
-@media only screen and (max-width: 1200px) {
-  .home-container .home-p {
-    width: 50%;
-    font-size: 0.5;
+/*ipad style*/
+@media only screen and (max-width: 768px) {
+  .home-h01 {
+    font-size: 1.5rem;
+    margin-left: -3rem;
+    margin-top: 5rem;
+  }
+  .home-30 {
+    margin-right: 3.5rem;
+    font-size: 1.5rem;
+  }
+  .home-button {
+    margin-right: 3rem;
   }
 }
 
-@media only screen and (max-width: 768px) {
+/*   mobile style*/
+@media only screen and (max-width: 576px) {
   .home-container {
     background-image: url("../../../../img/imgdog.jpg");
     background-size: cover;
-    background-position: left;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,19 +111,29 @@ body {
     text-align: start;
   }
   .home-h01 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-top: 4rem;
+    margin-left: -1rem;
+  }
+  .home-30 {
+    font-size: 2rem;
+    margin-right: 1rem;
   }
 
   .home-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.6rem;
 
     border-radius: 1rem;
-    width: 80%;
-    margin-left: 9px;
+    width: 100px;
+    margin-left: -0.1rem;
   }
   .home-home-discount {
     align-self: start;
-    margin-left: -2rem;
+    margin-left: -3rem;
   }
+}
+
+.footer-parent-container {
+  width: 100%;
 }

@@ -9,14 +9,14 @@ import { FooterPage } from "./FooterPage";
 import ProductCard from "./ProductCard.jsx";
 
 const products = [
-  { _id: 1, image: "../../../img/dog1.jpg", name: "Dog", price: 39.99 },
-  { _id: 2, image: "../../../img/cat.jpg", name: "Cat", price: 39.99 },
-  { _id: 3, image: "../../../img/bird.jpg", name: "Birds", price: 39.99 },
+  { _id: 1, image: "../../../img/dog1.jpg", name: "Dog", price: 9.99 },
+  { _id: 2, image: "../../../img/cat.jpg", name: "Cat", price: 19.99 },
+  { _id: 3, image: "../../../img/bird.jpg", name: "Birds", price: 29.99 },
   {
     _id: 4,
     image: "../../../img/hamster.jpg",
     name: "Rodents",
-    price: 39.99,
+    price: 10.99,
   },
 ];
 
@@ -38,35 +38,57 @@ export const Home = () => {
           <BannerOne />
         </div>
       </div>
+      <div className="main-product-container">
+        <div className="product-background">
+          <h1 className="product-h1">Best of this week</h1>
+          <div className="product-child-container">
+            <ul className="product-ul">
+              <li className="product-li">
+                <Link
+                  to="/products/category/dogs"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  For Dogs
+                </Link>
+              </li>
+              <li className="product-li">
+                {" "}
+                <Link
+                  to="/products/category/cats"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  For Cats
+                </Link>
+              </li>
+              <li className="product-li">
+                <Link
+                  to="/products/category/birds"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  For the Birds
+                </Link>
+              </li>
+              <li className="product-li">
+                <Link
+                  to="/products/category/rodents"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  For Rodents
+                </Link>
+              </li>
+            </ul>
 
-      <div className="product-background">
-        <h1 className="product-h1">Best of this week</h1>
-        <div className="product-child-container">
-          <ul className="product-ul">
-            <li className="product-li">
-              <Link to="/products/category/dogs">For Dogs</Link>
-            </li>
-            <li className="product-li">
-              {" "}
-              <Link to="/products/category/cats">For Cats</Link>
-            </li>
-            <li className="product-li">
-              <Link to="/products/category/birds">For the Birds</Link>
-            </li>
-            <li className="product-li">
-              <Link to="/products/category/rodents">For Rodents</Link>
-            </li>
-          </ul>
-
-          <div className="product-card">
-            <div className="product-text-container"></div>
-            {products.length > 0 ? (
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))
-            ) : (
-              <div>No products</div>
-            )}
+            <div className="product-card">
+              <div className="product-text-container">
+                {products.length > 0 ? (
+                  products.map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))
+                ) : (
+                  <div>No products</div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
