@@ -4,19 +4,19 @@
 
 .discount-h2 {
   margin: 1rem;
-  width: 100%; /* Adjusted to full width */
-  text-align: center; /* Center align text */
+  width: 100%;
+  text-align: start;
 }
 
 .discount-h1 {
   text-align: center;
-  padding-top: 2rem; /* Reduced padding for better fit */
+  padding-top: 2rem;
 }
 
 .dog-image img {
-  height: 200px; /* Adjusted height for smaller display */
-  width: auto; /* Auto width to maintain aspect ratio */
-  margin: 0.5rem; /* Reduced margin for better fit */
+  height: 200px;
+  width: auto;
+  margin: 0.5rem;
 }
 
 .dog-container {
@@ -25,54 +25,53 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem; /* Reduced padding for better fit */
-  border: 2px solid black;
+  padding: 2rem;
 }
 
 .border-card {
   background-color: rgb(255, 254, 254);
-  width: 250px; /* Reduced width for better fit */
+  width: 250px;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem; /* Reduced margin for better fit */
+  margin: 0.5rem;
   border: 1px solid black;
 }
 
 .dog-description-container {
-  margin: 0.5rem; /* Reduced margin */
+  margin: 0.5rem;
   padding: 2px;
 }
 .dog-description {
-  font-size: 0.9rem; /* Slightly reduced font size */
+  font-size: 0.9rem;
 }
 .dog-price {
-  margin-top: 1rem; /* Reduced margin */
+  margin-top: 1rem;
   font-size: 1rem;
 }
 
 .dog-buy-button {
-  width: 8rem; /* Adjusted width */
+  width: 8rem;
   text-align: center;
   font-size: 1rem;
-  margin-top: 1rem; /* Reduced margin */
+  margin-top: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .dog-image:hover .dog-buy-button {
   opacity: 1;
+  background-color: rgb(234, 193, 101);
 }
 
 .discount-h5 {
   width: 100%;
   background-color: rgb(241, 12, 12);
   text-align: center;
-  height: 2rem; /* Reduced height */
-  padding-top: 0.5rem; /* Adjusted padding */
-  font-size: 1rem;
+  height: 2rem;
+  padding-top: 0.5rem;
 }
 
 .discounted-span {
@@ -80,21 +79,20 @@
   color: red;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .dog-container {
     flex-direction: column;
     align-items: center;
   }
   .border-card {
-    width: 90%; /* Full width on small screens */
+    width: 90%;
   }
   .dog-image img {
-    width: 100%; /* Full width images on small screens */
+    width: 100%;
     height: auto;
   }
   .discount-h1,
   .discount-h2 {
-    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    font-size: 1.5rem;
   }
 }

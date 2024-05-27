@@ -47,7 +47,7 @@ function Navbar() {
       );
     } else {
       return (
-        <li className="nav-item">
+        <li className="nav-item logout-item">
           {" "}
           <Link to="/login">
             <button className="nav-button">
@@ -67,6 +67,7 @@ function Navbar() {
     <nav className="container-navbar">
       <div>
         <img className="logo" src="../images/logo.jpg" alt="" />
+        <h1 className="navbar-h1">Tail-Treasure</h1>
       </div>
       {/* <motion.h1
         initial={{ opacity: 0, x: -100 }}
@@ -110,16 +111,19 @@ function Navbar() {
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
               <FaShoppingCart size={20} className="nav-icon" />
+              <span className="nav-name">Cart</span>
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
               <FaHeart size={20} className="nav-icon" />
+              <span className="nav-name">Favorites</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">
               <FaUser size={20} className="nav-icon" />
+              <span className="nav-name">Profile</span>
             </Link>
           </li>
         </ul>

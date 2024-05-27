@@ -11,6 +11,21 @@ import {
 } from "react-icons/fa";
 import "./footerpage.css";
 
+const getCategoryLink = (category) => {
+  switch (category) {
+    case "dogs":
+      return "/products/category/dogs";
+    case "cats":
+      return "/products/category/cats";
+    case "birds":
+      return "/products/category/birds";
+    case "rodents":
+      return "/products/category/rodents";
+    default:
+      return "/";
+  }
+};
+
 export const FooterPage = () => {
   return (
     <div className="footer-parent-container">
@@ -46,12 +61,29 @@ export const FooterPage = () => {
           <div className="footer-catalogue">
             <h2 className="footer-h2">Catalogue</h2>
             <ul className="footer-ul">
-              <li className="footer-li">For Dogs</li>
-              <li className="footer-li">For Cats</li>
-              <li className="footer-li">For the Birds</li>
-              <li className="footer-li">For Rodents</li>
+              <li className="footer-li">
+                <a href={getCategoryLink("dogs")} className="footer-a">
+                  For Dogs
+                </a>
+              </li>
+              <li className="footer-li">
+                <a href={getCategoryLink("cats")} className="footer-a">
+                  For Cats
+                </a>
+              </li>
+              <li className="footer-li">
+                <a href={getCategoryLink("birds")} className="footer-a">
+                  For the Birds
+                </a>
+              </li>
+              <li className="footer-li">
+                <a href={getCategoryLink("rodents")} className="footer-a">
+                  For Rodents
+                </a>
+              </li>
             </ul>
           </div>
+
           <div className="footer-contact">
             <h2 className="footer-h2">Contacts</h2>
             <ul className="footer-ul">

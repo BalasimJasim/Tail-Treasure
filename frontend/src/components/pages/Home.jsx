@@ -9,14 +9,33 @@ import { FooterPage } from "./FooterPage";
 import ProductCard from "./ProductCard.jsx";
 
 const products = [
-  { _id: 1, image: "../../../img/dog1.jpg", name: "Dog", price: 9.99 },
-  { _id: 2, image: "../../../img/cat.jpg", name: "Cat", price: 19.99 },
-  { _id: 3, image: "../../../img/bird.jpg", name: "Birds", price: 29.99 },
+  {
+    _id: 1,
+    image: "../../../img/dog1.jpg",
+    name: "Dog",
+    price: 9.99,
+    category: "dogs",
+  },
+  {
+    _id: 2,
+    image: "../../../img/cat.jpg",
+    name: "Cat",
+    price: 19.99,
+    category: "cats",
+  },
+  {
+    _id: 3,
+    image: "../../../img/bird.jpg",
+    name: "Birds",
+    price: 29.99,
+    category: "birds",
+  },
   {
     _id: 4,
     image: "../../../img/hamster.jpg",
     name: "Rodents",
     price: 10.99,
+    category: "rodents",
   },
 ];
 
