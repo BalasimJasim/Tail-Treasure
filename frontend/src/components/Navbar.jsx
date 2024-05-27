@@ -1,16 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-import {
-  FaShoppingCart,
-  FaSignInAlt,
-  FaUserPlus,
-  FaUser,
-} from "react-icons/fa";
 
-import { BiHeart } from "react-icons/bi";
+import { FaHeart, FaSignInAlt, FaUserPlus, FaUser } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
-import { BsCart } from "react-icons/bs";
+import { FiShoppingCart } from "react-icons/fi";
+import { LuHeart } from "react-icons/lu";
+
 import { Link } from "react-router-dom";
 import "./routes/Navbar.css";
 import { motion } from "framer-motion";
@@ -114,28 +110,31 @@ function Navbar() {
           <li className="nav-item" onClick={toggleCart}>
             <Link to="/cart">
 
-              <span className="nav-name">Cart</span>
+              <FiShoppingCart size={20} className="nav-icon" />
 
-              <BsCart size={22} className="nav-icon" />
 
             </Link>
           </li>
           <li>
             <Link to="/products/:userId/favorites">
 
-              <span className="nav-name">Favorites</span>
+              <LuHeart size={20} className="nav-icon" />
 
-              <BiHeart size={22} className="nav-icon" />
 
+          
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">
 
-             
-              <span className="nav-name">Profile</span>
+              <FaRegUser size={20} className="nav-icon" />
 
-              <FaRegUser size={22} className="nav-icon" />
+
+             
+              
+
+              
+
 
             </Link>
           </li>

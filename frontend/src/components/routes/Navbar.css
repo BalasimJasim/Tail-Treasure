@@ -1,3 +1,4 @@
+
 .logo {
   border-radius: 50%;
   width: 90px;
@@ -69,6 +70,9 @@
   margin: 0 1rem;
 
 }
+.nav-icon {
+  color: black;
+}
 
 .nav-button {
   background: none;
@@ -96,10 +100,6 @@
 
 .nav-span {
   margin-left: 0.5rem;
-}
-
-.nav-icon {
-  color: #002292;
 }
 
 .burger-icon {
