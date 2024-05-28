@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./adminTable.scss";
 import AdminSideBar from "./AdminSidebar.jsx";
@@ -18,6 +17,7 @@ const ProductsTable = () => {
     quantity: "",
     category: "",
     image: "",
+    isFeatured: false, // Add isFeatured state
   });
   const [editedProduct, setEditedProduct] = useState(null);
 
@@ -58,6 +58,7 @@ const ProductsTable = () => {
         quantity: "",
         category: "",
         image: "",
+        isFeatured: false, // Reset isFeatured state after adding
       });
       const productsData = await fetchProducts();
       setProducts(productsData);
@@ -156,6 +157,16 @@ const ProductsTable = () => {
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
             />
+            <label>
+              Featured:
+              <input
+                type="checkbox"
+                checked={newProduct.isFeatured}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, isFeatured: e.target.checked })
+                }
+              />
+            </label>
             <button type="submit">Add Product</button>
           </form>
           <table className="table">
@@ -248,6 +259,19 @@ const ProductsTable = () => {
               setEditedProduct({ ...editedProduct, image: e.target.value })
             }
           />
+          <label>
+            Featured:
+            <input
+              type="checkbox"
+              checked={editedProduct.isFeatured}
+              onChange={(e) =>
+                setEditedProduct({
+                  ...editedProduct,
+                  isFeatured: e.target.checked,
+                })
+              }
+            />
+          </label>
           <button type="submit">Update Product</button>
           <button type="button" onClick={() => setEditedProduct(null)}>
             Cancel
