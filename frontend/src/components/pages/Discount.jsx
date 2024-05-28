@@ -1,11 +1,13 @@
 import React from "react";
 import "./discount.css";
 import { FaHeart } from "react-icons/fa";
+import { FaDog } from "react-icons/fa";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import dogFood1 from "../../../discountimages/dogfood1.jpeg";
-import dogFood2 from "../../../discountimages/dogfood2.jpeg";
-import dogFood3 from "../../../discountimages/dogfood3.jpeg";
-import dogFood4 from "../../../discountimages/dogfood4.jpeg";
+import dogFood1 from "../../../discountimages/dogfood1.jpg";
+import dogFood2 from "../../../discountimages/dogfood2.jpg";
+import dogFood3 from "../../../discountimages/dogfood3.jpg";
+import dogFood4 from "../../../discountimages/dogfood4.jpg";
 import catFood2 from "../../../discountimages/catfood2.jpeg";
 import catFood3 from "../../../discountimages/catfood3.jpeg";
 import catFood4 from "../../../discountimages/catfood4.jpeg";
@@ -24,15 +26,21 @@ import { FooterPage } from "./FooterPage.jsx";
 const Discount = () => {
   const navigate = useNavigate();
 
-  const handleNavigateToDiscount = () => {
-    navigate("/discount");
-  };
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const anchor = document.getElementById(hash.slice(1));
+    if (!anchor) return;
+    anchor.scrollIntoView({ behavior: "instant" }); // customize behavior as desired
+  }, []);
 
   return (
     <div className="main-container">
       <h2 className="discount-h2">Enjoy a 30% discount on first Purchase</h2>
 
-      <h1 className="discount-h1">Premium food for Dogs</h1>
+      <h1 className="discount-h1" id="dogs">
+        Premium food for Dogs
+      </h1>
       <div className="dog-container">
         <div className="border-card">
           <div className="dog-image">
@@ -99,7 +107,9 @@ const Discount = () => {
         </div>
       </div>
 
-      <h1 className="discount-h1">Premium food for Cats</h1>
+      <h1 className="discount-h1" id="cats">
+        Premium food for Cats
+      </h1>
 
       <div className="dog-container">
         <div className="border-card">
@@ -113,7 +123,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -129,7 +139,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -145,7 +155,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -161,13 +171,15 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
       </div>
 
-      <h1 className="discount-h1">Premium food for Birds</h1>
+      <h1 className="discount-h1" id="birds">
+        Premium food for Birds
+      </h1>
 
       <div className="dog-container">
         <div className="border-card">
@@ -181,7 +193,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -197,7 +209,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -212,7 +224,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -228,7 +240,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -236,7 +248,7 @@ const Discount = () => {
 
       <h1 className="discount-h1">Premium food for Rodents</h1>
 
-      <div className="dog-container">
+      <div className="dog-container" id="rodents">
         <div className="border-card">
           <div className="dog-image">
             <h5 className="discount-h5"> Sale 30% off</h5>{" "}
@@ -248,7 +260,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -264,7 +276,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -280,7 +292,7 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
@@ -295,15 +307,11 @@ const Discount = () => {
               <h4 className="dog-price">
                 price:$39.99 <span className="discounted-span">now $29,70</span>
               </h4>
-              <button className="dog-buy-button">Buy Now</button>
+              <button className="dog-buy-button">ADD TO CART</button>
             </div>
           </div>
         </div>
       </div>
-
-      <button className="dog-buy-button" onClick={handleNavigateToDiscount}>
-        Go to Discount
-      </button>
 
       <FooterPage />
     </div>
