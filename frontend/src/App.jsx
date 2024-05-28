@@ -76,6 +76,10 @@ function App() {
         />
         <Route path="/customersupportform" element={<CustomerSupportForm />} />
         <Route
+          path="/profile/:userId"
+          element={user ? <Profile /> : <Navigate to="/login" />}
+        />
+        <Route
           path="/profile"
           element={user ? <Profile /> : <Navigate to="/login" />}
         />
