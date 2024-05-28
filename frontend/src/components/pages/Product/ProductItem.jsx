@@ -119,7 +119,7 @@ export const ProductItem = ({ product }) => {
         />
       </Link>
       <div className="card-body">
-        <Link to={`/products/${product._id}`}>
+        <Link className="prod-link" to={`/products/${product._id}`}>
           <h5 className="card-title">{product.name}</h5>
         </Link>
         <p className="card-text" style={{ textAlign: "right" }}>

@@ -11,6 +11,8 @@ import { useUserContext } from "../../contexts/UserContext";
 import { FaHeart } from "react-icons/fa";
 import { PiStarFill } from "react-icons/pi";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { RotatingLines } from "react-loader-spinner";
+
 const ProductPage = () => {
   const { productID } = useParams();
   const [product, setProduct] = useState(null);
@@ -214,7 +216,7 @@ const ProductPage = () => {
                 <img src={product.image} className="d-block" />
               </div>
               <div className="prod-text">
-                <h1> {product.name}</h1>
+                <h1 className="prod-title"> {product.name}</h1>
                 <p>Price: {product.price}€</p>
 
                 <div className=" d-flex justify-content-between flex-column ">
@@ -272,15 +274,19 @@ const ProductPage = () => {
                     <div>
                       {isClicked ? (
                         <div>
-                          Description: {product.description}
+                          <h3>Description</h3>
+                          <p> {product.description}</p>
                           <span style={{ color: "blue" }} onClick={handleShow}>
                             Read less
                           </span>
                         </div>
                       ) : (
-                        <span style={{ color: "blue" }} onClick={handleShow}>
-                          Read more..
-                        </span>
+                        <>
+                          <h3>Description</h3>
+                          <span style={{ color: "blue" }} onClick={handleShow}>
+                            Read more..
+                          </span>
+                        </>
                       )}
                     </div>
                   ) : (
@@ -359,7 +365,26 @@ const ProductPage = () => {
             </div>
           </div>
         ) : (
-          <p>Loading...</p>
+          <>
+            <div className="d-flex flex-column justify-content-center align-items-center h-100">
+              {" "}
+              <p>
+                <RotatingLines
+                  visible={true}
+                  height="96"
+                  width="96"
+                  color="orange"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  ariaLabel="rotating-lines-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </p>
+              {/* <div className="line"> </div> */}
+              <div>Loading</div>
+            </div>
+          </>
         )}
       </div>
     </div>

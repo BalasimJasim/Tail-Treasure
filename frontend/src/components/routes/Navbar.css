@@ -58,6 +58,7 @@
   position: absolute;
   top: 5rem;
 
+
   background-color: white;
   width: 50%;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -88,8 +89,8 @@
   color: #0f0f0f;
   cursor: pointer;
   font-size: 1rem;
-}
 
+}
 .nav-span:hover {
   text-decoration: dashed;
   font-weight: 900;
