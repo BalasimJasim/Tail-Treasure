@@ -53,7 +53,7 @@ export const FooterPage = () => {
             <ul className="footer-ul">
               <li className="footer-li">Catalog</li>
               <li className="footer-li">Actions</li>
-              <li className="footer-li">Shipment and Payment</li>
+
               <li className="footer-li">Contacts</li>
             </ul>
           </div>
@@ -89,7 +89,7 @@ export const FooterPage = () => {
             <ul className="footer-ul">
               <li className="footer-li">
                 <FaEnvelope className="footer-icon" /> - Email -
-                <span className="footer-span">Tail_treasure@gmail.com</span>
+                <span className="footer-span">Tail_treasure@.com</span>
               </li>
               <li className="footer-li">
                 <FaPhone className="footer-icon" /> - Mobile -
