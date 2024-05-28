@@ -8,7 +8,10 @@ export const getAllProducts = async (req, res, next) => {
     res.json({
       message: "Success",
       length: products.length,
-      data: products,
+      data: products.map((product) => ({
+        ...product.toObject(),
+        isFeatured: product.isFeatured,
+      })),
     });
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -102,6 +105,18 @@ export const getProductsByCategory = async (req, res, next) => {
     });
   } catch (error) {
     console.error("Error fetching products by category:", error);
+    next(error);
+  }
+};
+export const getFeaturedProducts = async (req, res, next) => {
+  try {
+    const featuredProducts = await Product.find({ isFeatured: true });
+    res.json({
+      message: "Success",
+      length: featuredProducts.length,
+      data: featuredProducts,
+    });
+  } catch (error) {
     next(error);
   }
 };

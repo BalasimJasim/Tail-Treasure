@@ -3,6 +3,7 @@ import {
   addProduct,
   deleteProduct,
   getAllProducts,
+  getFeaturedProducts,
   getProduct,
   getProductsByCategory,
   updateProduct,
@@ -10,6 +11,7 @@ import {
 const productsRouter = Router();
 productsRouter.route("/products").get(getAllProducts).post(addProduct);
 productsRouter.route("/products/category").get(getProductsByCategory);
+productsRouter.route("/products/featured").get(getFeaturedProducts);
 productsRouter
   .route("/:productId")
   .get(getProduct)
