@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import axios from "axios";
 import "../pages/customerSupportForm.css";
 import support from "../../../images/support.jpg";
 
@@ -8,28 +8,21 @@ function CustomerSupportForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
-    setName("");
-    setEmail("");
-    setMessage("");
+    try {
+      await axios.post("http://localhost:5000/support", {
+        name,
+        email,
+        message,
+      });
+      console.log("Message sent successfully");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   };
 
   return (
@@ -43,7 +36,7 @@ function CustomerSupportForm() {
               placeholder="Name:"
               id="name"
               value={name}
-              onChange={handleNameChange}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
@@ -54,7 +47,7 @@ function CustomerSupportForm() {
               id="email"
               placeholder="Email:"
               value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -64,7 +57,7 @@ function CustomerSupportForm() {
               id="message"
               placeholder="How we can Help?"
               value={message}
-              onChange={handleMessageChange}
+              onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
@@ -72,7 +65,7 @@ function CustomerSupportForm() {
         </form>
       </div>
       <div className="image-container">
-        <img src={support} alt="Support Image" />
+        <img src={support} alt="Support" />
       </div>
     </div>
   );
