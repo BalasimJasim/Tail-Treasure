@@ -24,3 +24,49 @@
     padding: 0.5rem 1rem;
   }
 }
+.empty-favorite {
+  width: 50%;
+  margin: 3rem auto;
+  font-size: 1.4rem;
+  padding: 3rem;
+  text-align: center;
+  .brocken-heart {
+    color: rgb(245, 185, 73);
+    font-size: 13rem;
+  }
+  .back-to-prod {
+    a {
+      color: white;
+    }
+    background-color: rgb(245, 185, 73);
+    color: white;
+    text-decoration: none;
+    width: 40%;
+    margin: 1rem auto;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0.3rem 0;
+    border-radius: 5px;
+  }
+  // button {
+  //   a {
+  //     text-decoration: none;
+  //     color: white;
+  //     // color: rgb(245, 185, 73);
+  //   }
+  //   width: 50%;
+  //   margin: 3rem auto;
+  //   display: block;
+  //   // background-color: #fee6b8;
+  //   color: rgb(245, 185, 73);
+  //   background-color: rgb(245, 185, 73);
+  //   // color: white;
+  //   padding: 5px;
+  //   font-size: 1.5rem;
+  //   font-weight: 500;
+  //   // text-transform: uppercase;
+
+  //   border: none;
+  //   border-radius: 10px;
+  // }
+}
