@@ -73,7 +73,7 @@ const UsersTable = () => {
                   <td>
                     <div className="table-button-group">
                       <button>
-                        <Link to={`/profile/${user._id}`}>View Profile</Link>
+                        <Link to={`/users/${user._id}`}>View Profile</Link>
                       </button>
                       <button onClick={() => deleteUser(user._id)}>
                         Delete
