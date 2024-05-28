@@ -33,6 +33,7 @@
 }
 .product-text-container {
   display: flex;
+  width: auto;
 }
 .product-container {
   display: flex;
@@ -181,7 +182,10 @@ a {
     justify-content: center;
   }
   .product-text-container {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .card1 {

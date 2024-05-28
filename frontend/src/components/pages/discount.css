@@ -3,14 +3,19 @@
 }
 
 .discount-h2 {
-  margin: 1rem;
-  width: 100%;
   text-align: start;
+  border-top: 5px solid rgb(228, 184, 79);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-top: 2rem;
 }
 
 .discount-h1 {
-  text-align: center;
+  width: 50%;
+  margin-top: 4rem;
+  margin-left: 2rem;
   padding-top: 2rem;
+  border-bottom: 5px solid rgb(228, 184, 79);
 }
 
 .dog-image img {
@@ -44,16 +49,18 @@
   margin: 0.5rem;
   padding: 2px;
 }
+
 .dog-description {
   font-size: 0.9rem;
 }
+
 .dog-price {
   margin-top: 1rem;
   font-size: 1rem;
 }
 
 .dog-buy-button {
-  width: 8rem;
+  width: 100%;
   text-align: center;
   font-size: 1rem;
   margin-top: 1rem;
@@ -84,13 +91,16 @@
     flex-direction: column;
     align-items: center;
   }
+
   .border-card {
-    width: 90%;
+    width: 55vw;
   }
+
   .dog-image img {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 200px;
   }
+
   .discount-h1,
   .discount-h2 {
     font-size: 1.5rem;
