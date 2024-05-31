@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../pages/customerSupportForm.css";
-import support from "../../../images/support.jpg";
+// import support from "../../../images/support.jpg";
 
 function CustomerSupportForm() {
   const [name, setName] = useState("");
@@ -11,7 +11,7 @@ function CustomerSupportForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:5000/support", {
+      await axios.post("/support", {
         name,
         email,
         message,
@@ -65,7 +65,7 @@ function CustomerSupportForm() {
         </form>
       </div>
       <div className="image-container">
-        <img src={support} alt="Support" />
+        <img src={"/Images/support.jpg"} alt="Support" />
       </div>
     </div>
   );

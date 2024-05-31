@@ -15,9 +15,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:5000/products/products/featured"
-        );
+        const { data } = await axios.get("/products/products/featured");
         setFeaturedProducts(data.data);
         console.log("featured:", data);
       } catch (error) {

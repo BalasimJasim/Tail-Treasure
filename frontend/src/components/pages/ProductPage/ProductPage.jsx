@@ -67,7 +67,7 @@ const ProductPage = () => {
     try {
       const { data } = await axios.get(
         // "http://localhost:5000/products/66278214b4daa788fb4e131a"
-        `http://localhost:5000/products/${productID}`
+        `/products/${productID}`
       );
       console.log(data);
       setProduct(data.data);
@@ -77,9 +77,7 @@ const ProductPage = () => {
   };
   const getReviews = async () => {
     try {
-      const { data } = await axios.get(
-        `http://localhost:5000/reviews/product/${productID}`
-      );
+      const { data } = await axios.get(`/reviews/product/${productID}`);
       setReviews(data.data);
     } catch (error) {
       console.log("Error fetching reviews:", error);
@@ -89,7 +87,7 @@ const ProductPage = () => {
   const addReviewHandler = async () => {
     console.log({ userState });
     try {
-      await axios.post(`http://localhost:5000/reviews/product`, {
+      await axios.post(`/reviews/product`, {
         comment: reviewInput,
         productId: productID,
         userId: userState.user.id,

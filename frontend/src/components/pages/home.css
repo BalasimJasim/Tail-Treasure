@@ -28,7 +28,7 @@ body {
 }
 
 .home-container {
-  background-image: url("../../../../img/imgdog.jpg");
+  background-image: url("../Images/imgdog.jpg");
   background-size: cover;
   background-position: left 35%;
   display: flex;
@@ -87,7 +87,7 @@ body {
 /*   mobile style*/
 @media only screen and (max-width: 576px) {
   .home-container {
-    background-image: url("../../../../img/imgdog.jpg");
+    background-image: url("../Images/imgdog.jpg");
     background-size: cover;
     background-position: center;
     display: flex;

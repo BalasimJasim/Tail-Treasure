@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./profile.scss";
-import av1 from "../../../images/av1.png";
+// import av1 from "../../../images/av1.png";
 import { useUserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const Profile = () => {
       <main className="dash-content">
         {user ? (
           <div className="profile-container">
-            <ProfileHeader user={user} avatar={av1} />
+            <ProfileHeader user={user} avatar={"/Images/av1.png"} />
             <ProfileInformation
               isEditing={isEditing}
               formData={formData}

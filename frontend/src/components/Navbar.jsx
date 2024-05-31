@@ -86,7 +86,7 @@ function Navbar() {
         <div>
           <img
             className="logo"
-            src="/images/logo.jpg"
+            src="/Images/logo.jpg"
             alt="Tail-Treasure Logo"
           />
           <h1 className="navbar-h1">Tail-Treasure</h1>

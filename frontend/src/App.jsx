@@ -31,7 +31,7 @@ import UsersTable from "./components/pages/Admin/UsersTable.jsx";
 import CategoriesTable from "./components/pages/Admin/CategoriesTable.jsx";
 import ProductsTable from "./components/pages/Admin/ProductsTable.jsx";
 import ReviewTable from "./components/pages/Admin/ReviewTable.jsx";
-
+import axios from "axios";
 import { FooterPage } from "./components/pages/FooterPage";
 
 import { ProductsCatalog } from "./components/pages/Product/ProdactsCatalog.jsx";
@@ -39,7 +39,7 @@ import CartProcess from "./components/pages/cart/CartProcess.jsx";
 
 import { useUserContext } from "./components/contexts/UserContext.jsx";
 // import ProfileSidebar from "./components/pages/profileSidebar/ProfileSidebar.jsx";
-
+axios.defaults.baseURL = import.meta.env.VITE_BACKENDURL;
 function App() {
   const { state } = useUserContext();
   const { user } = state;

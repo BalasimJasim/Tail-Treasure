@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import loginImage2 from "../../../../images/loginImage2.png";
+// import loginImage2 from "../../../../images/loginImage2.png";
 import { motion } from "framer-motion";
 import { userLoginApi } from "../../../Helpers/fetches";
 import { useUserContext } from "../../contexts/UserContext";
@@ -109,7 +109,7 @@ function Login() {
                   transition={{ duration: 2, ease: "easeInOut" }}
                   className="image-box-login"
                 >
-                  <img src={loginImage2} alt="background" />
+                  <img src={"/Images/loginImage2.png"} alt="background" />
                 </motion.div>
               }
             </div>

@@ -1,9 +1,6 @@
 import React from "react";
 import "./bannerone.css";
-import img from "../../../img/dog.jpg";
-import img1 from "../../../img/hamster.jpg";
-import img2 from "../../../img/bird.jpg";
-import img3 from "../../../img/cat.jpg";
+
 import { Link } from "react-router-dom";
 export const BannerOne = () => {
   return (
@@ -12,7 +9,7 @@ export const BannerOne = () => {
         <div
           className="photo"
           style={{
-            backgroundImage: `url(${img})`,
+            backgroundImage: `url(${"/Images/dog.jpg"})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -32,7 +29,7 @@ export const BannerOne = () => {
         <div
           className="photo"
           style={{
-            backgroundImage: `url(${img1})`,
+            backgroundImage: `url(${"/Images/hamster.jpg"})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -52,7 +49,7 @@ export const BannerOne = () => {
         <div
           className="photo"
           style={{
-            backgroundImage: `url(${img2})`,
+            backgroundImage: `url(${"/Images/bird.jpg"})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -69,7 +66,7 @@ export const BannerOne = () => {
         <div
           className="photo"
           style={{
-            backgroundImage: `url(${img3})`,
+            backgroundImage: `url(${"/Images/cat.jpg"})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
