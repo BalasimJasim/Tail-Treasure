@@ -91,3 +91,17 @@ export const fetchUserById = async (userId) => {
     throw error;
   }
 };
+
+/** ordering */
+export const makePurchase = async (orderDetails) => {
+  try {
+    // const token = localStorage.getItem("token");
+
+    // console.log("Token:", token);
+    const response = await axios.post("/purchase/purchase", orderDetails);
+    return response.data;
+  } catch (error) {
+    console.error("Error in makePurchase:", error);
+    throw error;
+  }
+};

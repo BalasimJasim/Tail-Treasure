@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Steps } from "./constants.js";
+import { useUserContext } from "../../contexts/UserContext.jsx";
+import { makePurchase } from "../../../Helpers/fetches.js";
 import "./cartConfirm.scss";
 
 function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
@@ -9,9 +11,31 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
   //   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
   //   setCartItems(storedCart);
   // }, []);
+  const { state, dispatch } = useUserContext();
+  const { user } = state;
+  console.log("User from context:", user);
 
-  const onConfirm = () => {
-    goTo(Steps.fifth);
+  const onConfirm = async () => {
+    console.log("User before onConfirm:", user);
+    if (!user || !user.id) {
+      console.error("User ID is missing or invalid");
+      return;
+    }
+    const orderDetails = {
+      userId: user.id,
+      productId: cartItems[0]._id,
+      quantity: cartItems[0].quantity,
+    };
+    console.log("Order Details:", orderDetails);
+    try {
+      const result = await makePurchase(orderDetails);
+      console.log("Order Details after purchase:", orderDetails);
+
+      dispatch({ type: "UPDATE_HISTORY", payload: result.history });
+      goTo(Steps.fifth);
+    } catch (error) {
+      console.error("Error placing order:", error);
+    }
   };
 
   const goBack = () => {
@@ -25,7 +49,7 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
         <div>
           <h3 className="conf-title">Products</h3>
           {cartItems.map((item) => (
-            <div key={item._id} className="cart-item d-flex flex-row">
+            <div key={item.id} className="cart-item d-flex flex-row">
               <p className="m-3 img-container">
                 <img
                   src={item.image}
@@ -40,7 +64,7 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
               </div>
             </div>
           ))}
-          <p className="text-end total">Total: {finalTotal}€</p>
+          <p className="text-end total">Total: {finalTotal.toFixed(2)}€</p>
         </div>
         <div>
           <h3 className="conf-title">Delivery Details:</h3>

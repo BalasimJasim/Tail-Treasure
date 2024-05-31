@@ -91,10 +91,20 @@ const ReviewTable = () => {
                     ? `${review.user.firstName} ${review.user.lastName}`
                     : "Unknown User"}
                 </td>
-                <td>{review.product.name}</td>
+                <td>
+                  {review.product ? review.product.name : "Unknown Product"}
+                </td>
                 <td>{review.rating}</td>
                 <td>{review.comment}</td>
-                <td>{review.adminComment || "-"}</td>
+                <td>
+                  {review.adminComment ? (
+                    <div>
+                      <strong>Admin Reply:</strong> {review.adminComment}
+                    </div>
+                  ) : (
+                    "-"
+                  )}
+                </td>
                 <td>
                   <div className="table-button-group">
                     <input

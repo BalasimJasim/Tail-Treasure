@@ -25,7 +25,14 @@ export const userSchema = new Schema({
     default: false,
   },
   reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
-  history: [{}],
+  history: [
+    {
+      productId: { type: Schema.Types.ObjectId, ref: "Product" },
+      quantity: Number,
+      price: Number,
+      date: { type: Date, default: Date.now },
+    },
+  ],
   favorites: [{ type: Schema.Types.ObjectId, ref: "Product" }],
 
   createdAt: {

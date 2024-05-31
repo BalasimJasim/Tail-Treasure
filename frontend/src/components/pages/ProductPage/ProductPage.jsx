@@ -18,6 +18,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewInput, setReviewInput] = useState("");
+  const [showAllReviews, setShowAllReviews] = useState(false);
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
@@ -191,6 +192,9 @@ const ProductPage = () => {
   //   }
   // };
   // console.log(localStorage.getItem("cart"));
+
+  const visibleReviews = showAllReviews ? reviews : reviews.slice(0, 4);
+
   return (
     <div className="line">
       <div className="prod-container">
@@ -321,7 +325,7 @@ const ProductPage = () => {
                 </div>
                 {reviews.length > 0 ? (
                   <div>
-                    {reviews.map((review) => (
+                    {visibleReviews.map((review) => (
                       <div className="cont-review" key={review._id}>
                         <div className="d-flex justify-content-between review-cont-name">
                           <h5 className="review-name">
@@ -355,11 +359,25 @@ const ProductPage = () => {
                           })}
                         <p>{review.comment}</p>
                         <p>{review.rating}</p>
+                        {review.adminComment && (
+                          <div className="admin-reply">
+                            <strong>Admin:</strong>
+                            <p>{review.adminComment}</p>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 ) : (
                   <p>No reviews yet</p>
+                )}
+                {!showAllReviews && reviews.length > 4 && (
+                  <button
+                    className="see-all-btn"
+                    onClick={() => setShowAllReviews(true)}
+                  >
+                    See All
+                  </button>
                 )}
               </div>
             </div>
