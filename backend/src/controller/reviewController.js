@@ -4,10 +4,9 @@ import { User } from "../models/UserModel.js";
 
 export const getAllReview = async (req, res, next) => {
   try {
-    const reviews = await Review.find({}).populate(
-      "user",
-      "firstName lastName"
-    );
+    const reviews = await Review.find({})
+      .populate("user", "firstName lastName")
+      .populate("product", "name");
     res.json({ message: "success", data: reviews });
   } catch (error) {
     next(error);
@@ -49,10 +48,10 @@ export const addNewReview = async (req, res, next) => {
 export const updateReview = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { comment } = req.body;
+    const { comment, adminComment } = req.body;
     const updatedReview = await Review.findByIdAndUpdate(
       id,
-      { comment },
+      { comment, adminComment },
       { new: true }
     );
     res.json({ message: "Review updated successfully", data: updatedReview });

@@ -15,6 +15,7 @@ const reviewSchema = new Schema({
   comment: {
     type: String,
   },
+  adminComment: { type: String },
   rating: {
     type: Number,
     min: 1,
