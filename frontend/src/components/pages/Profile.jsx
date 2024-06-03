@@ -121,7 +121,7 @@ const ProfileInformation = ({ isEditing, formData, handleInputChange }) => (
   </div>
 );
 
-const PurchaseHistory = ({ history }) => {
+const PurchaseHistory = ({ history = [] }) => {
   const [showAll, setShowAll] = useState(false);
   const visibleHistory = showAll ? history : history.slice(0, 4);
 

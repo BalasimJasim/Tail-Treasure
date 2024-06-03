@@ -10,6 +10,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./footerpage.css";
+import { Link } from "react-router-dom";
 
 const getCategoryLink = (category) => {
   switch (category) {
@@ -21,6 +22,8 @@ const getCategoryLink = (category) => {
       return "/products/category/birds";
     case "rodents":
       return "/products/category/rodents";
+    case "catalog":
+      return "/products/category";
     default:
       return "/";
   }
@@ -51,10 +54,19 @@ export const FooterPage = () => {
           <div className="footer-menu">
             <h2 className="footer-h2">Menu</h2>
             <ul className="footer-ul">
-              <li className="footer-li">Catalog</li>
-              <li className="footer-li">Actions</li>
+              <li className="footer-li">
+                <a href={getCategoryLink("catalog")} className="footer-a">
+                  Catalog
+                </a>
+              </li>
 
-              <li className="footer-li">Contacts</li>
+              <li className="footer-li">
+                <Link to="/discount">Actions</Link>
+              </li>
+
+              <Link to="/profile">
+                <li className="footer-li">Contacts</li>
+              </Link>
             </ul>
           </div>
 
@@ -83,38 +95,39 @@ export const FooterPage = () => {
               </li>
             </ul>
           </div>
-
-          <div className="footer-contact">
-            <h2 className="footer-h2">Contacts</h2>
-            <ul className="footer-ul">
-              <li className="footer-li">
-                <FaEnvelope className="footer-icon" /> - Email -
-                <span className="footer-span">Tail_treasure@.com</span>
-              </li>
-              <li className="footer-li">
-                <FaPhone className="footer-icon" /> - Mobile -
-                <span className="footer-span">015785170045</span>
-              </li>
-              <li className="footer-li">
-                <FaClock className="footer-icon" /> - Opening hours from 8:00 to
-                21:00
-              </li>
-              <li className="footer-li">
-                <FaMapMarkerAlt className="footer-icon" /> - Address
-                <span className="footer-span">
-                  -
-                  <a
-                    className="footer-a"
-                    href="https://www.google.com/maps/place/Alexanderplatz+Strasse+77,+77777+Berlin,+Germany"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Alexanderplatz Strasse 77, 77777 Berlin, Germany
+          <Link to="/profile">
+            <div className="footer-contact">
+              <h2 className="footer-h2">Contacts</h2>
+              <ul className="footer-ul">
+                <li className="footer-li">
+                  <a href="/profile" className="footer-a">
+                    <FaEnvelope className="footer-icon" /> - Email -
+                    <span className="footer-span"> Tail_treasure@.com</span>
                   </a>
-                </span>
-              </li>
-            </ul>
-          </div>
+                </li>
+                <li className="footer-li">
+                  <a href="/profile" className="footer-a">
+                    <FaPhone className="footer-icon" /> - Mobile -
+                    <span className="footer-span"> 015785170045</span>
+                  </a>
+                </li>
+                <li className="footer-li">
+                  <a href="/profile" className="footer-a">
+                    <FaClock className="footer-icon" /> - Opening hours from
+                    8:00 to 21:00
+                  </a>
+                </li>
+                <li className="footer-li">
+                  <a href="/profile" className="footer-a">
+                    <FaMapMarkerAlt className="footer-icon" /> - Address -
+                    <span className="footer-span">
+                      Alexanderplatz Strasse 77, 77777 Berlin, Germany
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

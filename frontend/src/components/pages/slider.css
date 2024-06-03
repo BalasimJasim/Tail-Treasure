@@ -1,5 +1,5 @@
 .slider-container {
-  height: calc(100vh - 250px);
+  height: calc(80vh - 250px);
   width: 100%;
   display: flex;
   position: relative;
@@ -23,7 +23,7 @@
   /* align-items: center; */
   /* justify-content: center; */
   display: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .arrow-right {
@@ -45,31 +45,29 @@
 }
 
 .slide {
-  height: calc(100vh - 250px);
   width: 50vw;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .slide-img-wrapper {
-  width: 50%;
-  height: 90%;
+  width: 40%;
+  height: 100%;
 }
 
 .slide-img-wrapper img {
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: contain;
 }
 
 .slide-info-wrapper {
-  width: 50%;
-  margin-right: 40px;
 }
 
 .slide-info-title {
   font-size: 16px;
-  padding-left: 20px;
+  max-width: 80%;
 }
 
 .slide-info-desc {
@@ -77,39 +75,75 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 3px;
-  padding-left: 20px;
 }
 /* 
 media queries
 */
-@media (max-width: 720px) {
+@media (max-width: 692px) {
   .slide-info-wrapper {
-    margin-right: 20px;
+    margin-left: 50px;
+    height: 50%;
   }
   .slide-info-title {
-    font-size: 25px;
+    font-size: 16px;
   }
   .slide-info-desc {
-    font-size: 17px;
+    font-size: 12px;
+  }
+  .cart-btn1 {
+    width: 8rem;
+    margin-left: 1.5rem;
+  }
+  .slide {
+    display: flex;
+    flex-direction: column;
+
+    height: 40vh;
+  }
+  .slide-img-wrapper {
+    height: 40vh;
+    width: 30vw;
+  }
+  .slider-wrapper {
+    height: 100%;
+    display: flex;
+    transition: all 1s ease;
+    margin-top: 6rem;
   }
 }
 
 @media (max-width: 520px) {
   .slide {
-    height: calc(100vh - 250px);
     width: 100vw;
-    display: flex;
-    align-items: center;
+
+    margin-bottom: 1rem;
+  }
+  .slide-img-wrapper {
+    width: 220px;
   }
   .slide-info-title {
     font-size: 14px;
-    padding-left: 10px;
   }
   .slide-info-desc {
     margin-right: 12px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px;
-    padding-left: 10px;
+  }
+  .slider-container {
+    border: 1px solid rgb(255, 249, 249);
+    height: fit-content;
+    margin-top: -4rem;
+  }
+  .slider-wrapper {
+    border: 1px solid rgb(255, 253, 253);
+  }
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart-btn1 {
+    margin: 0rem;
   }
 }
