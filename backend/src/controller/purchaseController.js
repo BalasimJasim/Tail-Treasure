@@ -8,6 +8,7 @@ export const purchaseProduct = async (req, res, next) => {
     const user = await User.findById(userId);
     const product = await Product.findById(productId);
     console.log("User found:", user);
+    console.log("Product id", productId);
     console.log("Product found:", product);
     if (!user || !product) {
       return res.status(404).json({ error: "User or Product not found" });
