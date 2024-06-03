@@ -20,6 +20,14 @@ export const userReducer = (state, action) => {
         ...state,
         userCount: action.payload,
       };
+    case "UPDATE_HISTORY":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          history: action.payload,
+        },
+      };
     default:
       return state;
   }

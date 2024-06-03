@@ -18,6 +18,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewInput, setReviewInput] = useState("");
+  const [showAllReviews, setShowAllReviews] = useState(false);
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
@@ -82,7 +83,7 @@ const ProductPage = () => {
     try {
       const { data } = await axios.get(
         // "http://localhost:5000/products/66278214b4daa788fb4e131a"
-        `http://localhost:5000/products/${productID}`
+        `/products/${productID}`
       );
       console.log(data);
       setProduct(data.data);
@@ -92,9 +93,7 @@ const ProductPage = () => {
   };
   const getReviews = async () => {
     try {
-      const { data } = await axios.get(
-        `http://localhost:5000/reviews/product/${productID}`
-      );
+      const { data } = await axios.get(`/reviews/product/${productID}`);
       setReviews(data.data);
     } catch (error) {
       console.log("Error fetching reviews:", error);
@@ -104,7 +103,7 @@ const ProductPage = () => {
   const addReviewHandler = async () => {
     console.log({ userState });
     try {
-      await axios.post(`http://localhost:5000/reviews/product`, {
+      await axios.post(`/reviews/product`, {
         comment: reviewInput,
         productId: productID,
         userId: userState.user.id,
@@ -207,6 +206,9 @@ const ProductPage = () => {
   //   }
   // };
   // console.log(localStorage.getItem("cart"));
+
+  const visibleReviews = showAllReviews ? reviews : reviews.slice(0, 4);
+
   return (
     <div className="line">
       <a href="#" className={`go-up ${showGoUp ? "visible" : ""}`}>
@@ -340,7 +342,7 @@ const ProductPage = () => {
                 </div>
                 {reviews.length > 0 ? (
                   <div>
-                    {reviews.map((review) => (
+                    {visibleReviews.map((review) => (
                       <div className="cont-review" key={review._id}>
                         <div className="d-flex justify-content-between review-cont-name">
                           <h5 className="review-name">
@@ -374,11 +376,25 @@ const ProductPage = () => {
                           })}
                         <p>{review.comment}</p>
                         <p>{review.rating}</p>
+                        {review.adminComment && (
+                          <div className="admin-reply">
+                            <strong>Admin:</strong>
+                            <p>{review.adminComment}</p>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 ) : (
                   <p>No reviews yet</p>
+                )}
+                {!showAllReviews && reviews.length > 4 && (
+                  <button
+                    className="see-all-btn"
+                    onClick={() => setShowAllReviews(true)}
+                  >
+                    See All
+                  </button>
                 )}
               </div>
             </div>

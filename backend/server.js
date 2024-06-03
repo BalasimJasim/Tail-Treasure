@@ -17,6 +17,8 @@ import passwordRoute from "./src/routes/passwordRoute.js";
 import { getResetPasswordLink } from "./src/controller/passwordController.js";
 import categoryRoute from "./src/routes/categoryRoute.js";
 import adminRouter from "./src/routes/adminRoute.js";
+import msgRoute from "./src/routes/msgRouter.js";
+import purchaseRoute from "./src/routes/purchaseRoute.js";
 
 const app = express();
 config();
@@ -41,7 +43,9 @@ app.use("/reviews", reviewsRouter);
 app.use("/products", productsRouter);
 app.use("/categories", categoryRoute);
 app.use("/reset", passwordRoute);
+app.use("/purchase", purchaseRoute);
 app.get("/reset/:userId/reset/:token", getResetPasswordLink);
+app.use("/support", msgRoute);
 
 app.use((err, req, res, next) => {
   if (res.headersSent) {

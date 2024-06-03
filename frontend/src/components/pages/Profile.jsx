@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./profile.scss";
-import av1 from "../../../images/av1.png";
+// import av1 from "../../../images/av1.png";
 import { useUserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const { state, dispatch } = useUserContext();
   const { user } = state;
+
   const [formData, setFormData] = useState({
     firstName: user?.firstName || "",
     lastName: user?.lastName || "",
@@ -17,9 +18,6 @@ const Profile = () => {
   });
 
   const handleSettingsChange = () => {
-    if (isEditing) {
-      console.log("Saving changes:", formData);
-    }
     setIsEditing(!isEditing);
   };
 
@@ -52,7 +50,7 @@ const Profile = () => {
       <main className="dash-content">
         {user ? (
           <div className="profile-container">
-            <ProfileHeader user={user} avatar={av1} />
+            <ProfileHeader user={user} avatar={"/Images/av1.png"} />
             <ProfileInformation
               isEditing={isEditing}
               formData={formData}
@@ -67,6 +65,7 @@ const Profile = () => {
             <button className="logout-btn" onClick={handleLogout}>
               Logout
             </button>
+            <PurchaseHistory history={user.history} />
           </div>
         ) : (
           <div className="login-link">
@@ -75,13 +74,6 @@ const Profile = () => {
             </p>
           </div>
         )}
-
-        <div className="navigation-buttons">
-          <button className="navigation-btn">Your Orders</button>
-          <button className="navigation-btn">Track Order</button>
-          <button className="navigation-btn">Buy Again</button>
-          <button className="navigation-btn">Your Lists</button>
-        </div>
       </main>
 
       <footer className="dash-footer">
@@ -100,7 +92,7 @@ const ProfileHeader = ({ user, avatar }) => (
       <h2>
         {user?.firstName} {user?.lastName}
       </h2>
-      <p>User ID: {user?.id}</p>
+      <p>User ID: {user?._id}</p>
     </div>
   </div>
 );
@@ -128,6 +120,47 @@ const ProfileInformation = ({ isEditing, formData, handleInputChange }) => (
     </div>
   </div>
 );
+
+const PurchaseHistory = ({ history }) => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleHistory = showAll ? history : history.slice(0, 4);
+
+  return (
+    <div className="purchase-history">
+      <h2>Purchase History</h2>
+      <ul className="purchase-list">
+        {visibleHistory.length > 0 ? (
+          visibleHistory.map((purchase, index) => (
+            <li key={index} className="purchase-item">
+              <div className="purchase-details">
+                <div>
+                  <strong>Product ID:</strong> {purchase.productId}
+                </div>
+                <div>
+                  <strong>Quantity:</strong> {purchase.quantity}
+                </div>
+                <div>
+                  <strong>Price:</strong> {purchase.price}€
+                </div>
+                <div>
+                  <strong>Date:</strong>{" "}
+                  {new Date(purchase.date).toLocaleString()}
+                </div>
+              </div>
+            </li>
+          ))
+        ) : (
+          <li>No purchase history available.</li>
+        )}
+      </ul>
+      {!showAll && history.length > 4 && (
+        <button className="see-all-btn" onClick={() => setShowAll(true)}>
+          See All
+        </button>
+      )}
+    </div>
+  );
+};
 
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 

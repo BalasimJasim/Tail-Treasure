@@ -36,7 +36,7 @@ export const Product = () => {
   const getAllProductsByCategory = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/products/products/category?category=${category}`
+        `/products/products/category?category=${category}`
       );
 
       setProducts(data.data);

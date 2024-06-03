@@ -44,9 +44,7 @@ export const ProductsCatalog = () => {
   //   };
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(
-        "http://localhost:5000/products/products"
-      );
+      const { data } = await axios.get("/products/products");
       setProducts(data.data);
     } catch (error) {
       console.log(error);

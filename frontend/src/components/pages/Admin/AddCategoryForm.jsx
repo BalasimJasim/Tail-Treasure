@@ -15,7 +15,7 @@ const AddCategoryForm = () => {
 
       axios.defaults.withCredentials = true;
       const response = await axios.post(
-        "http://localhost:5000/categories",
+        "/categories",
         { title },
         {
           headers: {

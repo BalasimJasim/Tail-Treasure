@@ -7,38 +7,7 @@ import { BannerOne } from "./BannerOne.jsx";
 import BannerTwo from "./BannerTwo.jsx";
 import ServicePage from "./ServicePage.jsx";
 import { FooterPage } from "./FooterPage";
-import ProductCard from "./ProductCard.jsx";
-
-// const products = [
-//   {
-//     _id: 1,
-//     image: "../../../img/dog1.jpg",
-//     name: "Dog",
-//     price: 9.99,
-//     category: "dogs",
-//   },
-//   {
-//     _id: 2,
-//     image: "../../../img/cat.jpg",
-//     name: "Cat",
-//     price: 19.99,
-//     category: "cats",
-//   },
-//   {
-//     _id: 3,
-//     image: "../../../img/bird.jpg",
-//     name: "Birds",
-//     price: 29.99,
-//     category: "birds",
-//   },
-//   {
-//     _id: 4,
-//     image: "../../../img/hamster.jpg",
-//     name: "Rodents",
-//     price: 10.99,
-//     category: "rodents",
-//   },
-// ];
+import Slider from "./Slider.jsx";
 
 export const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -46,9 +15,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:5000/products/products/featured"
-        );
+        const { data } = await axios.get("/products/products/featured");
         setFeaturedProducts(data.data);
         console.log("featured:", data);
       } catch (error) {
@@ -58,6 +25,7 @@ export const Home = () => {
 
     fetchFeaturedProducts();
   }, []);
+
   return (
     <>
       <div className="home-container">
@@ -75,57 +43,16 @@ export const Home = () => {
           <BannerOne />
         </div>
       </div>
+
       <div className="main-product-container">
         <div className="product-background">
           <h1 className="product-h1">Best of this week</h1>
           <div className="product-child-container">
-            <ul className="product-ul">
-              <li className="product-li">
-                <Link
-                  to="/products/category/dogs"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  For Dogs
-                </Link>
-              </li>
-              <li className="product-li">
-                {" "}
-                <Link
-                  to="/products/category/cats"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  For Cats
-                </Link>
-              </li>
-              <li className="product-li">
-                <Link
-                  to="/products/category/birds"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  For the Birds
-                </Link>
-              </li>
-              <li className="product-li">
-                <Link
-                  to="/products/category/rodents"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  For Rodents
-                </Link>
-              </li>
-            </ul>
-
-            <div className="product-card">
-              <div className="product-text-container">
-                {featuredProducts.length > 0 ? (
-                  featuredProducts.map((product) => (
-                    <ProductCard key={product._id} product={product} />
-                  ))
-                ) : (
-                  <div>No products</div>
-                )}
-              </div>
-            </div>
+            {featuredProducts.length > 0 ? (
+              <Slider items={featuredProducts} />
+            ) : (
+              <div>No products</div>
+            )}
           </div>
         </div>
       </div>

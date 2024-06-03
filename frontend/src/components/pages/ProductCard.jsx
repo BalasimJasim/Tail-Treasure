@@ -8,13 +8,13 @@ const ProductCard = ({ product }) => {
   const getCategoryLink = (category) => {
     switch (category) {
       case "dogs":
-        return "/products/category/dogs";
+        return "/discount#dogs";
       case "cats":
-        return "/products/category/cats";
+        return "/discount#cats";
       case "birds":
-        return "/products/category/birds";
+        return "/discount#birds";
       case "rodents":
-        return "/products/category/rodents";
+        return "/discount#rodents";
       default:
         return "/";
     }
