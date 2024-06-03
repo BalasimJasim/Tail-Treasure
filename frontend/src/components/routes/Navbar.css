@@ -1,6 +1,8 @@
 .logo {
   border-radius: 50%;
-  width: 90px;
+  width: 75px;
+  display: block;
+  margin: auto;
 }
 
 .container-navbar {
@@ -19,10 +21,11 @@
 .navbar-h1 {
   font-family: monospace;
   display: block;
-  font-size: 1.2rem;
+
+  font-size: 0.9rem;
+
   text-align: center;
   margin: 0 auto;
-  display: none;
 }
 
 .mobile-menu {
@@ -90,7 +93,9 @@
   border: none;
   color: #0f0f0f;
   cursor: pointer;
-  font-size: 1.2rem;
+
+  font-size: 1rem;
+
 }
 .nav-span:hover {
   text-decoration: dashed;

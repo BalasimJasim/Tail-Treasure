@@ -15,6 +15,7 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
   const { user } = state;
   console.log("User from context:", user);
 
+
   const onConfirm = async () => {
     console.log("User before onConfirm:", user);
     if (!user || !user.id) {
@@ -32,10 +33,12 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
       console.log("Order Details after purchase:", orderDetails);
 
       dispatch({ type: "UPDATE_HISTORY", payload: result.history });
+localStorage.setItem("cart", JSON.stringify([]));
       goTo(Steps.fifth);
     } catch (error) {
       console.error("Error placing order:", error);
     }
+
   };
 
   const goBack = () => {
@@ -57,14 +60,24 @@ function CartConfirm({ goTo, formData, cartItems, finalTotal, paymentMethod }) {
                   className="product-image"
                 />
               </p>
-              <div className="w-75">
-                <h4 className="m-3">{item.name}</h4>
-                <p className="m-3">Price: {item.price}€</p>{" "}
-                <p className="m-3">Quantity: {item.quantity}</p>
+              <div className="w-100 w-sm-100 w-md-75 w-lg-75 w-xl-75 w-xxl-75">
+                <h4 className="m-0 m-sm-3 m-md-3 m-lg-3 m-xl-3 m-xxl-3 conf-title-prod">
+                  {item.name}
+                </h4>
+                <p className="my-1 m-sm-3 m-md-3 m-lg-3 m-xl-3 m-xxl-3 conf-price">
+                  Price: {item.price}€
+                </p>{" "}
+                <p className="my-1 m-sm-3 m-md-3 m-lg-3 m-xl-3 m-xxl-3 conf-quantity">
+                  Quantity: {item.quantity}
+                </p>
               </div>
             </div>
           ))}
-          <p className="text-end total">Total: {finalTotal.toFixed(2)}€</p>
+          <p className="text-end total">
+            Total: {parseFloat(finalTotal).toFixed(2)}€
+          </p>
+
+        
         </div>
         <div>
           <h3 className="conf-title">Delivery Details:</h3>
