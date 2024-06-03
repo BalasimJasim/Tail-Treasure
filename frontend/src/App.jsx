@@ -114,7 +114,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/logout/" element={<Login />} />
-        <Route path="*" element={<FooterPage />} />
+        {/* <Route path="*" element={<FooterPage />} /> */}
       </Routes>
     </>
   );
