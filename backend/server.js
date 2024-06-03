@@ -27,7 +27,7 @@ connectDB();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_DOMAIN,
     credentials: true,
   })
 );
