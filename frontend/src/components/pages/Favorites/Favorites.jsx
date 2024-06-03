@@ -4,17 +4,34 @@ import "./favorites.scss";
 import { BsHeartbreak } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { MdHeartBroken } from "react-icons/md";
+import { FaArrowUp } from "react-icons/fa";
 
 const Favorites = () => {
   const [products, setProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [isREmoved, setIsRemoved] = useState(false);
+  const [showGoUp, setShowGoUp] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
     fetchFavoriteProducts(favoriteIds);
   }, [isREmoved]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowGoUp(true);
+      } else {
+        setShowGoUp(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const fetchFavoriteProducts = async (favoriteIds) => {
     console.log(favoriteIds);
     try {
@@ -61,6 +78,10 @@ const Favorites = () => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   };
   const removeFromFavorites = (productId) => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -75,7 +96,11 @@ const Favorites = () => {
 
   return (
     <div className="favorites-container">
-      <div className="line"></div>
+      <div className="line">
+        <a href="#" className={`go-up ${showGoUp ? "visible" : ""}`}>
+          <FaArrowUp className="up-arrow" />
+        </a>
+      </div>
       {products.length > 0 ? (
         products.map((product) => (
           <div
@@ -91,6 +116,11 @@ const Favorites = () => {
             </p>
 
             <div className="product-details">
+              {showMessage && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Added to cart!
+                </div>
+              )}
               <h4 className="m-3">{product.name}</h4>
 
               <p className="m-3">Price: {product.price}€</p>

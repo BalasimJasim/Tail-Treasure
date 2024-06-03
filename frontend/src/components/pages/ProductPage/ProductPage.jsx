@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./productPage.css";
 import "./productPage.scss";
-import { FaCartPlus } from "react-icons/fa";
+import { FaArrowUp, FaCartPlus } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import { IoPawOutline } from "react-icons/io5";
@@ -21,6 +21,7 @@ const ProductPage = () => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
+  const [showGoUp, setShowGoUp] = useState(false);
 
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 320 || window.innerWidth <= 768
@@ -35,6 +36,21 @@ const ProductPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowGoUp(true);
+      } else {
+        setShowGoUp(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleShow = () => {
@@ -193,6 +209,9 @@ const ProductPage = () => {
   // console.log(localStorage.getItem("cart"));
   return (
     <div className="line">
+      <a href="#" className={`go-up ${showGoUp ? "visible" : ""}`}>
+        <FaArrowUp className="up-arrow" />
+      </a>
       <div className="prod-container">
         {product ? (
           <div className="card">

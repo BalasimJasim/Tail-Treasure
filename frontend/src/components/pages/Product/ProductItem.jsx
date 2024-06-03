@@ -8,7 +8,7 @@ export const ProductItem = ({ product }) => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
-
+  const [showMessage, setShowMessage] = useState(false);
   const toggleFavorite = (productId) => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     console.log(favorites);
@@ -56,6 +56,10 @@ export const ProductItem = ({ product }) => {
       // Product does not exist, add new with quantity 1
       addNewItemToCart(cart, product);
     }
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   };
 
   // const incrementItemCountInCart = (prevCart, currentProductInCart) => {
@@ -125,13 +129,18 @@ export const ProductItem = ({ product }) => {
         <p className="card-text" style={{ textAlign: "right" }}>
           Price: {product.price}€
         </p>
-        <div className="cart-btn">
+        <div className="">
           <button
             className="px-2 cart-btn"
             onClick={() => addProductToCart(product)}
           >
             <FaCartPlus className="faCart" /> ADD TO CART
           </button>
+          {showMessage && (
+            <div className="alert alert-success mt-2" role="alert">
+              Added to cart!
+            </div>
+          )}
         </div>
       </div>
     </div>

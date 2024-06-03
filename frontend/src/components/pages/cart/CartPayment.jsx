@@ -24,7 +24,7 @@ function CartPayment({ goTo, paymentMethod, setPaymentMethod }) {
       <div className="m-auto w-75">
         <h2 className="text-center my-2">Choose Payment Method</h2>
         <div
-          className="d-flex justify-content-around m-auto w-50"
+          className="d-flex justify-content-around m-auto w-100 w-sm-50 w-md-50 w-lg-50 w-xl-50 w-xxl-50"
           onChange={onPaymentMethodChange}
         >
           <input

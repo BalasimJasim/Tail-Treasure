@@ -139,24 +139,28 @@ function CartProcess({
       <div className="card">
         {cartItems.map((item) => (
           <div key={item._id} className="cart-item d-flex flex-row">
-            <p className="m-3 img-container">
+            <p className="m-0 img-container m-sm-2 m-md-3 m-lg-3 m-xl-3 m-xxl-3">
               <img src={item.image} alt={item.name} className="product-image" />
             </p>
 
-            <div className="w-75">
-              <h4 className="m-3">{item.name}</h4>
-              <p className="m-3">Price: {item.price}€</p>
-              <div className="quantity-controls d-flex justify-content-between">
-                <p>
+            <div className=" cont-quant-title m-0 m-sm-2 m-md-3 m-lg-3 m-lg-3 m-xl-3 m-xxl-3">
+              <h4 className="mx-0 mx-sm-3 mx-md-3 mx-lg-3 mx-xl-3 mx-xxl-3 cart-prod-name ">
+                {item.name}
+              </h4>
+              <p className="m-0  m-sm-2 m-md-3 m-lg-3 m-lg-3 m-xl-3 m-xxl-3 my-2 price-cont">
+                Price: {item.price}€
+              </p>
+              <div className="quantity-controls d-flex justify-content-around justify-content-md-between justify-content-sm-between justify-content-lg-between justify-content-xl-between justify-content-xxl-between">
+                <p className="quant-btn">
                   <button
-                    className="p-2 m-3"
+                    className="p-md-2 m-md-3 p-sm-0 m-sm-0 p-lg-2 m-lg-3 m-lg-3 m-xl-3 m-xxl-3"
                     onClick={() => decrementQuantity(item._id)}
                   >
                     -
                   </button>
-                  <span> {item.quantity} </span>
+                  <span className="quant-span "> {item.quantity} </span>
                   <button
-                    className="p-2 m-3"
+                    className="p-md-2 m-md-3 p-sm-0 m-sm-0 p-lg-2 m-lg-3 m-lg-3 m-xl-3 m-xxl-3"
                     onClick={() => incrementQuantity(item._id)}
                   >
                     +
@@ -165,7 +169,7 @@ function CartProcess({
 
                 <p className="rmv-cont">
                   <button
-                    className="p-2 m-3 remove-btn"
+                    className="remove-btn  p-sm-1 p-md-2 p-lg-2 p-lg-2 p-xl-2 p-xxl-2   m-sm-0 m-md-3 m-lg-3 m-lg-3 m-xl-3 m-xxl-3"
                     onClick={() => removeFromCart(item._id)}
                   >
                     Remove
@@ -176,10 +180,10 @@ function CartProcess({
           </div>
         ))}
         <div className="total-cart">
-          <div className="d-flex justify-content-between mx-2">
+          <div className="flex-sm-row flex-md-row flex-lg-row flex-row d-flex justify-content-between mx-0 mx-sm-0 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 mb-0 mb-sm-2 mb-md-2 mb-lg-2 mb-xl-2 mb-xxl-2 ">
             <p>Subtotal:</p> <p>{calculateTotal()}€</p>
           </div>
-          <div className="d-flex justify-content-between mx-2">
+          <div className="flex-sm-row flex-md-row flex-lg-row flex-row d-flex justify-content-between mx-0 mx-sm-0 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 mb-0 mb-sm-2 mb-md-2 mb-lg-2 mb-xl-2 mb-xxl-2">
             {total > 40 ? (
               <>
                 <p>Free Shipping:</p> <p>0€</p>
@@ -190,9 +194,12 @@ function CartProcess({
               </>
             )}
           </div>
-          <div className="total d-flex justify-content-between mx-2">
+          <div className="total flex-sm-row flex-md-row flex-lg-row flex-row d-flex justify-content-between mx-0 mx-sm-2 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 mb-0 mb-sm-2 mb-md-2 mb-lg-2 mb-xl-2 mb-xxl-2">
             <p>Total:</p> <p>{parseFloat(finalTotal).toFixed(2)}€</p>
           </div>
+        </div>
+        <div className="free-shipping">
+          *Free shipping on all orders over €39.99
         </div>
         <button onClick={nextStep} className="checkout-btn ">
           Checkout
