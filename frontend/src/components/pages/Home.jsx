@@ -8,9 +8,11 @@ import BannerTwo from "./BannerTwo.jsx";
 import ServicePage from "./ServicePage.jsx";
 import { FooterPage } from "./FooterPage";
 import Slider from "./Slider.jsx";
+import { FaArrowUp } from "react-icons/fa";
 
 export const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [showGoUp, setShowGoUp] = useState(false);
 
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
@@ -25,10 +27,28 @@ export const Home = () => {
 
     fetchFeaturedProducts();
   }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowGoUp(true);
+      } else {
+        setShowGoUp(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <div className="home-container">
+        <a href="#" className={`go-up ${showGoUp ? "visible" : ""}`}>
+          <FaArrowUp className="up-arrow" />
+        </a>
         <div className="home-home-discount">
           <h1 className="home-h01"> Discount on first purchase</h1>
           <span className="home-30"> 30%</span>
