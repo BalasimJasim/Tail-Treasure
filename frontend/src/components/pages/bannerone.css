@@ -160,13 +160,15 @@
   .container-grid > .photo:first-child {
     grid-area: Dog;
     height: 300px;
-    width: 50vw;
+    width: 48vw;
+    margin-left: 0.5rem;
   }
 
   .container-grid > .photo:nth-child(2) {
     grid-area: Bird;
     height: 300px;
-    width: 50vw;
+    width: 48vw;
+    margin-left: 0.5rem;
   }
 
   .container-grid > .photo:nth-child(3) {

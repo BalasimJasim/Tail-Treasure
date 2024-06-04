@@ -63,20 +63,17 @@ export const ProductsCatalog = () => {
           ))
         ) : (
           <div className="d-flex flex-column justify-content-center align-items-center h-100">
-            {" "}
-            <p>
-              <RotatingLines
-                visible={true}
-                height="96"
-                width="96"
-                color="rgb(245, 185, 73)"
-                strokeWidth="5"
-                animationDuration="0.75"
-                ariaLabel="rotating-lines-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-              />
-            </p>
+            <RotatingLines
+              visible={true}
+              height="96"
+              width="96"
+              color="rgb(245, 185, 73)"
+              strokeWidth="5"
+              animationDuration="0.75"
+              ariaLabel="rotating-lines-loading"
+              wrapperStyle
+              wrapperClass
+            />
             {/* <div className="line"> </div> */}
             <div>Loading</div>
           </div>

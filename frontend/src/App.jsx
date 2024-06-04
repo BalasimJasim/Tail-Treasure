@@ -39,6 +39,7 @@ import CartProcess from "./components/pages/cart/CartProcess.jsx";
 
 import { useUserContext } from "./components/contexts/UserContext.jsx";
 // import ProfileSidebar from "./components/pages/profileSidebar/ProfileSidebar.jsx";
+
 axios.defaults.baseURL = import.meta.env.VITE_BACKENDURL;
 function App() {
   const { state } = useUserContext();

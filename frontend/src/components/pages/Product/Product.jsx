@@ -70,7 +70,7 @@ export const Product = () => {
             <>
               <div className="d-flex flex-column justify-content-center align-items-center h-100">
                 {" "}
-                <p>
+                {/* <p>
                   <RotatingLines
                     visible={true}
                     height="96"
@@ -82,7 +82,7 @@ export const Product = () => {
                     wrapperStyle={{}}
                     wrapperClass=""
                   />
-                </p>
+                </p> */}
                 {/* <div className="line"> </div> */}
                 <div>Loading</div>
               </div>

@@ -16,13 +16,13 @@
   width: 40%;
   padding-top: 1.5rem;
   color: rgb(255, 255, 255);
-  display: none;
+  font-size: 2rem;
 }
 
 .bannertwo-button {
   margin-top: 4rem;
   padding: 1rem;
-  width: 14%;
+  width: 24%;
   border-radius: 1rem;
   border: none;
   background-color: white;
@@ -41,6 +41,7 @@
   }
 
   .banner-p {
+    display: none;
   }
 
   .bannertwo-button {
@@ -67,6 +68,15 @@
     margin-right: auto;
   }
   .banner-p {
-    display: none; /* Hide the banner-p element on tablet devices */
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-p {
+    display: none;
+  }
+  .bannertwo-button {
+    margin-bottom: 10rem;
   }
 }
