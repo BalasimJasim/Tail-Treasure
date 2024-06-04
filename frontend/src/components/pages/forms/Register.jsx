@@ -184,7 +184,7 @@ function Register() {
           transition={{ duration: 2, ease: "easeInOut" }}
           className="image-box"
         >
-          <img src="../../../images/backgound.png" alt="background" />
+          <img src="/Images/background.png" alt="background" />
         </motion.div>
       </div>
     </div>

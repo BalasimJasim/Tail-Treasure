@@ -60,7 +60,7 @@ const UsersTable = () => {
                   <td>
                     <div className="table-image">
                       <img
-                        src="/images/user-avatar.png"
+                        src="/Images/user-avatar.png"
                         alt=""
                         className="table-user-image"
                       />
