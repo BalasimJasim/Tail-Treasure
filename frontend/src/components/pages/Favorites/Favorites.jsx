@@ -10,6 +10,10 @@ const Favorites = ({ messageProductId, setMessageProductId }) => {
   const [isRemoved, setIsRemoved] = useState(false);
   const [showGoUp, setShowGoUp] = useState(false);
 
+  const [showMessage, setShowMessage] = useState({});
+
+
+
   useEffect(() => {
     const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
     fetchFavoriteProducts(favoriteIds);
@@ -53,9 +57,18 @@ const Favorites = ({ messageProductId, setMessageProductId }) => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    setMessageProductId(product._id);
+
+
+    setShowMessage((prevMessages) => ({
+      ...prevMessages,
+      [product._id]: true,
+    }));
     setTimeout(() => {
-      setMessageProductId(null);
+      setShowMessage((prevMessages) => ({
+        ...prevMessages,
+        [product._id]: false,
+      }));
+
     }, 2000);
   };
 
@@ -86,7 +99,10 @@ const Favorites = ({ messageProductId, setMessageProductId }) => {
             </p>
 
             <div className="product-details">
-              {messageProductId === product._id && (
+
+              {showMessage[product._id] && (
+             
+
                 <div className="alert alert-success mt-2" role="alert">
                   Added to cart!
                 </div>

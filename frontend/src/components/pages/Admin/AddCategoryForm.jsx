@@ -11,7 +11,7 @@ const AddCategoryForm = () => {
     if (!title.trim()) return;
 
     try {
-      const token = Cookies.get("token");
+      const token = localStorage.getItem("token");
 
       axios.defaults.withCredentials = true;
       const response = await axios.post(

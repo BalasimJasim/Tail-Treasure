@@ -5,10 +5,12 @@ import {
   fetchAllReviews,
   updateReview,
 } from "./../../../Helpers/fetchProducts.js";
+import Swal from "sweetalert2";
 
 const ReviewTable = () => {
   const [reviews, setReviews] = useState([]);
   const [searchReview, setSearchReview] = useState("");
+  const [adminComments, setAdminComments] = useState({}); // Added state to manage admin comments
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,27 +37,51 @@ const ReviewTable = () => {
   });
 
   const handleCommentChange = (event, reviewId) => {
-    const updatedReviews = reviews.map((review) => {
-      if (review._id === reviewId) {
-        return {
-          ...review,
-          adminComment: event.target.value,
-        };
-      }
-      return review;
+    setAdminComments({
+      ...adminComments,
+      [reviewId]: event.target.value,
     });
-    setReviews(updatedReviews);
   };
 
   const submitComment = async (reviewId) => {
-    const reviewToUpdate = reviews.find((review) => review._id === reviewId);
+    const adminComment = adminComments[reviewId];
     try {
       await updateReview(reviewId, {
-        adminComment: reviewToUpdate.adminComment,
+        adminComment: adminComment,
       });
       console.log("Comment submitted successfully!");
+
+      setReviews((prevReviews) =>
+        prevReviews.map((review) => {
+          if (review._id === reviewId) {
+            return {
+              ...review,
+              adminComment: adminComment,
+            };
+          }
+          return review;
+        })
+      );
+
+      setAdminComments((prevComments) => ({
+        ...prevComments,
+        [reviewId]: "", // Clear the input field after submission
+      }));
+
+      Swal.fire({
+        title: "Success",
+        text: "Comment submitted successfully!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     } catch (error) {
       console.error("Error submitting comment:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Failed to submit comment",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 
@@ -99,7 +125,7 @@ const ReviewTable = () => {
                 <td>
                   {review.adminComment ? (
                     <div>
-                      <strong>Admin Reply:</strong> {review.adminComment}
+                      <strong>Manager:</strong> {review.adminComment}
                     </div>
                   ) : (
                     "-"
@@ -109,7 +135,7 @@ const ReviewTable = () => {
                   <div className="table-button-group">
                     <input
                       type="text"
-                      value={review.adminComment || ""}
+                      value={adminComments[review._id] || ""}
                       onChange={(event) =>
                         handleCommentChange(event, review._id)
                       }
