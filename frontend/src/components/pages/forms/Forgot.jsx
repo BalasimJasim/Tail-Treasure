@@ -4,10 +4,10 @@ import { userForgotPassword } from "../../../Helpers/fetches";
 import "./forgot.css";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Forgot = () => {
   const [email, setEmail] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
@@ -24,14 +24,28 @@ const Forgot = () => {
         const { userId, token } = response.data;
         Cookies.set("userId", userId);
         Cookies.set("token", token);
-        setSuccessMessage("Password Reset link sent successfully!");
-        setErrorMessage("");
       }
-      navigate("/reset/:userId/reset/:token");
+      await Swal.fire({
+        title: "Success!",
+        text: "Password Reset link sent to your email.",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      setErrorMessage("");
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
     } catch (error) {
       console.error("Error sending reset link:", error);
-      setErrorMessage("Failed to send reset link: " + error.message);
-      setSuccessMessage("");
+      await Swal.fire({
+        title: "Error",
+        text: "Failed to send reset link: " + error.message,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+
+      setErrorMessage("");
     }
   };
 
@@ -50,9 +64,6 @@ const Forgot = () => {
           Send Reset Link
         </button>
         {errorMessage && <p className="forgot-error-message">{errorMessage}</p>}
-        {successMessage && (
-          <p className="forgot-success-message">{successMessage}</p>
-        )}
       </div>
     </div>
   );

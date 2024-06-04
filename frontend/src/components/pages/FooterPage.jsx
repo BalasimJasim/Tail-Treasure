@@ -55,9 +55,9 @@ export const FooterPage = () => {
             <h2 className="footer-h2">Menu</h2>
             <ul className="footer-ul">
               <li className="footer-li">
-                <a href={getCategoryLink("catalog")} className="footer-a">
+                <Link to="/products" className="footer-a">
                   Catalog
-                </a>
+                </Link>
               </li>
 
               <li className="footer-li">

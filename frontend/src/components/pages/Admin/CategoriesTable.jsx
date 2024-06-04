@@ -10,6 +10,7 @@ const CategoriesTable = () => {
   const { deleteCategory } = useCategoryContext();
   const [categories, setCategories] = useState([]);
   const [searchCategory, setSearchCategory] = useState("");
+  const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,12 +23,17 @@ const CategoriesTable = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [isRemoved]);
 
   const searchCategHandler = (event) => {
     setSearchCategory(event.target.value);
   };
-
+  const handleDeleteCategory = async (id) => {
+    const success = await deleteCategory(id);
+    if (success) {
+      setIsRemoved(!isRemoved);
+    }
+  };
   const filteredCategory = categories.filter((categ) =>
     `${categ.title}`.toLowerCase().includes(searchCategory.toLowerCase())
   );
@@ -61,7 +67,7 @@ const CategoriesTable = () => {
                   </td>
                   <td>
                     <div className="table-button-group">
-                      <button onClick={() => deleteCategory(item._id)}>
+                      <button onClick={() => handleDeleteCategory(item._id)}>
                         Delete Category
                       </button>
                     </div>
