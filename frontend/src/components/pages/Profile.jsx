@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./profile.scss";
-// import av1 from "../../../images/av1.png";
 import { useUserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 
@@ -50,7 +49,7 @@ const Profile = () => {
       <main className="dash-content">
         {user ? (
           <div className="profile-container">
-            <ProfileHeader user={user} avatar={"/Images/av1.png"} />
+            <ProfileHeader user={user} />
             <ProfileInformation
               isEditing={isEditing}
               formData={formData}
@@ -83,11 +82,8 @@ const Profile = () => {
   );
 };
 
-const ProfileHeader = ({ user, avatar }) => (
+const ProfileHeader = ({ user }) => (
   <div className="profile-info">
-    <div className="profile-image">
-      <img src={avatar} alt="Profile" />
-    </div>
     <div className="profile-details">
       <h2>
         {user?.firstName} {user?.lastName}
@@ -123,13 +119,13 @@ const ProfileInformation = ({ isEditing, formData, handleInputChange }) => (
 
 const PurchaseHistory = ({ history }) => {
   const [showAll, setShowAll] = useState(false);
-  const visibleHistory = showAll ? history : history.slice(0, 4);
+  const visibleHistory = showAll ? history : history?.slice(0, 4);
 
   return (
     <div className="purchase-history">
       <h2>Purchase History</h2>
       <ul className="purchase-list">
-        {visibleHistory.length > 0 ? (
+        {visibleHistory?.length > 0 ? (
           visibleHistory.map((purchase, index) => (
             <li key={index} className="purchase-item">
               <div className="purchase-details">
@@ -153,7 +149,7 @@ const PurchaseHistory = ({ history }) => {
           <li>No purchase history available.</li>
         )}
       </ul>
-      {!showAll && history.length > 4 && (
+      {history?.length > 4 && (
         <button className="see-all-btn" onClick={() => setShowAll(true)}>
           See All
         </button>
