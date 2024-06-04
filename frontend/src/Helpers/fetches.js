@@ -105,3 +105,12 @@ export const makePurchase = async (orderDetails) => {
     throw error;
   }
 };
+
+export const fetchPurchaseHistory = async (userId) => {
+  try {
+    const response = await axios.get(`/purchase/history/${userId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
