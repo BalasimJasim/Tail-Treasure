@@ -20,7 +20,9 @@ export const CategoryProvider = ({ children }) => {
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this category!",
         icon: "warning",
-        buttons: true,
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, keep it",
         dangerMode: true,
       });
 
@@ -33,6 +35,7 @@ export const CategoryProvider = ({ children }) => {
           showConfirmButton: false,
           timer: 1500,
         });
+        return true;
       }
     } catch (error) {
       console.error("Error deleting category:", error);
@@ -42,6 +45,7 @@ export const CategoryProvider = ({ children }) => {
         icon: "error",
         confirmButtonText: "OK",
       });
+      return false;
     }
   };
 

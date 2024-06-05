@@ -365,7 +365,38 @@ body {
     }
   }
 }
-
+@media (max-width: 390px) {
+  .Product {
+    width: 100%;
+    .cart-btn {
+      background-color: rgb(245, 185, 73);
+      font-size: 1.3rem;
+      width: 19.3rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      visibility: visible;
+      border: none;
+      border-radius: 0 0 5px 5px;
+      color: white;
+      padding-block: 4px;
+      font-weight: bold;
+      .faCart {
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+    }
+    .alert {
+      background-color: #fee6b8;
+      width: 19.3rem;
+      border: solid 2px rgb(245, 185, 73);
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 1.2rem;
+    }
+  }
+}
 @media (max-width: 375px) {
   .Product {
     width: 100%;

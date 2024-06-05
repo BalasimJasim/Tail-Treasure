@@ -17,7 +17,7 @@ export const fetchAllCategories = async () => {
 
 export const deleteCategoryById = async (categoryId) => {
   try {
-    const token = Cookies.get("token");
+    const token = localStorage.getItem("token");
     await axios.delete(`/categories/${categoryId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ export const deleteCategoryById = async (categoryId) => {
 
 export const createCategory = async (categoryData) => {
   try {
-    const token = Cookies.get("token");
+    const token = localStorage.getItem("token");
     const response = await axios.post("/categories", categoryData, {
       headers: {
         Authorization: `Bearer ${token}`,
