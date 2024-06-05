@@ -15,19 +15,23 @@ export const purchaseProduct = async (req, res, next) => {
     }
 
     const price = (product.price * quantity).toFixed(2);
-
+    const bonusPoints = parseFloat(price) * 0.1;
     user.history.push({
       productId: product._id,
       quantity,
       price: parseFloat(price),
       date: new Date(),
+      bonusPoints: bonusPoints,
     });
-
+    user.bonusPoints += bonusPoints;
     await user.save();
 
-    res
-      .status(200)
-      .json({ message: "Purchase successful", history: user.history });
+    res.status(200).json({
+      message: "Purchase successful",
+      history: user.history,
+      bonusPoints: user.bonusPoints,
+    });
+    console.log("bonous from BE:", bonusPoints);
   } catch (error) {
     next(error);
   }
