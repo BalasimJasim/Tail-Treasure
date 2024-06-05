@@ -20,7 +20,7 @@ const BannerTwo = () => {
             guidance tailored to your needs.
           </p>
           <button className="bannertwo-button" onClick={bannerTwoButtonClick}>
-            Back Call
+            Click Here
           </button>
         </div>
       </div>
