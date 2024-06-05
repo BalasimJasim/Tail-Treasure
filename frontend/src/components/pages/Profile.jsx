@@ -7,7 +7,7 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const { state, dispatch } = useUserContext();
   const { user } = state;
-
+  console.log("bonous:", user.bonusPoints);
   const [formData, setFormData] = useState({
     firstName: user?.firstName || "",
     lastName: user?.lastName || "",
@@ -88,7 +88,7 @@ const ProfileHeader = ({ user }) => (
       <h2>
         {user?.firstName} {user?.lastName}
       </h2>
-      <p>User ID: {user?._id}</p>
+      <p>Bonus Points: {user?.bonusPoints}</p>
     </div>
   </div>
 );

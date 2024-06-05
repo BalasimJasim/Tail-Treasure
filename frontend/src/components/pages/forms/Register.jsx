@@ -2,13 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import "./register.css";
-import { NavLink, Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { userRegisterApi } from "../../../Helpers/fetches";
-
 import { useUserContext } from "../../contexts/UserContext";
+import Swal from "sweetalert2";
 
 function Register() {
   const { dispatch } = useUserContext();
@@ -18,6 +16,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -42,6 +41,17 @@ function Register() {
 
       dispatch({ type: "REGISTER_USER_SUCCESS", payload: user });
 
+      Swal.fire({
+        title: "Success!",
+        text: "You have registered successfully. Please verify your email.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
+
       console.log("User registered successfully!");
       setFirstName("");
       setLastName("");
@@ -51,6 +61,13 @@ function Register() {
     } catch (error) {
       console.error("Registration failed:", error);
       dispatch({ type: "REGISTER_USER_FAILURE", payload: error.message });
+
+      Swal.fire({
+        title: "Error!",
+        text: "Registration failed. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     } finally {
       setLoading(false);
     }

@@ -16,7 +16,15 @@ import {
 import Swal from "sweetalert2";
 import { FiCloudLightning } from "react-icons/fi";
 const initialState = {
-  user: null,
+  user: {
+    id: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    isAdmin: false,
+    bonusPoints: 0,
+    history: [],
+  },
   isAccountVerified: false,
   userCount: 0,
   isAdmin: false,
