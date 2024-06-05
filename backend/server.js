@@ -19,6 +19,7 @@ import categoryRoute from "./src/routes/categoryRoute.js";
 import adminRouter from "./src/routes/adminRoute.js";
 import msgRoute from "./src/routes/msgRouter.js";
 import purchaseRoute from "./src/routes/purchaseRoute.js";
+import bonusPointsRouter from "./src/routes/bonousRoute.js";
 
 const app = express();
 config();
@@ -40,6 +41,7 @@ app.use("/auth", authRoute);
 app.use("/admin-dashboard", adminRouter);
 // app.use("/", userRoute);
 app.use("/reviews", reviewsRouter);
+app.use("/bonus/", bonusPointsRouter);
 app.use("/products", productsRouter);
 app.use("/categories", categoryRoute);
 app.use("/reset", passwordRoute);
