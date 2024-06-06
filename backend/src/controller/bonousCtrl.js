@@ -3,6 +3,7 @@ import { User } from "../models/UserModel.js";
 export const getBonusPoints = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    console.log("user id from bonus:", userId);
     const user = await User.findById(userId);
 
     if (!user) {
@@ -33,12 +34,10 @@ export const updateBonusPoints = async (req, res, next) => {
     user.bonusPoints = bonusPoints;
     await user.save();
 
-    res
-      .status(200)
-      .json({
-        message: "Bonus points updated successfully",
-        bonusPoints: user.bonusPoints,
-      });
+    res.status(200).json({
+      message: "Bonus points updated successfully",
+      bonusPoints: user.bonusPoints,
+    });
   } catch (error) {
     next(error);
   }
