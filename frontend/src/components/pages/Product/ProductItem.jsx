@@ -48,8 +48,8 @@ export const ProductItem = ({ product }) => {
 
   const addProductToCart = (product) => {
     const productInCart = cart.find((p) => p._id === product._id);
-    const isProductInCart = !!productInCart;
-    if (isProductInCart) {
+    // const isProductInCart = !!productInCart;
+    if (productInCart) {
       // Product exists, update quantity
       incrementItemCountInCart(cart, productInCart);
     } else {
